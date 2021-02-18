@@ -47,7 +47,7 @@ export class SeleccionarClima extends React.Component {
                     title={img.name}
                     actionIcon={
                         <FormControlLabel
-                            control={<Checkbox  name={i} style={{color: "white"}} />}
+                            control={<Checkbox  style={{color: "white"}} />}
                             label="Clic aquí"
                             style={{color: "white"}}
                         />
