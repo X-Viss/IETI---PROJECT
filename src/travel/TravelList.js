@@ -8,6 +8,7 @@ class TravelList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            name: "rr",
             travels: [{
                 name: "Negocios de cartera",
                 place: "Argentina",
@@ -24,12 +25,25 @@ class TravelList extends React.Component {
                 date: new Date()
             }]
         };
+
+        this.handleCardDelete = this.handleCardDelete.bind(this);
+    }
+
+
+    handleCardDelete(key){
+        this.setState(prevState => {
+            const travels = prevState.travels.filter(item => item.key !== key);
+            return {
+                travels
+            }
+        });
     }
 
     render() {
         const renderTravels = this.state.travels.map((value, index) => {
+            value.key = index;
             return (
-            <TravelCard key={index} name={value.name} place={value.place} date={value.date}>
+            <TravelCard key= {index} keyName={index} name={value.name} place={value.place} date={value.date} onDelete={this.onCardDelete} onCardDelete={this.handleCardDelete}>
             </TravelCard>
             );
         })

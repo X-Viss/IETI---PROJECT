@@ -15,11 +15,10 @@ class TravelCard extends React.Component {
     }
 
     handleTravelClick() {
-        console.log(this.props);
     }
 
     handleTravelDelete() {
-        console.log(this.props);
+        this.props.onCardDelete(this.props.keyName);
     }
 
     render() {
