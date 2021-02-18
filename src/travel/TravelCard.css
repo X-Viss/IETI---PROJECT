@@ -1,0 +1,25 @@
+.cardButton {
+    min-Width: 275;
+    background-color: green;
+    color: black;
+    cursor: pointer;
+}
+
+.mainCard {
+    display: inline-block;
+}
+
+
+.title {
+    font-size: 14;
+}
+
+.bullet{
+    display: inline-block;
+    margin: 0 2px;
+    transform: scale(0.8);
+}
+
+.pos {
+    margin-bottom: 12;
+}
