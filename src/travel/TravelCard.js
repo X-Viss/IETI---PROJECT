@@ -44,7 +44,7 @@ class TravelCard extends React.Component {
 
                 <Button startIcon={<DeleteIcon />} style={{ marginLeft: "auto" }} onClick={this.handleTravelDelete}>
                     Borrar
-                </Button>
+            </Button>
 
             </div>
         );
