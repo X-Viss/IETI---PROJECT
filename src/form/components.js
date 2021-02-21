@@ -23,7 +23,7 @@ function itemsForRegisterForm(){
     return[
         {
             className:"",
-            item:<TextField label="Nombre" type="text" name="name" required={true}/>
+            item:<TextField label="Correo" type="email" name="correo" required={true}/>
         },
         {
             className:"",
@@ -74,7 +74,7 @@ export function RegisterForm(props){
     return <form onSubmit={handleSubmit}>
         <center>
             <MapArticles items={items}/>
-            <Button variant="contained">Submit</Button>
+            <Button type="submit" variant="contained">Submit</Button>
         </center>
     </form>
 }
