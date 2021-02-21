@@ -1,6 +1,7 @@
 import React from 'react'
 import { MapArticles } from './articles'
 import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button';
 import Autocomplete from '@material-ui/lab/Autocomplete'
 
 function itemsForRegisterForm(){
@@ -22,15 +23,15 @@ function itemsForRegisterForm(){
     return[
         {
             className:"",
-            item:<TextField id="standard-basic" type="text" name="name" required={true} placeholder="Nombre"/>
+            item:<TextField label="Nombre" type="text" name="name" required={true}/>
         },
         {
             className:"",
-            item:<input type="password" name="password" required={true} placeholder="Contraseña" onChange={confirmPasswords}/>
+            item:<TextField label="Contraseña" type="password" name="password" required={true} onChange={confirmPasswords}/>
         },
         {
             className:"",
-            item:<input type="password" name="password2" required={true} placeholder="Confirmar Contraseña" onChange={confirmPasswords}/>
+            item:<TextField label="Confirmar Contraseña" type="password" name="password2" required={true} onChange={confirmPasswords}/>
         },
         {
             className:"",
@@ -59,7 +60,7 @@ function itemsForRegisterForm(){
         },
         {
             className:"",
-            item:<input type="number" name="phone" placeholder="Telefono" required={true}/>
+            item:<TextField label="Telefono" type="number" name="phone" required={true}/>
         },
     ]
 }
@@ -71,7 +72,9 @@ export function RegisterForm(props){
     }
     const items=itemsForRegisterForm()
     return <form onSubmit={handleSubmit}>
-        <MapArticles items={items}/>
-        <button>Submit</button>
+        <center>
+            <MapArticles items={items}/>
+            <Button variant="contained">Submit</Button>
+        </center>
     </form>
 }
