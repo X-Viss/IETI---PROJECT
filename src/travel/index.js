@@ -1,20 +1,20 @@
-import { Grid } from '@material-ui/core';
+import { Divider, Grid } from '@material-ui/core';
 import React from 'react';
 import TravelList from './TravelList';
 import UserCard from './UserCard';
 import { withStyles } from '@material-ui/core/styles';
+import OptionsBoard from '../common/OptionsBoard';
 
 
 const styles = (theme) => ({
     root: {
         verticalAlign: "baseline",
         position: "relative",
-
+        padding: theme.spacing(2),
+        height: "100%"
     },
     down: {
-        margin: "auto",
-        padding: theme.spacing(2),
-        position: "absolute",
+        height: "70%",
     },
     user: {
         width: "30%",
@@ -24,38 +24,68 @@ const styles = (theme) => ({
     },
     travelList: {
         width: "inherit",
+    },
+
+    upperDiv: {
+
     }
 });
 
 class index extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { name: [] }
+
+        this.setState(prevState => {
+            const name = prevState.push({})
+            return (
+                name
+            )
+        })
+    }
+
+
+    funcion(a) {
+
     }
 
     render() {
         const { classes } = this.props;
         return (
 
-            
+
             <div className={classes.root}>
                 <Grid
-                    container
-                    spacing={2}
-                    className={classes.down}
-                    xs
                 >
-                    <Grid item className={classes.user}>
-                        <UserCard></UserCard>
+                    <Grid item xs style={{height: "30%"}}>
+                        <OptionsBoard></OptionsBoard>
                     </Grid>
 
-                    <Grid item className={classes.travelListGrid}>
-                        <TravelList className={classes.travelList}></TravelList>
+                    <br></br>
+                    <Divider></Divider>
+                    <br></br>
+                    <Grid
+                        container
+                        spacing={2}
+                        xs
+                        item
+                    >
+                        <Grid item className={classes.user}>
+                            <UserCard></UserCard>
+                        </Grid>
+
+                        <Grid item className={classes.travelListGrid}>
+                            <TravelList name={this.state.name} className={classes.travelList}></TravelList>
+                        </Grid>
                     </Grid>
                 </Grid>
+
+
             </div>
 
         );
     }
+
 }
 export default withStyles(styles)(index);
 export { default as Travels } from './index.js';

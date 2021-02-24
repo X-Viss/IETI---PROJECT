@@ -21,6 +21,10 @@ class TravelCard extends React.Component {
         this.props.onCardDelete(this.props.keyName);
     }
 
+    functionEnLista(){
+        this.props.onDelete(1)
+    }
+
     render() {
         const bull = <span className="bullet">•</span>;
 

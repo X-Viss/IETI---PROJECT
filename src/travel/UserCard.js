@@ -11,7 +11,7 @@ const styles = (theme) => ({
         height: theme.spacing(10),
         margin: "0 auto",
         padding: theme.spacing(2),
-    }
+    },
 });
 
 class UserCard extends React.Component {
