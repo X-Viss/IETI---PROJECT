@@ -1,3 +1,6 @@
+* {
+    font-family: Helvetica;
+}
 .cardButton {
     min-Width: 275;
     background-color: green;
