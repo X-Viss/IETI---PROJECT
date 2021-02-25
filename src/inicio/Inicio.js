@@ -48,9 +48,9 @@ class Inicio extends Component {
             <div>
                 <ImageBanner title={"Title"} description={"Here is the description"} textButton={"Click Me"}/>
                 <br/>
-                <AdvancedGridList tileData={this.tileData} />
+                <AdvancedGridList tileData={this.tileData} title={"Inspirate"} numcols={4}/>
                 <br/>
-                <SingleLineGridList tileData={this.tileData} />
+                <SingleLineGridList tileData={this.tileData} title={"Tipo de viaje"}/>
             </div>
         );
     }
