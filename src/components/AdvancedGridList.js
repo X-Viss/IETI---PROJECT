@@ -37,21 +37,23 @@ export default function AdvancedGridList(props) {
     return (
         <div className={classes.root}>
             <Typography variant="h3" gutterBottom style={{color: 'black'}}>
-                Inspirate
+                {props.title}
             </Typography>
-            <GridList cellHeight={200} spacing={1} cols={4} className={classes.gridList}>
+            <GridList cellHeight={200} spacing={1} cols={props.numcols ? props.numcols : 2} className={classes.gridList}>
                 {props.tileData.map((tile) => (
                     <GridListTile key={tile.img} cols={tile.featured} >
                         <img src={tile.img} alt={tile.title} />
-                        <GridListTileBar
-                            title={tile.title}
-                            subtitle={<span>by: {tile.author}</span>}
-                            actionIcon={
-                                <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
-                                    <InfoIcon />
-                                </IconButton>
-                            }
-                        />
+                        {tile.title && tile.author ?
+                            <GridListTileBar
+                                title={tile.title}
+                                subtitle={<span>by: {tile.author}</span>}
+                                actionIcon={
+                                    <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
+                                        <InfoIcon />
+                                    </IconButton>
+                                }
+                            /> : ""
+                        }
                     </GridListTile>
                 ))}
             </GridList>

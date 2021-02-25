@@ -38,21 +38,23 @@ export default function SingleLineGridList(props) {
     return (
         <div className={classes.root}>
             <Typography variant="h4" gutterBottom style={{color: 'black'}}>
-                Tipos de viaje
+                {props.title}
             </Typography>
             <GridList className={classes.gridList} cols={2.5}>
                 {props.tileData.map((tile) => (
                     <GridListTile key={tile.img}>
                         <img src={tile.img} alt={tile.title} />
-                        <GridListTileBar
-                            title={tile.title}
-                            subtitle={<span>by: {tile.author}</span>}
-                            actionIcon={
-                                <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
-                                    <InfoIcon />
-                                </IconButton>
-                            }
-                        />
+                        {tile.title && tile.author ?
+                            <GridListTileBar
+                                title={tile.title}
+                                subtitle={<span>by: {tile.author}</span>}
+                                actionIcon={
+                                    <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
+                                        <InfoIcon />
+                                    </IconButton>
+                                }
+                            /> : ""
+                        }
                     </GridListTile>
                 ))}
             </GridList>
