@@ -15,7 +15,7 @@ const styles = (theme) => ({
 
     user: {
         width: "30%",
-        height: "100%",
+        height: "80vh",
     },
 
     travelListGrid: {

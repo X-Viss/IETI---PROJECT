@@ -1,6 +1,5 @@
-import { CardMedia, Divider, Grid } from '@material-ui/core';
+import { Divider, Grid } from '@material-ui/core';
 import React from 'react';
-import logo from './logo.jpg';
 import { withStyles } from '@material-ui/core/styles';
 import AppLogo from './AppLogo';
 import ButtonsMenu from './ButtonsMenu';
@@ -10,7 +9,6 @@ const styles = (theme) => ({
     root: {
         border: `1px solid ${theme.palette.divider}`,
         borderRadius: theme.shape.borderRadius,
-        backgroundColor: theme.palette.background.paper,
         color: theme.palette.text.secondary,
         '& svg': {
             margin: theme.spacing(1.5),
