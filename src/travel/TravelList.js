@@ -27,46 +27,6 @@ class TravelList extends React.Component {
                 name: "Negocios de cartera",
                 place: "Argentina",
                 date: new Date()
-            },
-            {
-                name: "Vacaciones en méxico",
-                place: "México",
-                date: new Date()
-            },
-            {
-                name: "Viaje por chile",
-                place: "Chile",
-                date: new Date()
-            },
-            {
-                name: "Negocios de negocios empresa",
-                place: "Brazil",
-                date: new Date()
-            },
-            {
-                name: "Trabajo en Perú",
-                place: "Perú",
-                date: new Date()
-            },
-            {
-                name: "Vacas",
-                place: "USA",
-                date: new Date()
-            },
-            {
-                name: "Cine",
-                place: "Canadá",
-                date: new Date()
-            },
-            {
-                name: "Visita a amigo",
-                place: "Alemania",
-                date: new Date()
-            },
-            {
-                name: "Trabajando en proyecto",
-                place: "Rusia",
-                date: new Date()
             }]
         };
 
