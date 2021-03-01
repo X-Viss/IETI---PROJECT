@@ -5,7 +5,7 @@ import  TravelList from './travel/TravelList.js';
 function App() {
   return (
     <div className="App">
-      <TravelList></TravelList>
+      learn react
     </div>
   );
 }
