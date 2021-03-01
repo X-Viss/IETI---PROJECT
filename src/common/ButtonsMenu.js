@@ -2,8 +2,8 @@ import { Button, CardMedia, Grid } from '@material-ui/core';
 import React from 'react';
 import logo from './logo.jpg';
 import { withStyles } from '@material-ui/core/styles';
-import AppLogo from './AppLogo';
 import { AddToPhotos, QuestionAnswer } from '@material-ui/icons';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const styles = (theme) => ({
     root: {

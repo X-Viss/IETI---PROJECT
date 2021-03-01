@@ -8,27 +8,23 @@ import OptionsBoard from '../common/OptionsBoard';
 
 const styles = (theme) => ({
     root: {
-        verticalAlign: "baseline",
-        position: "relative",
         padding: theme.spacing(2),
-        height: "100%"
+        display: 'flex',
+        flexFlow: 'column',
     },
-    down: {
-        height: "70%",
-    },
+
     user: {
         width: "30%",
+        height: "100%",
     },
+
     travelListGrid: {
-        width: "70%"
+        width: "70%",
+        overflowY: 'auto',
+        height: "80vh"
+        
+        
     },
-    travelList: {
-        width: "inherit",
-    },
-
-    upperDiv: {
-
-    }
 });
 
 class index extends React.Component {
@@ -55,9 +51,8 @@ class index extends React.Component {
 
 
             <div className={classes.root}>
-                <Grid
-                >
-                    <Grid item xs style={{height: "30%"}}>
+                <Grid>
+                    <Grid item xs >
                         <OptionsBoard></OptionsBoard>
                     </Grid>
 
@@ -69,6 +64,7 @@ class index extends React.Component {
                         spacing={2}
                         xs
                         item
+                        className={classes.downGrid}
                     >
                         <Grid item className={classes.user}>
                             <UserCard></UserCard>

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Avatar, Card, CardContent, Link, Typography, withStyles } from '@material-ui/core';
 import user from './user.png';
+import EditIcon from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
 const styles = (theme) => ({
     root: {
         backgroundColor: 'grey',
@@ -52,15 +55,18 @@ class UserCard extends React.Component {
                             {this.state.user.description}
                         </Typography>
                     </CardContent>
-
-                    <Link
-                        component="button"
-                        variant="body2"
-                        to="/editar"
-                        onClick={this.preventDefault}
-                    >
-                        Editar
-                    </Link>
+                    <Tooltip title="Editar perfíl" arrow>
+                        <Link
+                            component="button"
+                            variant="body2"
+                            to="/editar"
+                            onClick={this.preventDefault}
+                        >
+                            <IconButton>
+                                <EditIcon />
+                            </IconButton>
+                        </Link>
+                    </Tooltip>
 
                 </Card>
 
