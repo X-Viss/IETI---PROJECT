@@ -15,14 +15,11 @@ class TravelCard extends React.Component {
     }
 
     handleTravelClick() {
+        console.log(1)
     }
 
     handleTravelDelete() {
         this.props.onCardDelete(this.props.keyName);
-    }
-
-    functionEnLista(){
-        this.props.onDelete(1)
     }
 
     render() {
@@ -30,7 +27,7 @@ class TravelCard extends React.Component {
 
         return (
             <div style={{ display: "flex" }}>
-                <Button variant="outlined" fullWidth={true} className="cardButton" onClick={this.handleTravelClick}>
+                <Button id="travelButton" variant="outlined" fullWidth={true} className="cardButton" onClick={this.handleTravelClick}>
 
                     <CardContent className="mainCard">
                         <Typography variant="h5" component="h2">
@@ -45,7 +42,7 @@ class TravelCard extends React.Component {
                     </CardContent>
                 </Button>
 
-                <Button startIcon={<DeleteIcon />} style={{ marginLeft: "auto" }} onClick={this.handleTravelDelete}>
+                <Button id="deleteButton" startIcon={<DeleteIcon />} style={{ marginLeft: "auto" }} onClick={this.handleTravelDelete}>
                     Borrar
             </Button>
 

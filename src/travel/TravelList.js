@@ -119,10 +119,10 @@ class TravelList extends React.Component {
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.handleDialogClose} color="primary">
+                        <Button id="dialogDeleteCancel" onClick={this.handleDialogClose} color="primary">
                             Cancelar
                         </Button>
-                        <Button onClick={this.handleDeleteCardConfirmation} color="primary" autoFocus>
+                        <Button id="dialogDeleteAccept" onClick={this.handleDeleteCardConfirmation} color="primary" autoFocus>
                             Confirmar
                         </Button>
                     </DialogActions>

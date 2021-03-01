@@ -31,18 +31,6 @@ class index extends React.Component {
     constructor(props) {
         super(props);
         this.state = { name: [] }
-
-        this.setState(prevState => {
-            const name = prevState.push({})
-            return (
-                name
-            )
-        })
-    }
-
-
-    funcion(a) {
-
     }
 
     render() {

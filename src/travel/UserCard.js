@@ -28,16 +28,10 @@ class UserCard extends React.Component {
                 description: "Ready to Travel :)"
             }
         };
-        this.preventDefault = this.preventDefault.bind(this);
-    }
-
-    preventDefault = (event) => {
-        event.preventDefault();
     }
 
     render() {
         const { classes } = this.props;
-
         return (
             <div>
 
@@ -60,7 +54,6 @@ class UserCard extends React.Component {
                             component="button"
                             variant="body2"
                             to="/editar"
-                            onClick={this.preventDefault}
                         >
                             <IconButton>
                                 <EditIcon />
