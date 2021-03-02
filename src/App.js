@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import {SeleccionarClima} from './seleccionarClima/SeleccionarClima';
+import Main from './seleccionarClima/decoracionMain'
 
 function App() {
   return (
-    <SeleccionarClima/>
+    <Main/>
   );
 }
 
