@@ -2,73 +2,9 @@ import React, {Component} from 'react';
 import AdvancedGridList from "../components/AdvancedGridList";
 import BasicCard from "../components/BasicCard";
 import {Typography} from "@material-ui/core";
+import {datatest3} from "../tmp/datamock";
 
 class Tiposviajes extends Component {
-
-    tileData=[
-        {
-            img: "https://picsum.photos/1280/720?random=1",
-            title: 'Image',
-            author: 'author',
-            featured: 1,
-        },
-        {
-            img: "https://picsum.photos/1280/720?random=12",
-            title: 'Image',
-            author: 'author',
-            featured: 1,
-        },
-        {
-            img: "https://picsum.photos/1280/720?random=11",
-            title: 'Image',
-            author: 'author',
-            featured: 1,
-        },
-        {
-            img: "https://picsum.photos/1280/720?random=21",
-            title: 'Image',
-            author: 'author',
-            featured: 1,
-        },
-        {
-            img: "https://picsum.photos/1280/720?random=10",
-            title: 'Image',
-            author: 'author',
-            featured: 1,
-        },
-        {
-            img: "https://picsum.photos/1280/720?random=3",
-            title: 'Image',
-            author: 'author',
-            featured: 1,
-        },
-        {
-            img: "https://picsum.photos/1280/720?random=7",
-            title: 'Image',
-            author: 'author',
-            featured: 1,
-        },
-        {
-            img: "https://picsum.photos/1280/720?random=8",
-            title: 'Image',
-            author: 'author',
-            featured: 1,
-        },
-        {
-            img: "https://picsum.photos/1280/720?random=4",
-            title: 'Image',
-            author: 'author',
-            featured: 1,
-        },
-        {
-            img: "https://picsum.photos/1280/720?random=6",
-            title: 'Image',
-            author: 'author',
-            featured: 1,
-        }
-    ]
-
-
 
     render() {
         return (
@@ -89,7 +25,7 @@ class Tiposviajes extends Component {
 
                 <br/>
                 <br/>
-                <AdvancedGridList tileData={this.tileData} title={"Lugares"} numcols={5}/>
+                <AdvancedGridList tileData={datatest3} title={"Lugares"} numcols={5}/>
             </div>
         );
     }
