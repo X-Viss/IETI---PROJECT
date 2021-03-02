@@ -7,6 +7,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core';
+
+const styles = (theme) => ({
+    root: {
+        height: "100%",
+    }
+})
 
 class TravelList extends React.Component {
 
@@ -20,16 +27,6 @@ class TravelList extends React.Component {
                 name: "Negocios de cartera",
                 place: "Argentina",
                 date: new Date()
-            },
-            {
-                name: "Vacaciones en méxico",
-                place: "México",
-                date: new Date()
-            },
-            {
-                name: "Viaje por chile",
-                place: "Chile",
-                date: new Date()
             }]
         };
 
@@ -39,14 +36,14 @@ class TravelList extends React.Component {
     }
 
     handleCardDelete(key) {
-        this.setState({currentCardDelete: key, deleteConfirmationDialogOpen: true});
+        this.setState({ currentCardDelete: key, deleteConfirmationDialogOpen: true });
     }
 
-    handleDialogClose(){
-        this.setState({deleteConfirmationDialogOpen: false});
+    handleDialogClose() {
+        this.setState({ deleteConfirmationDialogOpen: false });
     }
 
-    handleDeleteCardConfirmation(){
+    handleDeleteCardConfirmation() {
         this.setState(prevState => {
             const travels = prevState.travels.filter(item => item.key !== this.state.currentCardDelete);
             return {
@@ -63,8 +60,10 @@ class TravelList extends React.Component {
                 </TravelCard>
             );
         })
+
+        const { classes }=this.props; 
         return (
-            <div>
+            <div className={classes.root}>
                 {renderTravels}
 
                 <Dialog
@@ -80,10 +79,10 @@ class TravelList extends React.Component {
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.handleDialogClose} color="primary">
+                        <Button id="dialogDeleteCancel" onClick={this.handleDialogClose} color="primary">
                             Cancelar
                         </Button>
-                        <Button onClick={this.handleDeleteCardConfirmation} color="primary" autoFocus>
+                        <Button id="dialogDeleteAccept" onClick={this.handleDeleteCardConfirmation} color="primary" autoFocus>
                             Confirmar
                         </Button>
                     </DialogActions>
@@ -93,4 +92,4 @@ class TravelList extends React.Component {
     }
 }
 
-export default TravelList;
+export default withStyles(styles)(TravelList);
