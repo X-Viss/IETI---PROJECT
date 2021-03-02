@@ -1,7 +1,7 @@
 import {act, render, screen} from '@testing-library/react';
 import {unmountComponentAtNode} from "react-dom";
 import {datatest, datatest1} from "../tmp/datamock";
-import SingleLineGridList from "./SingleLineGridList";
+import SingleLineGridList from "../components/SingleLineGridList";
 import React from "react";
 
 let container = null;
