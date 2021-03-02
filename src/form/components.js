@@ -39,7 +39,7 @@ export function LoginForm(props){
             </div>
         </div>
         <div className="overlay-container">
-            <div className="overlay">
+            <div className="overlay overlay-right">
             </div>
 	    </div>
     </div>

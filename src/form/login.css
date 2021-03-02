@@ -34,8 +34,6 @@ form {
 	width: 50%;
 	height: 100%;
 	overflow: hidden;
-	transition: transform 0.6s ease-in-out;
-	z-index: 100;
 }
 
 .overlay {
@@ -60,7 +58,10 @@ form {
 	top: 0;
 	height: 100%;
 	width: 50%;
-    right: 0;
+}
+
+.overlay-right {
+	right: 0;
 }
 
 button {
