@@ -12,7 +12,10 @@ import Checkbox from '@material-ui/core/Checkbox';
 export class SeleccionarViajero extends React.Component {
     constructor(props){
         super(props)
-        this.state = { open: false, name: '', status: '', date: ''}
+        this.state = { open: true, name: '', status: '', date: ''}
+        this.imgs = this.props.list
+        this.handleClave = this.handleClave.bind(this)
+        this.handleCheck = this.handleCheck.bind(this)
         this.handleClose = this.handleClose.bind(this)
         this.handleOpen = this.handleOpen.bind(this)
         this.handleName = this.handleName.bind(this)
@@ -22,31 +25,6 @@ export class SeleccionarViajero extends React.Component {
     }
     
     render(){
-        let imgs = [
-            {
-                path : 'https://i.ibb.co/6JRjSwT/mascotas.jpg',
-                name : "Viaje con mascotas"
-
-            },
-            {
-                path: 'https://i.ibb.co/dKFjmSv/mochilero.jpg',
-                name: "Viaje como Mochilero"
-            },
-            {
-                path: 'https://i.ibb.co/3mJhzz1/parejas.jpg',
-                name: "Viaje en pareja"
-            
-            },
-            {
-                path: 'https://i.ibb.co/vdJ8ZQc/turistas.jpg',
-                name: "Viaje como turista"
-            },
-            {
-                path: 'https://i.ibb.co/88ckWqL/viaje-De-Negocios.jpg',
-                name: "Viaje de trabajo"
-            }
-
-        ];
         return (
             <div>
                 <div style={{textAlign: 'center'}}>
@@ -54,6 +32,7 @@ export class SeleccionarViajero extends React.Component {
                         Hola viajero!, qué rol tomaras esta vez?
                     </Button>
                 </div>
+            <form onSubmit={this.handleClave}>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -71,14 +50,14 @@ export class SeleccionarViajero extends React.Component {
                 <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
                     <h1>Escoge tu rol!</h1>
                 </GridListTile>
-                {imgs.map((img, i) => (
+                {this.imgs.map((img, i) => (
                 <GridListTile key={i} >
                     <img src={img.path} style={{width: 800, height: 600}} />
                     <GridListTileBar
                     title={img.name}
                     actionIcon={
                         <FormControlLabel
-                            control={<Checkbox  style={{color: "white"}} />}
+                            control={<Checkbox  style={{color: "white"}} onChange={() => this.handleCheck(i)}/>}
                             label="Clic aquí"
                             style={{color: "white"}}
                         />
@@ -98,8 +77,19 @@ export class SeleccionarViajero extends React.Component {
                 </div>
                 </Fade>
             </Modal>
+            </form>
             </div>
         );
+    }
+
+
+    handleClave(e){
+        e.preventDefault();
+        this.props.guardar(this.imgs)
+    }
+
+    handleCheck(position){
+        this.imgs[position].check ? this.imgs[position].check=false : this.imgs[position].check=true
     }
 
     handleName (e) {
