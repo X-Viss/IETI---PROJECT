@@ -62,3 +62,25 @@ form {
 	width: 50%;
     right: 0;
 }
+
+button {
+	border-radius: 10px;
+	border: 1px solid #222A4F;
+	background-color: #222A4F;
+	color: #FFFFFF;
+	font-size: 70%;
+	padding: 5% 10%;
+	text-transform: uppercase;
+}
+
+button:active {
+    border: 1px solid #BA4974;
+	background-color: #BA4974;
+	transform: scale(0.95);
+}
+
+button.ghost {
+	background-color: #F4F4F4;
+	border-color: #F4F4F4;
+    color: #222A4F;
+}

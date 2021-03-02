@@ -1,7 +1,6 @@
 import React from "react"
 import { MapArticles } from './articles'
 import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button';
 import './login.css';
 
 function itemsForLoginForm(){
@@ -23,24 +22,24 @@ export function LoginForm(props){
         event.preventDefault()
         console.log('submit')
     }
-    return <div class="container">
-        <div class= "sing-in">
-            <div class="sign-in-container">
+    return <div className="container">
+        <div className= "sing-in">
+            <div className="sign-in-container">
                 <form onSubmit={handleSubmit}>
                     <center>
                     <h1>Sign in</h1>
                     <p/>
                     <MapArticles items={itemsForLoginForm()}/>
                     <p/>
-                    <Button type="submit" variant="contained">Login</Button>
+                    <button type="submit">Login</button>
                     <p/><p/>
                     </center>
-                    <Button type="submit">No tienes cuenta? Registrate</Button>
+                    <button type="submit" className="ghost">No tienes cuenta? Registrate</button>
                 </form>
             </div>
         </div>
-        <div class="overlay-container">
-            <div class="overlay">
+        <div className="overlay-container">
+            <div className="overlay">
             </div>
 	    </div>
     </div>
