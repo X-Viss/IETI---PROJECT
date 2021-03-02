@@ -2,10 +2,6 @@ import React from 'react';
 import {SeleccionarClima} from './SeleccionarClima';
 import { withStyles } from '@material-ui/core/styles';
 
-const styleLink = document.createElement("link");
-styleLink.rel = "stylesheet";
-styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
-document.head.appendChild(styleLink);
 
 const styles = (theme) => ({
     root: {
