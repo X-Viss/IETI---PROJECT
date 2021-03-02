@@ -10,7 +10,7 @@ const styles = (theme) => ({
     },
 
     card:{
-        backgroundColor: 'grey',
+        backgroundColor: '#2C355E',
         height: "100%",
     },
     large: {
@@ -50,10 +50,10 @@ class UserCard extends React.Component {
                         <Typography variant="h5" component="h2" classes={{root: classes.root}}>
                             {this.state.user.firstName + " " + this.state.user.lastName}
                         </Typography>
-                        <Typography color="textSecondary">
+                        <Typography variant="h5" component="h2"> 
                             {this.state.user.mail}
                         </Typography>
-                        <Typography variant="body2" component="p" >
+                        <Typography variant="h5" component="h2" >
                             {this.state.user.description}
                         </Typography>
                     </CardContent>
@@ -63,8 +63,8 @@ class UserCard extends React.Component {
                             variant="body2"
                             to="/editar"
                         >
-                            <IconButton size="medium">
-                                <EditIcon fontSize="large"/>
+                            <IconButton size="large">
+                                <EditIcon fontSize="large" style={{color: "white"}}/>
                             </IconButton>
                         </Link>
                     </Tooltip>

@@ -5,6 +5,9 @@ import { createMuiTheme, makeStyles, MuiThemeProvider } from '@material-ui/core'
 const THEME = createMuiTheme({
   typography: {
     "fontFamily": "Helvetica",
+    "allVariants": {
+      color: "white"
+    },
     "fontSize": "auto",
     "fontWeightLight": 300,
     "fontWeightRegular": 400,
@@ -17,7 +20,6 @@ function App() {
 
   return (
     <div className="App" >
-      learn react
       <MuiThemeProvider theme={THEME}>
         <Travels></Travels>
       </MuiThemeProvider>
