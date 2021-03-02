@@ -2,7 +2,6 @@ import {act, render, screen} from '@testing-library/react';
 import AdvancedGridList from "../components/AdvancedGridList";
 import {unmountComponentAtNode} from "react-dom";
 import {datatest, datatest1} from "../tmp/datamock";
-import InfoIcon from "@material-ui/icons/Info";
 import React from "react";
 
 let container = null;
