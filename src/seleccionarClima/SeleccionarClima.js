@@ -31,7 +31,7 @@ export class SeleccionarClima extends React.Component {
             <form onSubmit={this.handleClave}>
             <GridList cellHeight={250} style={{width: 1500, height: 600}} >
                 <GridListTile cols={2} style={{ height: 'auto' }}>
-                    <h1>Escoge el clime</h1>
+                    <h1>Escoge el clima</h1>
                 </GridListTile>
                 {this.imgs.map((img, i) => (
                 <GridListTile key={i} >
