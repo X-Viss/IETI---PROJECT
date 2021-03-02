@@ -3,7 +3,7 @@ import { MapArticles } from './articles'
 import TextField from '@material-ui/core/TextField'
 import './login.css';
 
-function itemsForLoginForm(){
+export function itemsForLoginForm(){
     return[
         {
             className:"",

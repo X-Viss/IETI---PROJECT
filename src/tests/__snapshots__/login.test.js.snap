@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The app renders 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="logo.svg"
+    />
+    <p>
+      Edit 
+      <code>
+        src/App.js
+      </code>
+       and save to reload.
+    </p>
+    <a
+      className="App-link"
+      href="https://reactjs.org"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Learn React
+    </a>
+  </header>
+</div>
+`;
+
+exports[`The login renders 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="sing-in"
+  >
+    <div
+      className="sign-in-container"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <center>
+          <h1>
+            Sign in
+          </h1>
+          <p />
+          <MapArticles
+            items={
+              Array [
+                Object {
+                  "className": "",
+                  "item": <WithStyles(ForwardRef(TextField))
+                    label="Usuario"
+                    name="usuario"
+                    required={true}
+                    type="email"
+                  />,
+                },
+                Object {
+                  "className": "",
+                  "item": <WithStyles(ForwardRef(TextField))
+                    label="Contraseña"
+                    name="password"
+                    required={true}
+                    type="password"
+                  />,
+                },
+              ]
+            }
+          />
+          <p />
+          <button
+            type="submit"
+          >
+            Login
+          </button>
+          <p />
+          <p />
+        </center>
+        <button
+          className="ghost"
+          type="submit"
+        >
+          No tienes cuenta? Registrate
+        </button>
+      </form>
+    </div>
+  </div>
+  <div
+    className="overlay-container"
+  >
+    <div
+      className="overlay overlay-right"
+    />
+  </div>
+</div>
+`;
+
+exports[`The login renders article 1`] = `
+<article
+  className="noneClass"
+/>
+`;
+
+exports[`The login renders map 1`] = `
+Array [
+  <ArticleForForm
+    className=""
+    item={
+      <p
+        label="Usuario"
+        name="usuario"
+        required={true}
+        type="email"
+      />
+    }
+    key="0"
+  />,
+  <ArticleForForm
+    className=""
+    item={
+      <p
+        label="Contraseña"
+        name="password"
+        required={true}
+        type="password"
+      />
+    }
+    key="1"
+  />,
+]
+`;
