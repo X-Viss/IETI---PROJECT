@@ -50,6 +50,7 @@ export class SeleccionarClima extends React.Component {
                 ))}
             </GridList>
             <Button
+                id = "guardar"
                 type="submit"
                 variant="contained"
                 color="primary"
