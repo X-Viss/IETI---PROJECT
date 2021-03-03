@@ -7,12 +7,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-
         <Switch>
           <Route exact path="/login" ><LoginForm /></Route>
           <Route exact path="/travelList" ><Travels /></Route>
         </Switch>
-
       </Router>
     </div>
   );
