@@ -1,4 +1,5 @@
 import {SeleccionarClima} from '../../seleccionarClima/SeleccionarClima';
+import {GridListTileMio} from '../../seleccionarClima/gridListTitle'
 import {SeleccionarViajero} from '../../seleccionarClima/seleccionarViajero';
 import Main from '../../seleccionarClima/decoracionMain'
 import { render, screen } from '@testing-library/react';
@@ -81,11 +82,6 @@ describe("Main", () => {
         component.children().find('#abrir').at(0).simulate("click");
     });
 
-    it('Deberia dar actualizar arreglo de viajero', () => {
-        const component = mount(<Main/>);
-        component.children().find('form').simulate('submit')
-    });
-
     it('Deberia dar click en checkbox en clima a true', () => {
         const component = mount(<SeleccionarClima list={imgs2} />)
         var checkbox = () => component.find('#checkBoxId').at(0)
@@ -99,15 +95,31 @@ describe("Main", () => {
     })
 
     it('Deberia dar click en checkbox en Viajero a true', () => {
-        const component = mount(<SeleccionarViajero list={imgs} />)
-        var checkbox = () => component.find('#checkBoxIdViajero').at(0)
+        const data = jest.fn()
+        const component = mount(<GridListTileMio list={imgs} enviar={data}/>)
+        var checkbox = () => component.find('#checkBox').at(0)
         checkbox().simulate('click', {target: {check: true}});   
     })
 
     it('Deberia dar click en checkbox en checkbox en Viajero a false', () => {
-        const component = mount(<SeleccionarViajero list={imgs} />)
-        var checkbox = () => component.find('#checkBoxIdViajero').at(0)
+        const data = jest.fn()
+        const component = mount(<GridListTileMio list={imgs} enviar={data}/>)
+        var checkbox = () => component.find('#checkBox').at(0)
         checkbox().simulate('click', {target: {check: false}});   
     })
+
+    it('Deberia dar click en checkbox en checkbox en Viajero a false', () => {
+        const component = mount(<SeleccionarViajero list={imgs} />)
+        var checkbox = () => component.children().find('#checkBox').at(0)
+        checkbox().simulate('click', {target: {check: false}});   
+    })
+
+    it('Deberia dar click en checkbox en checkbox en Viajero a false', () => {
+        const component = mount(<SeleccionarViajero list={imgs} />)
+        var checkbox = () => component.children().find('#checkBox').at(0)
+        checkbox().simulate('click', {target: {check: true}});   
+    })
+
+    
 
 })

@@ -1,4 +1,5 @@
 import React from 'react';
+import {GridListTileMio} from './gridListTitle';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
@@ -14,6 +15,7 @@ export class SeleccionarViajero extends React.Component {
         super(props)
         this.state = { open: true, name: '', status: '', date: ''}
         this.imgs = this.props.list
+        this.id = this.props.id
         this.handleClave = this.handleClave.bind(this)
         this.handleCheck = this.handleCheck.bind(this)
         this.handleClose = this.handleClose.bind(this)
@@ -29,7 +31,6 @@ export class SeleccionarViajero extends React.Component {
                         Hola viajero!, qué rol tomaras esta vez?
                     </Button>
                 </div>
-            <form onSubmit={this.handleClave}>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -43,26 +44,11 @@ export class SeleccionarViajero extends React.Component {
             >
                 <Fade in={this.state.open}>
                 <div style={{backgroundColor: 'white', border: '2px solid #000', textAlign: 'center'}}>
-                <GridList cellHeight={250} style={{width: 1300, height: 600}} >
+                <GridList cellHeight={250} style={{width: 1000, height: 600}} >
                 <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
                     <h1>Escoge tu rol!</h1>
                 </GridListTile>
-                {this.imgs.map((img, i) => (
-                <GridListTile key={i} >
-                    <img src={img.path} style={{width: 800, height: 600}} />
-                    <GridListTileBar
-                    title={img.name}
-                    actionIcon={
-                        <FormControlLabel
-                            id="controlLabelViajero"
-                            control={<Checkbox id="checkBoxIdViajero" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
-                            label="Clic aqui"
-                            style={{color: "white"}}
-                        />
-                    }
-                    />
-                    </GridListTile>
-                    ))}
+                <GridListTileMio id={this.id} list={this.imgs} enviar={this.handleCheck} width={400} height={300}/>
                 </GridList>
                     <Button
                         id="cerrar"
@@ -76,14 +62,12 @@ export class SeleccionarViajero extends React.Component {
                 </div>
                 </Fade>
             </Modal>
-            </form>
             </div>
         );
     }
 
 
-    handleClave(e){
-        e.preventDefault();
+    handleClave(){
         this.props.guardar(this.imgs)
     }
 
@@ -102,6 +86,7 @@ export class SeleccionarViajero extends React.Component {
 
 
     handleClose(){
+        this.handleClave()
         this.setState({
             open:false
         })
