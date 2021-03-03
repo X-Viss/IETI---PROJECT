@@ -3,7 +3,22 @@
 exports[`The app renders 1`] = `
 <div
   className="App"
-/>
+>
+  <BrowserRouter>
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/login"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/travelList"
+      />
+    </Switch>
+  </BrowserRouter>
+</div>
 `;
 
 exports[`The login renders 1`] = `
@@ -77,6 +92,12 @@ exports[`The login renders 1`] = `
 `;
 
 exports[`The login renders article 1`] = `
+<article
+  className="noneClass"
+/>
+`;
+
+exports[`The login renders article not class 1`] = `
 <article
   className="noneClass"
 />

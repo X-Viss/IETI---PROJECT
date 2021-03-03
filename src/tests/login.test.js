@@ -1,6 +1,7 @@
-import Enzyme, { shallow} from 'enzyme'
+import Enzyme, { mount, shallow} from 'enzyme'
+import { createRender } from '@material-ui/core/test-utils';
 import toJson from "enzyme-to-json"
-import Adapter from "enzyme-adapter-react-16"
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 import { itemsForLoginForm, LoginForm } from '../form/components';
 import { ArticleForForm, MapArticles } from '../form/articles';
 import App from '../App';
@@ -54,7 +55,30 @@ it('The login renders article', () => {
   expect(toJson(wrapper)).toMatchSnapshot()
 })
 
+it('The login renders article not class', () => {
+  const prueba = [
+    {
+      item: <p label="Usuario" type="email" name="usuario" required={true} />
+    }
+  ]
+  const wrapper = mount(<ArticleForForm item={prueba.item} className={"hola"}/>)
+  expect(wrapper.find('article.hola').instance().className).toBe('hola')
+  
+})
+
 it('calls click event', () => {
-  const wrapper = shallow(<LoginForm />);
+  const wrapper = mount(<LoginForm />);
   wrapper.find('button').at(0).simulate('click');
+});
+
+describe('<LoginForm />', () => {
+  let render;
+
+  beforeAll(() => {
+      render = createRender();
+  });
+
+  it('should work', () => {
+      render(<LoginForm />);
+  });
 });

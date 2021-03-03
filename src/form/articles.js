@@ -1,9 +1,9 @@
 import React from 'react'
 
 export function ArticleForForm(props){
-    const {item}=props
-    const className = props.className? props.className:"noneClass"
-    return <article className={className}>
+    const {item,className}=props
+    const classNameToSet = className? className:"noneClass"
+    return <article className={classNameToSet}>
         {item}
     </article>
 }
