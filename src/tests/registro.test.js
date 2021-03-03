@@ -39,3 +39,11 @@ it('calls click register event', () => {
   wrapper.find('form').simulate('submit')
   expect(wrapper.find('input[name="correo"]').instance().value).toEqual('');
 });
+
+const updateInput = (wrapper, instance, newValue) => {
+  wrapper.children().find(instance).simulate('change', {
+      currentTarget: {value: newValue}
+  })
+  return wrapper.find(instance)
+}
+
