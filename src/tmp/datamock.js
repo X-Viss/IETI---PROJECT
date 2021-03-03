@@ -98,7 +98,8 @@ const datatest3=[
         img: "https://picsum.photos/1280/720?random=130",
         title: 'Image',
         author: 'Monet',
-
+    }
+]
 const datatest2 = [
     {
         img: "https://picsum.photos/1280/720",
