@@ -6,6 +6,7 @@ import './login.css';
 
 export function itemsForRegisterForm() {
     const confirmPasswords = (event) => {
+        console.log(document.getElementsByName('password')[0])
         const password = document.getElementsByName('password')[0]
         const password2 = document.getElementsByName('password2')[0]
         if (password.value === password2.value) {
