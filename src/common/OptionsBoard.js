@@ -7,20 +7,13 @@ import ButtonsMenu from './ButtonsMenu';
 const styles = (theme) => ({
 
     root: {
-        border: `1px solid ${theme.palette.divider}`,
-        borderRadius: theme.shape.borderRadius,
-        color: theme.palette.text.secondary,
-        '& svg': {
-            margin: theme.spacing(1.5),
-        },
-        '& hr': {
-            margin: theme.spacing(0, 0.5),
-        },
-        height: "100%"
+        height: "inherit",
     },
 
     logo: {
-        width: "20%",
+        width: "15%",
+        height: "100%",
+        padding: theme.spacing(2)
     },
 
     buttons: {
@@ -45,15 +38,13 @@ class OptionsBoard extends React.Component {
                 <Grid
                     container
                     alignItems="center"
-                    
+                    style={{height: "100%"}}
                 >
-                    <Grid item className={classes.logo}>
+                    <Grid item container alignItems="flex-start" justify="center" className={classes.logo}>
                         <AppLogo></AppLogo>
                     </Grid>
 
-                    <Divider orientation="vertical" flexItem />
-
-                    <Grid item className={classes.buttons}>
+                    <Grid item alignItems="center" className={classes.buttons}>
                         <ButtonsMenu ></ButtonsMenu>
                     </Grid>
 

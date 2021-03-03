@@ -11,7 +11,8 @@ const styles = (theme) => ({
     },
 
     button: {
-
+        backgroundColor: "#BA4974",
+        color: 'white'
     }
 });
 
@@ -38,9 +39,9 @@ class ButtonsMenu extends React.Component {
                     <Grid item>
                         <Button
                             variant="contained"
-                            color="primary"
                             className={classes.button}
                             startIcon={<QuestionAnswer />}
+                            size="large"
                         >
                             Preguntas Frecuentes
                         </Button>
@@ -50,9 +51,9 @@ class ButtonsMenu extends React.Component {
                     <Grid item>
                         <Button
                             variant="contained"
-                            color="primary"
                             className={classes.button}
-                            startIcon={<AddToPhotos />}
+                            startIcon={<AddToPhotos style={{color: 'white'}}/>}
+                            size="large"
                         >
                             Añadir viaje
                     </Button>

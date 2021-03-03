@@ -6,14 +6,13 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = (theme) => ({
 
     root: {
-        
+        height: "100%",
     },
     logo: {
-        height: 100,
+        height: "100%",
         cursor: "pointer",
-        borderRadius: "4px",
-        objectFit: "contain",
-        width: "20%",
+        borderRadius: "6px",
+        width: "auto",
         margin: "0 auto",
     }
 });
