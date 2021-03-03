@@ -6,13 +6,11 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
 const styles = (theme) => ({
-  root: {
-    padding: theme.spacing(0, 3),
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
+    root: {
+        flexGrow: 1,
+        overflow: 'hidden',
+        padding: theme.spacing(2),
+      }
 })
 
 class Quest extends React.Component {
