@@ -98,8 +98,26 @@ const datatest3=[
         img: "https://picsum.photos/1280/720?random=130",
         title: 'Image',
         author: 'Monet',
+
+const datatest2 = [
+    {
+        img: "https://picsum.photos/1280/720",
+        title: 'Image',
+        author: 'author',
+        featured: 2,
+    },
+    {
+        img: "https://picsum.photos/1280/720?random=1",
+        title: 'Image',
+        author: 'author',
+        featured: 1,
+    },
+    {
+        img: "https://picsum.photos/1280/720?random=2",
+        title: 'Image',
+        author: 'author',
         featured: 1,
     }
 ]
 
-export {datatest,datatest1,datatest3};
+export {datatest,datatest1, datatest2,datatest3};

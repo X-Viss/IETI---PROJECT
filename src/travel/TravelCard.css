@@ -3,7 +3,6 @@
 }
 .cardButton {
     background-color: green;
-    color: black;
     cursor: pointer;
 }
 
@@ -34,9 +33,9 @@
     font-weight: 400;
     font-style: normal;
     font-family: "Maiden Orange", serif;
-    color: #000000;
     letter-spacing: 0px;
     line-height: 1.2;
+    color: #ffffff;
     font-size: 72px;
     text-align: left;
 }
@@ -48,7 +47,7 @@
     font-weight: 400;
     font-style: normal;
     font-family: "Maiden Orange", serif;
-    color: #000000;
+    color: #ffffff;
     font-size: 64px;
     letter-spacing: 0px;
     line-height: 1.2;
