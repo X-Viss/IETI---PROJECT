@@ -39,14 +39,22 @@ it('calls click register event', () => {
   wrapper.find('form').simulate('submit')
   expect(wrapper.find('input[name="correo"]').instance().value).toEqual('');
 });
+
 /*
+const updateInput = (wrapper, instance, newValue) => {
+  const input = wrapper.find(instance)
+  Console.log(input)
+  input.simulate('change', {
+      currentTarget: {value: newValue}
+  })
+  return wrapper.find(instance)
+}
+
 it('calls click register pas event', () => {
   const wrapper = mount(<RegisterForm />);
-  wrapper.find('input[name="password"]').simulate('change',{currentTarget:{value:"1324"}})
-  console.log(wrapper.find('input[name="password"]'))
-  wrapper.find('input[name="password2"]').simulate('change',{currentTarget:{value:"1324"}})
-  wrapper.find('input[name="password2"]').simulate('change')
-  expect(wrapper.find('input[name="password"]').instance().value).toEqual("1324");
+    updateInput(wrapper, '[name="password"]', '8018882321')
+    wrapper.find('[data-testid="addUserForm"]').simulate('submit', {preventDefault: () => {}})
+    expect(api.addUser).toHaveBeenCalledWith('8018882321')
 });
 
 it('calls click register nopas event', () => {
