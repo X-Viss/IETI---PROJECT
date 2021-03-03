@@ -57,8 +57,9 @@ export class SeleccionarViajero extends React.Component {
                     title={img.name}
                     actionIcon={
                         <FormControlLabel
-                            control={<Checkbox  style={{color: "white"}} onChange={() => this.handleCheck(i)}/>}
-                            label="Clic aquí"
+                            id="controlLabel"
+                            control={<Checkbox id="checkBoxId" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
+                            label="Clic aqui"
                             style={{color: "white"}}
                         />
                     }
@@ -67,6 +68,7 @@ export class SeleccionarViajero extends React.Component {
                     ))}
                 </GridList>
                     <Button
+                        id = "guardar"
                         type="submit"
                         variant="contained"
                         color="primary"

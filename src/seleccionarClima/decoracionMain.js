@@ -166,7 +166,6 @@ class Main extends React.Component {
             <div className={classes.root} >
                 <SeleccionarViajero list={imgs} guardar={this.guardarViajero}/>
                 <SeleccionarClima list={imgs2} guardar={this.guardarClima} />
-                {console.log(this.state.clima), console.log(this.state.viajero), console.log(this.state.accesorios)}
                 <h1>Accesorios</h1>
                 <SeleccionarCategoria list={imgs} guardar={this.guardarAccesorios}/>
                 <h1>A La Mano</h1>

@@ -27,7 +27,6 @@ export class SeleccionarCategoria extends React.Component {
   render(){
         return (
         <div>
-            <form onSubmit={this.handleClave}>
                 <GridList cols={4} style={{flexWrap: 'nowrap', transform: 'translateZ(0)'}} >
                 {this.list.map((img, i) => (
                     <GridListTile key={i}>
@@ -36,23 +35,25 @@ export class SeleccionarCategoria extends React.Component {
                         title={img.name}
                         actionIcon={
                             <FormControlLabel
-                                control={<Checkbox  style={{color: "white"}} onChange={() => this.handleCheck(i)}></Checkbox>}
-                                label="Clic aquí"
-                                style={{color: "white"}}
-                            />
+                            id="controlLabel"
+                            control={<Checkbox id="checkBoxId" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
+                            label="Clic aqui"
+                            style={{color: "white"}}
+                        />
                         }
                     />
                     </GridListTile>
                 ))}
                 </GridList>
                 <Button
+                    id="guardar"
                     type="submit"
                     variant="contained"
                     color="primary"
+                    onClick={this.handleClave}
                 >
                     Guardar
                 </Button><br/>
-            </form>
         </div>
         );
     }
