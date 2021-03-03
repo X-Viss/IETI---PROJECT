@@ -69,6 +69,39 @@ const datatest1 =[
     }
 ]
 
+
+const datatest3=[
+    {
+        img: "https://picsum.photos/1280/720?random=134",
+        title: 'Image',
+        author: 'Picasso',
+        featured: 1,
+    },
+    {
+        img: "https://picsum.photos/1280/720?random=112",
+        title: 'Image',
+        author: 'Da Vinci',
+        featured: 1,
+    },
+    {
+        img: "https://picsum.photos/1280/720?random=121",
+        title: 'Image',
+        author: 'Velásquez',
+        featured: 1,
+    },
+    {
+        img: "https://picsum.photos/1280/720?random=241",
+        title: 'Image',
+        author: 'Remembrandt',
+        featured: 1,
+    },
+    {
+        img: "https://picsum.photos/1280/720?random=130",
+        title: 'Image',
+        author: 'Monet',
+    }
+]
+
 const datatest2 = [
     {
         img: "https://picsum.photos/1280/720",
@@ -92,4 +125,4 @@ const datatest2 = [
 
 
 
-export {datatest,datatest1, datatest2};
+export {datatest,datatest1,datatest2,datatest3};
