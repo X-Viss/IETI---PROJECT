@@ -1,36 +1,42 @@
 body {
-  background: linear-gradient(to right, #fff 50%, #222A4F 50%);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.5;
-  color: white;
+  margin:0;
+  padding: 0;
 }
 
-div {
-  display: flex;
-  align-items: center;
+.izquierda{
+  background: #222A4F;
   height: 100vh;
-  max-width: 1000px;
-  width: calc(100% - 4rem);
-  margin: 0 auto;
+  width: 40%;
+  text-align: center;
 }
 
-aside {
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: 25px 100%;
-  }
-img {
-    display: block;
-    height: auto;
-    width: 100%;
-  }
+.derecha{
+  background: url(https://image.freepik.com/free-vector/error-404-found-glitch-effect_8024-4.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 60%;
+  height: 100vh;
+}
 
+#pantalla{
+  display: flex;
+}
 
 h1 {
-    text-align: center;
   font-family: "Fontdiner Swanky", cursive;
-  font-size: 4rem;
   color: #BA4974;
-  margin-bottom: 1rem;
+  font-size: 60px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+  text-align: center;
+  margin-top: 50%;
+}
+
+p{
+  font-size: 19px;
+  line-height: 30px;
+  width: 50% ;
+  margin: auto;
+  color: white;
 }

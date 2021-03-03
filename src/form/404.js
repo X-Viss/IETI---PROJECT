@@ -2,15 +2,16 @@ import React from 'react'
 import './404.css';
 
 export function NotFoundForm(props) {
-    return <div>
-        <aside>
-            <img src="https://image.freepik.com/free-vector/error-404-found-glitch-effect_8024-4.jpg" alt="404 Image" />
-        </aside>
-        <main>
+    return <section id="pantalla">
+        <div className= "derecha"/>
+        <div className= "izquierda">
             <h1>Oopss..... !</h1>
             <p>
-                Lo lamentamos parece que te has perdido Página no encontrada 
+                Lo lamentamos parece que te has perdido 
             </p>
-        </main>
-    </div>
+            <p>
+                Página no encontrada 
+            </p>
+        </div>
+    </section>
 }
