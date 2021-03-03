@@ -110,6 +110,7 @@ class Main extends React.Component {
         return (
             <div className={classes.root} >
                 <SeleccionarViajero list={imgs} guardar={this.guardarViajero} id="checkBoxIdViajero"/>
+                <h1>Escoge el clima</h1>
                 <SeleccionarClima list={imgs2} guardar={this.guardarClima} id="checkBoxId" />
             </div>
         );

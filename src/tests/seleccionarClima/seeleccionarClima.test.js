@@ -32,10 +32,8 @@ test('renders buttons with text', () => {
 
     render(<SeleccionarClima list={imgs2} />);
     const boton = screen.getByText(/Guardar/i);
-    const texto = screen.getByText(/Escoge el clima/i);
 
     expect(boton).toBeInTheDocument();
-    expect(texto).toBeInTheDocument();
 });
 
 
