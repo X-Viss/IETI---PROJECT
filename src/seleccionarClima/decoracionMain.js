@@ -1,66 +1,83 @@
 import React from 'react';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Button from '@material-ui/core/Button';
+import {SeleccionarClima} from './SeleccionarClima';
+import { withStyles } from '@material-ui/core/styles';
 
 
-export class SeleccionarClima extends React.Component {
+const styles = (theme) => ({
+    root: {
+        verticalAlign: "baseline",
+        position: "relative",
+        padding: theme.spacing(2),
+        height: "100%"
+    },
+    down: {
+        height: "70%",
+    },
+    user: {
+        width: "30%",
+    },
+    travelListGrid: {
+        width: "70%"
+    },
+    travelList: {
+        width: "inherit",
+    },
+
+    upperDiv: {
+
+    }
+});
+
+class Main extends React.Component {
 
     constructor(props){
         super(props)
-        this.imgs = this.props.list
-        this.handleClave = this.handleClave.bind(this)
-        this.handleCheck = this.handleCheck.bind(this)
+        this.state = {clima: []}
+        this.guardarClima = this.guardarClima.bind(this)
     }
 
-    handleClave(e){
-        e.preventDefault();
-        this.props.guardar(this.imgs)
-    }
-
-    handleCheck(position){
-        console.log("ome ave maria")
-        this.imgs[position].check ? this.imgs[position].check=false : this.imgs[position].check=true
+    guardarClima(data){
+        this.setState({
+            clima: data
+        })
     }
 
     render() {
+        
+        let imgs2 = [
+            {
+                path : 'https://i.ibb.co/ssC1Wz1/KONICA-MINOLTA-DIGITAL-CAMERA.jpg',
+                name : "Invierno",
+                check: false
+
+            },
+            {
+                path: 'https://i.ibb.co/XsY2PSt/oto-o.jpg',
+                name: "Otoño",
+                check: false
+            },
+            {
+                path: 'https://i.ibb.co/rQ6K4Pp/primavera.jpg',
+                name: "Primavera",
+                check: false
+            
+            },
+            {
+                path: 'https://i.ibb.co/8BHqHSC/verano.jpg',
+                name: "Verano",
+                check: false
+            }
+        ];
+
+        const { classes } = this.props;
+
         return (
-            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around',  overflow: 'hidden'}}>
-            <GridList cellHeight={250} style={{width: 1500, height: 600}} >
-                <GridListTile cols={2} style={{ height: 'auto' }}>
-                    <h1>Escoge el clima</h1>
-                </GridListTile>
-                {this.imgs.map((img, i) => (
-                <GridListTile key={i} >
-                    <img src={img.path} style={{width: 800, height: 600}} />
-                    <GridListTileBar
-                    title={img.name}
-                    actionIcon={
-                        <FormControlLabel
-                            id="controlLabel"
-                            control={<Checkbox id="checkBoxId" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
-                            label="Clic aqui"
-                            style={{color: "white"}}
-                        />
-                    }
-                    />
-                </GridListTile>
-                ))}
-            </GridList>
-            <Button
-                id = "guardar"
-                type="submit"
-                variant="contained"
-                color="primary"
-                onClick={this.handleClave}
-            >
-                Guardar
-            </Button>
+            <div className={classes.root} >
+                <SeleccionarClima list={imgs2} guardar={this.guardarClima} />
+                {console.log(this.state.clima)}
             </div>
         );
     }
-
 }
+
+export default withStyles(styles)(Main);
