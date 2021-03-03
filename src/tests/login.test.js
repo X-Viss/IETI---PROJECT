@@ -1,21 +1,16 @@
 import Enzyme, { mount, shallow } from 'enzyme'
 import { createRender } from '@material-ui/core/test-utils';
-import toJson from "enzyme-to-json"
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 import { itemsForLoginForm, LoginForm } from '../form/components';
 import { ArticleForForm, MapArticles } from '../form/articles';
 import App from '../App';
 
-
-Enzyme.configure({ adapter: new Adapter() })
 
 it('The app renders', () => {
   shallow(<App />)
 })
 
 it('The login renders', () => {
-  const wrapper = shallow(<LoginForm />)
-  expect(toJson(wrapper)).toMatchSnapshot()
+  shallow(<LoginForm />)
 })
 
 it('The login renders map', () => {
@@ -29,8 +24,7 @@ it('The login renders map', () => {
       item: <p label="Contraseña" type="password" name="password" required={true} />
     }
   ]
-  const wrapper = shallow(<MapArticles items={prueba} />)
-  expect(toJson(wrapper)).toMatchSnapshot()
+  shallow(<MapArticles items={prueba} />)
 })
 
 it('The login renders items', () => {
@@ -45,8 +39,7 @@ it('The login renders article', () => {
       item: <p label="Usuario" type="email" name="usuario" required={true} />
     }
   ]
-  const wrapper = shallow(<ArticleForForm item={prueba.item} className={prueba.className} />)
-  expect(toJson(wrapper)).toMatchSnapshot()
+  shallow(<ArticleForForm item={prueba.item} className={prueba.className} />)
 })
 
 it('The login renders article not class', () => {
