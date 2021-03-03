@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react"
 import { MapArticles } from './articles'
 import TextField from '@material-ui/core/TextField'
-import Autocomplete from '@material-ui/lab/Autocomplete'
 import './login.css';
+
 
 export function itemsForRegisterForm() {
     const confirmPasswords = (event) => {
