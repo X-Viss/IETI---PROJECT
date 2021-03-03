@@ -3,13 +3,9 @@ import {GridListTileMio} from '../../seleccionarClima/gridListTitle'
 import {SeleccionarViajero} from '../../seleccionarClima/seleccionarViajero';
 import {SeleccionarCategoria} from '../../seleccionarClima/SeleccionarPorCategoria'
 import Main from '../../seleccionarClima/decoracionMain'
-import { render, screen } from '@testing-library/react';
-import { Memory } from '@material-ui/icons';
-import { create } from "react-test-renderer";
 import { mount } from 'enzyme';
 import {it, describe } from '@jest/globals';
 import { cleanup } from '@testing-library/react'
-
 
 describe("Main", () => {
     afterEach(cleanup)
@@ -86,6 +82,12 @@ describe("Main", () => {
     it('deberia leer boton abrir en Categoria', () => {
         const component = mount(<Main/>);
         component.children().find('#guardarCategoria').at(0).simulate("click");
+    });
+
+    it('deberia leer boton abrir en Categoria', () => {
+        const component = mount(<Main/>);
+        component.find('mano').at(0)
+        component.unmount();
     });
 
     it('Deberia dar click en checkbox en clima a true', () => {

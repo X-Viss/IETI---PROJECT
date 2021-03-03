@@ -33,11 +33,10 @@ class Main extends React.Component {
 
     constructor(props){
         super(props)
-        this.state = {viajero: [], clima: [], pais: "", accesorios: [], ropa: [],
+        this.state = {viajero: [], clima: [], accesorios: [], ropa: [],
                       aseo: [], medicina: [], aLaMano: [], compras: [], varios: []}
         this.guardarViajero = this.guardarViajero.bind(this)
         this.guardarClima = this.guardarClima.bind(this)
-        this.guardarPais = this.guardarPais.bind(this)
         this.guardarAccesorios = this.guardarAccesorios.bind(this)
         this.guardarRopa = this.guardarRopa.bind(this)
         this.guardarAseo = this.guardarAseo.bind(this)
@@ -79,12 +78,6 @@ class Main extends React.Component {
     guardarMedicina(data){
         this.setState({
             medicina: data
-        })
-    }
-
-    guardarPais(data){
-        this.setState({
-            pais: data
         })
     }
 
@@ -168,19 +161,19 @@ class Main extends React.Component {
                 <h1>Escoge el clima</h1>
                 <SeleccionarClima list={imgs2} guardar={this.guardarClima} id="checkBoxId" />
                 <h1>Accesorios</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarAccesorios}/>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarAccesorios} id="accesorios" />
                 <h1>A La Mano</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarALaMano}/>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarALaMano} id="mano" />
                 <h1>Aseo</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarAseo}/>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarAseo} id="aseo" />
                 <h1>Compras</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarCompras}/>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarCompras} id="compras" />
                 <h1>Medicina</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarMedicina}/>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarMedicina} id="medicina" />
                 <h1>Ropa</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarRopa}/>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarRopa} id="ropa" />
                 <h1>Varios</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarVarios}/>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarVarios} id="varios" />
                 {console.log(this.state.aLaMano), console.log(this.state.accesorios),
                 console.log(this.state.aseo), console.log(this.state.clima), console.log(this.state.compras), 
                 console.log(this.state.medicina), console.log(this.state.ropa), 
