@@ -60,14 +60,6 @@ describe('Seleccionar Main', ()=>{
 })
 
 describe("Mirar lista clima", () => {
-    test("Ver lista", () => {
-      const component = create(<Main/>);
-      const instance = component.getInstance();
-    });
-});
-
-
-describe("Mirar lista clima", () => {
     let imgs2 = [
         {
             path : 'https://i.ibb.co/ssC1Wz1/KONICA-MINOLTA-DIGITAL-CAMERA.jpg',
