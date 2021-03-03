@@ -40,7 +40,7 @@ export default function BodyTabs() {
 
   const extractForm = (values) => {
     const tab = categories[value].label;
-    categories.map(function(dato){
+    categories.forEach(function(dato){
       if(dato.label == tab){
         dato.items.push(values.value);
       }return dato;
