@@ -90,67 +90,6 @@ const datatest2 = [
     }
 ]
 
-const datatest3=[
-    {
-        img: "https://picsum.photos/1280/720?random=1",
-        title: 'Image',
-        author: 'author',
-        featured: 1,
-    },
-    {
-        img: "https://picsum.photos/1280/720?random=12",
-        title: 'Image',
-        author: 'author',
-        featured: 1,
-    },
-    {
-        img: "https://picsum.photos/1280/720?random=11",
-        title: 'Image',
-        author: 'author',
-        featured: 1,
-    },
-    {
-        img: "https://picsum.photos/1280/720?random=21",
-        title: 'Image',
-        author: 'author',
-        featured: 1,
-    },
-    {
-        img: "https://picsum.photos/1280/720?random=10",
-        title: 'Image',
-        author: 'author',
-        featured: 1,
-    },
-    {
-        img: "https://picsum.photos/1280/720?random=3",
-        title: 'Image',
-        author: 'author',
-        featured: 1,
-    },
-    {
-        img: "https://picsum.photos/1280/720?random=7",
-        title: 'Image',
-        author: 'author',
-        featured: 1,
-    },
-    {
-        img: "https://picsum.photos/1280/720?random=8",
-        title: 'Image',
-        author: 'author',
-        featured: 1,
-    },
-    {
-        img: "https://picsum.photos/1280/720?random=4",
-        title: 'Image',
-        author: 'author',
-        featured: 1,
-    },
-    {
-        img: "https://picsum.photos/1280/720?random=6",
-        title: 'Image',
-        author: 'author',
-        featured: 1,
-    }
-]
 
-export {datatest,datatest1, datatest2,datatest3};
+
+export {datatest,datatest1, datatest2};
