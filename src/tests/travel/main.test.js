@@ -10,6 +10,6 @@ describe('<Travels />', () => {
     });
 
     it('should work', () => {
-        const wrapper = render(<Travels />);
+        render(<Travels />);
     });
 });

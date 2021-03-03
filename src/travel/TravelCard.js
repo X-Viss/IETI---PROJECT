@@ -45,7 +45,10 @@ class TravelCard extends React.Component {
                                 <Typography variant="h5" component="h2">
                                     {this.props.name}
                                 </Typography>
-                                <Typography className="pos" color="textSecondary">
+
+                                <Typography className="pos">
+
+
                                     Destino: {this.props.place}
                                 </Typography>
                                 <Typography variant="body2" component="p">
@@ -56,7 +59,9 @@ class TravelCard extends React.Component {
                     </CardContent>
                 </Button>
 
-                <Button id="deleteButton" startIcon={<DeleteIcon />} style={{ marginLeft: "auto" }} onClick={this.handleTravelDelete}>
+                <Button id="deleteButton" startIcon={<DeleteIcon />} style={{ marginLeft: "auto", color: 'white' }} onClick={this.handleTravelDelete}>
+
+
                     Borrar
             </Button>
 
