@@ -128,13 +128,13 @@ describe("Main", () => {
 
     it('Deberia dar click en checkbox en Categoria a true', () => {
         const component = mount(<SeleccionarCategoria list={imgs} />)
-        var checkbox = () => component.find('#checkBoxCaterogira').at(0)
+        var checkbox = () => component.find('#checkBox').at(0)
         checkbox().simulate('click', {target: {check: true}});   
     })
 
     it('Deberia dar click en checkbox en Cateogira a false', () => {
         const component = mount(<SeleccionarCategoria list={imgs} />)
-        var checkbox = () => component.find('#checkBoxCaterogira').at(0)
+        var checkbox = () => component.find('#checkBox').at(0)
         checkbox().simulate('click', {target: {check: false}});   
     })    
 

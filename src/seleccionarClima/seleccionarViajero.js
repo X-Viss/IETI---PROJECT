@@ -45,11 +45,10 @@ export class SeleccionarViajero extends React.Component {
             >
                 <Fade in={this.state.open}>
                 <div style={{backgroundColor: 'white', border: '2px solid #000', textAlign: 'center'}}>
-                <GridList cellHeight={250} style={{width: 1000, height: 600}} >
-                <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-                    <h1>Escoge tu rol!</h1>
-                </GridListTile>
-                <GridListTileMio id={this.id} list={this.imgs} enviar={this.handleCheck} width={400} height={300}/>
+                <GridList  style={{width: 1000, height: 500}} >
+                <h1>Escoge tu rol!</h1>
+                    <GridListTileMio id={this.id} list={this.imgs} enviar={this.handleCheck} width={500} height={300}
+                    style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}} cols={2}/>
                 </GridList>
                     <Button
                         id="cerrar"

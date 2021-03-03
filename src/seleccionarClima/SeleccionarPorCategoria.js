@@ -5,6 +5,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
+import {GridListTileMio} from './gridListTitle';
 
 
 export class SeleccionarCategoria extends React.Component {
@@ -27,24 +28,8 @@ export class SeleccionarCategoria extends React.Component {
   render(){
         return (
         <div>
-            <GridList cols={4} style={{flexWrap: 'nowrap', transform: 'translateZ(0)'}} >
-            {this.list.map((img, i) => (
-                <GridListTile key={i}>
-                <img src={img.path} style={{width: 330, height: 200}} />
-                <GridListTileBar
-                    title={img.name}
-                    actionIcon={
-                        <FormControlLabel
-                        id="controlLabelCategoria"
-                        control={<Checkbox id="checkBoxCaterogira" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
-                        label="Clic aqui"
-                        style={{color: "white"}}
-                    />
-                    }
-                />
-                </GridListTile>
-            ))}
-            </GridList>
+            <GridListTileMio list={this.list} enviar={this.handleCheck} width={330} height={200} 
+            style={{flexWrap: 'nowrap', transform: 'translateZ(0)'}} cols={4} />
             <Button
                 id="guardarCategoria"
                 type="submit"

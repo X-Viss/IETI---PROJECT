@@ -181,6 +181,11 @@ class Main extends React.Component {
                 <SeleccionarCategoria list={imgs} guardar={this.guardarRopa}/>
                 <h1>Varios</h1>
                 <SeleccionarCategoria list={imgs} guardar={this.guardarVarios}/>
+                {console.log(this.state.aLaMano), console.log(this.state.accesorios),
+                console.log(this.state.aseo), console.log(this.state.clima), console.log(this.state.compras), 
+                console.log(this.state.medicina), console.log(this.state.ropa), 
+                console.log(this.state.ropa), console.log(this.state.varios), console.log(this.state.viajero)
+                }
             </div>
         );
     }
