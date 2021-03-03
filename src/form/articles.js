@@ -14,3 +14,4 @@ export function MapArticles(props){
         return <ArticleForForm item={item.item} className={item.className} key={index}/>
     })
 }
+
