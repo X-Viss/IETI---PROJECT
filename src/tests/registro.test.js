@@ -60,7 +60,7 @@ it('calls click register pas event', () => {
 it('calls click register nopas event', () => {
   const wrapper = mount(<RegisterForm />);
   wrapper.find('input[name="password"]').simulate('change',{currentTarget:{value:'1324'}})
-  wrapper.find('input[name="password2"]').simulate('change',{currentTarget:{value:'1304'}})
+  wrapper.find('input[namegit="password2"]').simulate('change',{currentTarget:{value:'1304'}})
 
   expect(wrapper.find('input[name="password"]').instance().value).not().toEqual(wrapper.find('input[name="password2"]').instance().value);
 });*/
