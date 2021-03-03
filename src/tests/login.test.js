@@ -5,17 +5,12 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 import { itemsForLoginForm, LoginForm } from '../form/components';
 import { ArticleForForm, MapArticles } from '../form/articles';
 import App from '../App';
-import reportWebVitals from '../reportWebVitals';
+
 
 Enzyme.configure({ adapter: new Adapter() })
 
 it('The app renders', () => {
   shallow(<App />)
-})
-
-it('The app renders react', () => {
-  const wrapper = reportWebVitals()
-  expect(wrapper).toBeUndefined()
 })
 
 it('The login renders', () => {
