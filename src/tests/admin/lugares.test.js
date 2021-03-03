@@ -1,7 +1,7 @@
 import {act, render, screen} from '@testing-library/react';
 import {unmountComponentAtNode} from "react-dom";
 import React from "react";
-import Lugares from "../lugares/lugares";
+import Lugares from "../../lugares/lugares";
 
 let container = null;
 beforeEach(() => {
