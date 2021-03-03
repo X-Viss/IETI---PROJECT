@@ -10,8 +10,7 @@ import reportWebVitals from '../reportWebVitals';
 Enzyme.configure({ adapter: new Adapter() })
 
 it('The app renders', () => {
-  const wrapper = shallow(<App />)
-  expect(toJson(wrapper)).toMatchSnapshot()
+  shallow(<App />)
 })
 
 it('The app renders react', () => {
