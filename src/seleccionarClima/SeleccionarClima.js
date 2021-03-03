@@ -22,13 +22,13 @@ export class SeleccionarClima extends React.Component {
     }
 
     handleCheck(position){
+        console.log("ome ave maria")
         this.imgs[position].check ? this.imgs[position].check=false : this.imgs[position].check=true
     }
 
     render() {
         return (
             <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around',  overflow: 'hidden'}}>
-            <form onSubmit={this.handleClave}>
             <GridList cellHeight={250} style={{width: 1500, height: 600}} >
                 <GridListTile cols={2} style={{ height: 'auto' }}>
                     <h1>Escoge el clima</h1>
@@ -40,8 +40,9 @@ export class SeleccionarClima extends React.Component {
                     title={img.name}
                     actionIcon={
                         <FormControlLabel
-                            control={<Checkbox  style={{color: "white"}} onChange={() => this.handleCheck(i)} />}
-                            label="Clic aquí"
+                            id="controlLabel"
+                            control={<Checkbox id="checkBoxId" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
+                            label="Clic aqui"
                             style={{color: "white"}}
                         />
                     }
@@ -54,10 +55,10 @@ export class SeleccionarClima extends React.Component {
                 type="submit"
                 variant="contained"
                 color="primary"
+                onClick={this.handleClave}
             >
                 Guardar
             </Button>
-            </form>
             </div>
         );
     }

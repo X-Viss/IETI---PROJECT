@@ -1,0 +1,1378 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component Matches the snapshot 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "justifyContent": "space-around",
+      "overflow": "hidden",
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <ul
+      className="MuiGridList-root"
+      style={
+        Object {
+          "height": 600,
+          "margin": -2,
+          "width": 1500,
+        }
+      }
+    >
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": "auto",
+            "padding": 2,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <h1>
+            Escoge el clima
+          </h1>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/ssC1Wz1/KONICA-MINOLTA-DIGITAL-CAMERA.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Invierno
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/XsY2PSt/oto-o.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Otoño
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/rQ6K4Pp/primavera.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Primavera
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/8BHqHSC/verano.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Verano
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+      disabled={false}
+      id="guardar"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="submit"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Guardar
+      </span>
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Mirando boton guardar Matches the snapshot 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "justifyContent": "space-around",
+      "overflow": "hidden",
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <ul
+      className="MuiGridList-root"
+      style={
+        Object {
+          "height": 600,
+          "margin": -2,
+          "width": 1500,
+        }
+      }
+    >
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": "auto",
+            "padding": 2,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <h1>
+            Escoge el clima
+          </h1>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/ssC1Wz1/KONICA-MINOLTA-DIGITAL-CAMERA.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Invierno
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/XsY2PSt/oto-o.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Otoño
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/rQ6K4Pp/primavera.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Primavera
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/8BHqHSC/verano.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Verano
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+      disabled={false}
+      id="guardar"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="submit"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Guardar
+      </span>
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Mirando clima Matches the snapshot 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "justifyContent": "space-around",
+      "overflow": "hidden",
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <ul
+      className="MuiGridList-root"
+      style={
+        Object {
+          "height": 600,
+          "margin": -2,
+          "width": 1500,
+        }
+      }
+    >
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": "auto",
+            "padding": 2,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <h1>
+            Escoge el clima
+          </h1>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/ssC1Wz1/KONICA-MINOLTA-DIGITAL-CAMERA.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Invierno
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/XsY2PSt/oto-o.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Otoño
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/rQ6K4Pp/primavera.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Primavera
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className="MuiGridListTile-root"
+        style={
+          Object {
+            "height": 254,
+            "padding": 2,
+            "width": "50%",
+          }
+        }
+      >
+        <div
+          className="MuiGridListTile-tile"
+        >
+          <img
+            src="https://i.ibb.co/8BHqHSC/verano.jpg"
+            style={
+              Object {
+                "height": 600,
+                "width": 800,
+              }
+            }
+          />
+          <div
+            className="MuiGridListTileBar-root MuiGridListTileBar-titlePositionBottom"
+          >
+            <div
+              className="MuiGridListTileBar-titleWrap MuiGridListTileBar-titleWrapActionPosRight"
+            >
+              <div
+                className="MuiGridListTileBar-title"
+              >
+                Verano
+              </div>
+            </div>
+            <div
+              className="MuiGridListTileBar-actionIcon"
+            >
+              <label
+                className="MuiFormControlLabel-root"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                <span
+                  aria-disabled={false}
+                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                  onBlur={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "color": "white",
+                    }
+                  }
+                  tabIndex={null}
+                >
+                  <span
+                    className="MuiIconButton-label"
+                  >
+                    <input
+                      className="PrivateSwitchBase-input-8"
+                      data-indeterminate={false}
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                >
+                  Clic aquí
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+      disabled={false}
+      id="guardar"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="submit"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Guardar
+      </span>
+    </button>
+  </form>
+</div>
+`;

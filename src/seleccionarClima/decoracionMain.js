@@ -74,6 +74,7 @@ class Main extends React.Component {
         return (
             <div className={classes.root} >
                 <SeleccionarClima list={imgs2} guardar={this.guardarClima} />
+                {console.log(this.state.clima)}
             </div>
         );
     }
