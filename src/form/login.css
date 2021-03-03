@@ -1,0 +1,87 @@
+.container {
+	background-color: #ffff;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+    min-height: 100vh;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+}
+
+.sign-in-container {
+    height: 100%;
+    position: absolute;
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.sing-in{   
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+}
+
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.overlay {
+	background-size: cover;
+    background-image: url(https://images-ext-2.discordapp.net/external/BdPVPY2hbkVD-Q8F8uJ_p_qwHTn6DAaxq97CHzpzjqY/%3Fu%3Dhttps%253A%252F%252Fblog.peppynite.com%252Fwp-content%252Fuploads%252F2019%252F03%252Fdelhi.jpg%26f%3D1%26nofb%3D1/https/external-content.duckduckgo.com/iu/);
+    background-repeat: no-repeat;
+    background-position: center;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+}
+
+.overlay-right {
+	right: 0;
+}
+
+button {
+	border-radius: 10px;
+	border: 1px solid #222A4F;
+	background-color: #222A4F;
+	color: #FFFFFF;
+	font-size: 70%;
+	padding: 5% 10%;
+	text-transform: uppercase;
+}
+
+button:active {
+    border: 1px solid #BA4974;
+	background-color: #BA4974;
+	transform: scale(0.95);
+}
+
+button.ghost {
+	background-color: #F4F4F4;
+	border-color: #F4F4F4;
+    color: #222A4F;
+}
