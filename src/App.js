@@ -4,6 +4,7 @@ import { RegisterForm } from './form/components';
 import { Travels } from './travel';
 import { LoginForm } from './form/components';
 import { NotFoundForm } from './form/404';
+import Main from './seleccionarClima/decoracionMain'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path="/registro" ><RegisterForm /></Route>
           <Route exact path="/login" ><LoginForm /></Route>
           <Route exact path="/travelList" ><Travels /></Route>
+          <Route exact path="/categorias"><Main /></Route>
           <Route><NotFoundForm/></Route>
         </Switch>
       </Router>
