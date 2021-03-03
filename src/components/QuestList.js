@@ -1,7 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Quest from './Quest.js'
+import Quest from './quest.js'
 
 const styles = (theme) => ({
   root: {
