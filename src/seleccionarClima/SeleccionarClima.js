@@ -6,7 +6,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 
-
 export class SeleccionarClima extends React.Component {
 
     constructor(props){
@@ -29,9 +28,6 @@ export class SeleccionarClima extends React.Component {
         return (
             <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around',  overflow: 'hidden'}}>
             <GridList cellHeight={250} style={{width: 1500, height: 600}} >
-                <GridListTile cols={2} style={{ height: 'auto' }}>
-                    <h1>Escoge el clima</h1>
-                </GridListTile>
                 {this.imgs.map((img, i) => (
                 <GridListTile key={i} >
                     <img src={img.path} style={{width: 800, height: 600}} />

@@ -27,33 +27,33 @@ export class SeleccionarCategoria extends React.Component {
   render(){
         return (
         <div>
-                <GridList cols={4} style={{flexWrap: 'nowrap', transform: 'translateZ(0)'}} >
-                {this.list.map((img, i) => (
-                    <GridListTile key={i}>
-                    <img src={img.path} style={{width: 330, height: 200}} />
-                    <GridListTileBar
-                        title={img.name}
-                        actionIcon={
-                            <FormControlLabel
-                            id="controlLabel"
-                            control={<Checkbox id="checkBoxId" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
-                            label="Clic aqui"
-                            style={{color: "white"}}
-                        />
-                        }
+            <GridList cols={4} style={{flexWrap: 'nowrap', transform: 'translateZ(0)'}} >
+            {this.list.map((img, i) => (
+                <GridListTile key={i}>
+                <img src={img.path} style={{width: 330, height: 200}} />
+                <GridListTileBar
+                    title={img.name}
+                    actionIcon={
+                        <FormControlLabel
+                        id="controlLabelCategoria"
+                        control={<Checkbox id="checkBoxCaterogira" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
+                        label="Clic aqui"
+                        style={{color: "white"}}
                     />
-                    </GridListTile>
-                ))}
-                </GridList>
-                <Button
-                    id="guardar"
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    onClick={this.handleClave}
-                >
-                    Guardar
-                </Button><br/>
+                    }
+                />
+                </GridListTile>
+            ))}
+            </GridList>
+            <Button
+                id="guardarCategoria"
+                type="submit"
+                variant="contained"
+                color="primary"
+                onClick={this.handleClave}
+            >
+                Guardar
+            </Button><br/>
         </div>
         );
     }
