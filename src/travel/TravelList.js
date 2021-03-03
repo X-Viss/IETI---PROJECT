@@ -27,6 +27,45 @@ class TravelList extends React.Component {
                 name: "Negocios de cartera",
                 place: "Argentina",
                 date: new Date()
+            },
+            {
+                name: "Negocios de cartera",
+                place: "Argentina",
+                date: new Date()
+            },{
+                name: "Negocios de cartera",
+                place: "Argentina",
+                date: new Date()
+            },
+            {
+                name: "Negocios de cartera",
+                place: "Argentina",
+                date: new Date()
+            },
+            {
+                name: "Negocios de cartera",
+                place: "Argentina",
+                date: new Date()
+            },
+            {
+                name: "Negocios de cartera",
+                place: "Argentina",
+                date: new Date()
+            },
+            {
+                name: "Negocios de cartera",
+                place: "Argentina",
+                date: new Date()
+            },
+            {
+                name: "Negocios de cartera",
+                place: "Argentina",
+                date: new Date()
+            },
+            {
+                name: "Negocios de cartera",
+                place: "Argentina",
+                date: new Date()
             }]
         };
 

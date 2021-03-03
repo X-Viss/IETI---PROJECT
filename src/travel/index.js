@@ -8,23 +8,40 @@ import OptionsBoard from '../common/OptionsBoard';
 
 const styles = (theme) => ({
     root: {
-        padding: theme.spacing(2),
         display: 'flex',
         flexFlow: 'column',
     },
 
     user: {
-        width: "30%",
-        height: "80vh",
+        width: "21%",
+        height: "100%",
     },
 
     travelListGrid: {
-        width: "70%",
+        width: "78.7%",
         overflowY: 'auto',
-        height: "80vh"
-        
-        
+        height: "100%",
+        backgroundColor: "#2C355E",
     },
+
+    horizontalDivider: {
+        backgroundColor: "black",
+        height: "0.2vh",
+    },
+
+    verticalDivider:{
+        backgroundColor: "white",
+        width: "0.3%",
+    },
+
+    upperGrid:{
+        height: "15vh",
+        backgroundColor: "#222A4F",
+    },
+
+    downGrid: {
+        height: "84.6vh",
+    }
 });
 
 class index extends React.Component {
@@ -40,16 +57,12 @@ class index extends React.Component {
 
             <div className={classes.root}>
                 <Grid>
-                    <Grid item xs >
+                    <Grid item xs alignItems="center" className={classes.upperGrid}>
                         <OptionsBoard></OptionsBoard>
                     </Grid>
-
-                    <br></br>
-                    <Divider></Divider>
-                    <br></br>
+                    <Divider className={classes.horizontalDivider}/>
                     <Grid
                         container
-                        spacing={2}
                         xs
                         item
                         className={classes.downGrid}
@@ -57,7 +70,7 @@ class index extends React.Component {
                         <Grid item className={classes.user}>
                             <UserCard></UserCard>
                         </Grid>
-
+                        <Divider orientation="vertical" flexItem className={classes.verticalDivider}/>
                         <Grid item className={classes.travelListGrid}>
                             <TravelList name={this.state.name} className={classes.travelList}></TravelList>
                         </Grid>
