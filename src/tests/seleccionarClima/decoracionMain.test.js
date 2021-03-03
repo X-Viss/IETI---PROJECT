@@ -1,4 +1,5 @@
 import {SeleccionarClima} from '../../seleccionarClima/SeleccionarClima';
+import {SeleccionarViajero} from '../../seleccionarClima/seleccionarViajero';
 import Main from '../../seleccionarClima/decoracionMain'
 import { render, screen } from '@testing-library/react';
 import { Memory } from '@material-ui/icons';
@@ -10,6 +11,35 @@ import { cleanup } from '@testing-library/react'
 
 describe("Main", () => {
     afterEach(cleanup)
+
+    let imgs = [
+        {
+            path: 'https://i.ibb.co/6JRjSwT/mascotas.jpg',
+            name: "Viaje con mascotas",
+            check: false,
+        },
+        {
+            path: 'https://i.ibb.co/dKFjmSv/mochilero.jpg',
+            name: "Viaje como Mochilero",
+            check: false,
+        },
+        {
+            path: 'https://i.ibb.co/3mJhzz1/parejas.jpg',
+            name: "Viaje en pareja",
+            check: false,
+
+        },
+        {
+            path: 'https://i.ibb.co/vdJ8ZQc/turistas.jpg',
+            name: "Viaje como turista",
+            check: false,
+        },
+        {
+            path: 'https://i.ibb.co/88ckWqL/viaje-De-Negocios.jpg',
+            name: "Viaje de trabajo",
+            check: false,
+        }
+    ];
 
     let imgs2 = [
         {
@@ -36,20 +66,47 @@ describe("Main", () => {
         }
     ];
 
-    it('deberia leer boton guardar', () => {
+    it('deberia leer boton guardar en Clima', () => {
         const component = mount(<Main/>);
         component.children().find('#guardar').at(0).simulate("click");
     });
 
-    it('changes style of div as checkbox is checked/unchecked', () => {
+    it('deberia leer boton guardar cerrar en Viajero', () => {
+        const component = mount(<Main/>);
+        component.children().find('#cerrar').at(0).simulate("click");
+    });
+
+    it('deberia leer boton abrir en Viajero', () => {
+        const component = mount(<Main/>);
+        component.children().find('#abrir').at(0).simulate("click");
+    });
+
+    it('Deberia dar actualizar arreglo de viajero', () => {
+        const component = mount(<Main/>);
+        component.children().find('form').simulate('submit')
+    });
+
+    it('Deberia dar click en checkbox en clima a true', () => {
         const component = mount(<SeleccionarClima list={imgs2} />)
         var checkbox = () => component.find('#checkBoxId').at(0)
         checkbox().simulate('click', {target: {check: true}});   
     })
 
-    it('changes style of div as checkbox is checked/unchecked', () => {
+    it('Deberia dar click en checkbox en clima a false', () => {
         const component = mount(<SeleccionarClima list={imgs2} />)
         var checkbox = () => component.find('#checkBoxId').at(0)
+        checkbox().simulate('click', {target: {check: false}});   
+    })
+
+    it('Deberia dar click en checkbox en Viajero a true', () => {
+        const component = mount(<SeleccionarViajero list={imgs} />)
+        var checkbox = () => component.find('#checkBoxIdViajero').at(0)
+        checkbox().simulate('click', {target: {check: true}});   
+    })
+
+    it('Deberia dar click en checkbox en checkbox en Viajero a false', () => {
+        const component = mount(<SeleccionarViajero list={imgs} />)
+        var checkbox = () => component.find('#checkBoxIdViajero').at(0)
         checkbox().simulate('click', {target: {check: false}});   
     })
 

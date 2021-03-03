@@ -18,9 +18,6 @@ export class SeleccionarViajero extends React.Component {
         this.handleCheck = this.handleCheck.bind(this)
         this.handleClose = this.handleClose.bind(this)
         this.handleOpen = this.handleOpen.bind(this)
-        this.handleName = this.handleName.bind(this)
-        this.handleDate = this.handleDate.bind(this)
-        this.handleStatus = this.handleStatus.bind(this)
         this.handleClear = this.handleClear.bind(this)
     }
     
@@ -57,8 +54,8 @@ export class SeleccionarViajero extends React.Component {
                     title={img.name}
                     actionIcon={
                         <FormControlLabel
-                            id="controlLabel"
-                            control={<Checkbox id="checkBoxId" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
+                            id="controlLabelViajero"
+                            control={<Checkbox id="checkBoxIdViajero" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
                             label="Clic aqui"
                             style={{color: "white"}}
                         />
@@ -68,7 +65,7 @@ export class SeleccionarViajero extends React.Component {
                     ))}
                 </GridList>
                     <Button
-                        id="guardar"
+                        id="cerrar"
                         type="submit"
                         variant="contained"
                         color="primary"
@@ -92,24 +89,6 @@ export class SeleccionarViajero extends React.Component {
 
     handleCheck(position){
         this.imgs[position].check ? this.imgs[position].check=false : this.imgs[position].check=true
-    }
-
-    handleName (e) {
-        this.setState({
-            name: e.target.value
-        })
-    }
-
-    handleStatus (e){
-        this.setState({
-            status: e.target.value
-        })
-    }
-
-    handleDate(e){
-        this.setState({
-            date: e.target.value
-        })
     }
 
     handleClear (e){   

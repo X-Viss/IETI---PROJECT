@@ -59,38 +59,6 @@ describe('Seleccionar Main', ()=>{
     })
 })
 
-describe("Mirar lista clima", () => {
-    let imgs2 = [
-        {
-            path : 'https://i.ibb.co/ssC1Wz1/KONICA-MINOLTA-DIGITAL-CAMERA.jpg',
-            name : "Invierno",
-            check: false
-
-        },
-        {
-            path: 'https://i.ibb.co/XsY2PSt/oto-o.jpg',
-            name: "Otoño",
-            check: false
-        },
-        {
-            path: 'https://i.ibb.co/rQ6K4Pp/primavera.jpg',
-            name: "Primavera",
-            check: false
-        
-        },
-        {
-            path: 'https://i.ibb.co/8BHqHSC/verano.jpg',
-            name: "Verano",
-            check: false
-        }
-    ];
-    const data = jest.fn()
-    test("Ver lista", () => {
-      const component = create(<SeleccionarClima list={imgs2} guardar={data} />);
-      const instance = component.getInstance();
-    });
-});
-
 
 
 

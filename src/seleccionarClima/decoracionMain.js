@@ -109,7 +109,7 @@ class Main extends React.Component {
 
         return (
             <div className={classes.root} >
-                <SeleccionarViajero list={imgs} guardar={this.guardarViajero}/>
+                <SeleccionarViajero list={imgs} guardar={this.guardarViajero} />
                 <SeleccionarClima list={imgs2} guardar={this.guardarClima} />
             </div>
         );
