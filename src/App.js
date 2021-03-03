@@ -1,12 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import Categoria from './components/Categoria.js';
 
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Categoria></Categoria>
+
     </div>
   );
 }
