@@ -22,7 +22,6 @@ export class SeleccionarClima extends React.Component {
     }
 
     handleCheck(position){
-        console.log("ome ave maria")
         this.imgs[position].check ? this.imgs[position].check=false : this.imgs[position].check=true
     }
 
