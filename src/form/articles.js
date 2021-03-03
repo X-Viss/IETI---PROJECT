@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ArticleForForm(props){
+export function ArticleForForm(props){
     const {item}=props
     const className = props.className? props.className:"noneClass"
     return <article className={className}>

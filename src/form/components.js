@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import './login.css';
 
-function itemsForRegisterForm() {
+export function itemsForRegisterForm() {
     const confirmPasswords = (event) => {
         const password = document.getElementsByName('password')[0]
         const password2 = document.getElementsByName('password2')[0]
