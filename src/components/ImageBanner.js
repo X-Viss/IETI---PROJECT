@@ -1,0 +1,18 @@
+import React from 'react';
+import './ImageBanner.css';
+
+function ImageBanner(props) {
+    return (
+        <div style={{height: 400}}>
+            <div className="hero-image">
+                <div className="hero-text">
+                    <h1 style={{fontSize: "50px"}}>{props.title}</h1>
+                    <p>{props.description}</p>
+                    <button>{props.textButton}</button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default ImageBanner;
