@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
+import TabIcon from '@material-ui/icons/Tab';
 
 const styles = (theme) => ({
   root: {
@@ -44,6 +45,10 @@ class NewItem extends React.Component {
                     <Grid container justify="flex-start" alignItems="center" spacing={0}>
                           <IconButton item aria-label="edit item" onClick={this.onSubForm}><AddIcon /></IconButton>
                           <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    </Grid>
+                    <Grid container justify="flex-end" alignItems="center" spacing={0}>
+                      <layer>Agregar Categoria Personal</layer>
+                    <IconButton item aria-label="edit item"><TabIcon /></IconButton>
                     </Grid>
                 </CardContent>
             </Card>
