@@ -40,27 +40,10 @@ it('calls click register event', () => {
   expect(wrapper.find('input[name="correo"]').instance().value).toEqual('');
 });
 
-/*
 const updateInput = (wrapper, instance, newValue) => {
-  const input = wrapper.find(instance)
-  Console.log(input)
-  input.simulate('change', {
+  wrapper.children().find(instance).simulate('change', {
       currentTarget: {value: newValue}
   })
   return wrapper.find(instance)
 }
 
-it('calls click register pas event', () => {
-  const wrapper = mount(<RegisterForm />);
-    updateInput(wrapper, '[name="password"]', '8018882321')
-    wrapper.find('[data-testid="addUserForm"]').simulate('submit', {preventDefault: () => {}})
-    expect(api.addUser).toHaveBeenCalledWith('8018882321')
-});
-
-it('calls click register nopas event', () => {
-  const wrapper = mount(<RegisterForm />);
-  wrapper.find('input[name="password"]').simulate('change',{currentTarget:{value:'1324'}})
-  wrapper.find('input[namegit="password2"]').simulate('change',{currentTarget:{value:'1304'}})
-
-  expect(wrapper.find('input[name="password"]').instance().value).not().toEqual(wrapper.find('input[name="password2"]').instance().value);
-});*/
