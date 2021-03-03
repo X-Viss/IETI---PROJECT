@@ -1,7 +1,7 @@
 import {act, render, screen} from '@testing-library/react';
 import {unmountComponentAtNode} from "react-dom";
 import React from "react";
-import Inicio from "../inicio/Inicio";
+import Inicio from "../../inicio/Inicio";
 
 let container = null;
 beforeEach(() => {
