@@ -5,6 +5,7 @@ import { Travels } from './travel';
 import { LoginForm } from './form/components';
 import { NotFoundForm } from './form/404';
 import Main from './seleccionarClima/decoracionMain'
+import { EditUserForm } from './form/edit';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/login" ><LoginForm /></Route>
           <Route exact path="/travelList" ><Travels /></Route>
           <Route exact path="/categorias"><Main /></Route>
+          <Route exact path="/editUser"><EditUserForm /></Route>
           <Route><NotFoundForm/></Route>
         </Switch>
       </Router>
