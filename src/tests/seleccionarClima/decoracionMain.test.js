@@ -84,12 +84,6 @@ describe("Main", () => {
         component.children().find('#guardarCategoria').at(0).simulate("click");
     });
 
-    it('deberia leer boton abrir en Categoria', () => {
-        const component = mount(<Main/>);
-        component.find('mano').at(0)
-        component.unmount();
-    });
-
     it('Deberia dar click en checkbox en clima a true', () => {
         const component = mount(<SeleccionarClima list={imgs2} />)
         var checkbox = () => component.find('#checkBoxId').at(0)
