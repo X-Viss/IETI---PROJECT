@@ -1,4 +1,5 @@
 import React from 'react';
+import Enzyme, { mount, shallow } from 'enzyme'
 import Categoria from '../../components/Categoria'
 
 it('input check', () => {
