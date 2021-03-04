@@ -46,6 +46,14 @@ export default function BodyTabs() {
       }return dato;
     });
   }
+
+  const handleAddTab = () => {
+    categories.push(
+      {label:'varios',
+      items:[]}
+      );
+    {console.log(categories)}
+  }
   return (
     <div className={classes.root}>
       <Typography>[barra de navegacion]</Typography>
@@ -73,7 +81,7 @@ export default function BodyTabs() {
         </TabPanel>
         )
       })}
-      <NewItem onSubmitForm={extractForm} ></NewItem>
+      <NewItem onSubmitForm={extractForm} onSubmitTab={handleAddTab} ></NewItem>
     </div>
   );
 }
