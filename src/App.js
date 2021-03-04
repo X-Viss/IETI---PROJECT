@@ -1,12 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-import Categoria from './components/Categoria.js';
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { RegisterForm } from './form/components';
+import { Travels } from './travel';
+import { LoginForm } from './form/components';
+import { NotFoundForm } from './form/404';
+import Main from './seleccionarClima/decoracionMain'
 
 function App() {
   return (
     <div className="App">
-      <Categoria></Categoria>
+      <Router>
+        <Switch>
+          <Route exact path="/registro" ><RegisterForm /></Route>
+          <Route exact path="/login" ><LoginForm /></Route>
+          <Route exact path="/travelList" ><Travels /></Route>
+          <Route exact path="/categorias"><Main /></Route>
+          <Route><NotFoundForm/></Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
