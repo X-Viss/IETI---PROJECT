@@ -2,6 +2,7 @@ import React from 'react';
 import {SeleccionarClima} from './SeleccionarClima';
 import {SeleccionarViajero} from './seleccionarViajero';
 import {SeleccionarDestino} from './SeleccionarDestino'
+import {SeleccionarCategoria} from './SeleccionarPorCategoria'
 import { withStyles } from '@material-ui/core/styles';
 
 const styleLink = document.createElement("link");
@@ -38,15 +39,52 @@ class Main extends React.Component {
 
     constructor(props){
         super(props)
-        this.state = {viajero: [], clima: [], pais: ""}
+        this.state = {viajero: [], clima: [], pais: "", accesorios: [], ropa: [],
+                      aseo: [], medicina: [], aLaMano: [], compras: [], varios: []}
         this.guardarViajero = this.guardarViajero.bind(this)
-        this.guardarDestino = this.guardarDestino.bind(this)
         this.guardarClima = this.guardarClima.bind(this)
+        this.guardarDestino = this.guardarDestino.bind(this)
+        this.guardarAccesorios = this.guardarAccesorios.bind(this)
+        this.guardarRopa = this.guardarRopa.bind(this)
+        this.guardarAseo = this.guardarAseo.bind(this)
+        this.guardarMedicina = this.guardarMedicina.bind(this)
+        this.guardarALaMano = this.guardarALaMano.bind(this)
+        this.guardarCompras = this.guardarCompras.bind(this)
+        this.guardarVarios = this.guardarVarios.bind(this)
     }
 
-    guardarViajero(data){
+    guardarALaMano(data){
         this.setState({
-            viajero: data
+            aLaMano: data
+        })
+    }
+
+    guardarAccesorios(list){
+        this.setState({
+            accesorios: list
+        })
+    }
+
+    guardarAseo(data){
+        this.setState({
+            aseo: data
+        })
+    }
+    guardarClima(data){
+        this.setState({
+            clima: data
+        })
+    }
+
+    guardarCompras(data){
+        this.setState({
+            compras: data
+        })
+    }
+
+    guardarMedicina(data){
+        this.setState({
+            medicina: data
         })
     }
 
@@ -56,12 +94,23 @@ class Main extends React.Component {
         })
     }
 
-    guardarClima(data){
+    guardarRopa(data){
         this.setState({
-            clima: data
+            ropa: data
         })
     }
 
+    guardarVarios(data){
+        this.setState({
+            varios: data
+        })
+    }
+
+    guardarViajero(data){
+        this.setState({
+            viajero: data
+        })
+    }
     render() {
         let imgs = [
             {
@@ -150,8 +199,22 @@ class Main extends React.Component {
             <div className={classes.root} >
                 <SeleccionarViajero list={imgs} guardar={this.guardarViajero} id="checkBoxIdViajero"/>
                 <SeleccionarDestino pais={data} guardar={this.guardarDestino} />
-                <h1>Escoge el clima</h1>
-                <SeleccionarClima list={imgs2} guardar={this.guardarClima} id="checkBoxId" />                
+                <h1>Escoge el Clima</h1>
+                <SeleccionarClima list={imgs2} guardar={this.guardarClima} id="checkBoxId" />     
+                <h1>Accesorios</h1>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarAccesorios}/>
+                <h1>A La Mano</h1>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarALaMano}/>
+                <h1>Aseo</h1>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarAseo}/>
+                <h1>Compras</h1>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarCompras}/>
+                <h1>Medicina</h1>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarMedicina}/>
+                <h1>Ropa</h1>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarRopa}/>
+                <h1>Varios</h1>
+                <SeleccionarCategoria list={imgs} guardar={this.guardarVarios}/>           
             </div>
         );
     }
