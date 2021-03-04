@@ -6,6 +6,7 @@ import Main from '../../seleccionarClima/decoracionMain'
 import { mount } from 'enzyme';
 import {it, describe } from '@jest/globals';
 import { cleanup } from '@testing-library/react'
+import { SeleccionarCategoria } from '../../seleccionarClima/SeleccionarPorCategoria';
 
 describe("Main", () => {
     afterEach(cleanup)
@@ -115,6 +116,11 @@ describe("Main", () => {
         component.children().find('#abrir').at(0).simulate("click");
     });
 
+    it('Deberia ir al boton guardar categoria', () => {
+        const component = mount(<Main />)
+        component.children().find('#guardarCategoria').at(0).simulate("click");
+    }) 
+
     it('Deberia dar click en checkbox en clima a true', () => {
         const component = mount(<SeleccionarClima list={imgs2} />)
         var checkbox = () => component.find('#checkBoxId').at(0)
@@ -151,6 +157,18 @@ describe("Main", () => {
         const component = mount(<SeleccionarViajero list={imgs} />)
         var checkbox = () => component.children().find('#checkBox').at(0)
         checkbox().simulate('click', {target: {check: true}});   
+    }) 
+
+    it('Deberia cambiar el estado de una categoria a true', () => {
+        const component = mount(<SeleccionarCategoria list={imgs} />)
+        var checkbox = () => component.children().find('#checkBox').at(0)
+        checkbox().simulate('click', {target: {check: true}});   
+    }) 
+
+    it('Deberia cambiar el estado de una categoria a false', () => {
+        const component = mount(<SeleccionarCategoria list={imgs} />)
+        var checkbox = () => component.children().find('#checkBox').at(0)
+        checkbox().simulate('click', {target: {check: false}});   
     }) 
 
 })
