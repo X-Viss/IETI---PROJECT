@@ -1,6 +1,4 @@
 import React from 'react';
-import Enzyme, { mount, shallow } from 'enzyme'
-import { createRender } from '@material-ui/core/test-utils';
 import Categoria from '../../components/Categoria'
 
 it('input check', () => {
