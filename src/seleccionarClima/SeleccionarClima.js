@@ -6,7 +6,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 
-
 export class SeleccionarClima extends React.Component {
 
     constructor(props){
@@ -28,11 +27,7 @@ export class SeleccionarClima extends React.Component {
     render() {
         return (
             <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around',  overflow: 'hidden'}}>
-            <form onSubmit={this.handleClave}>
             <GridList cellHeight={250} style={{width: 1500, height: 600}} >
-                <GridListTile cols={2} style={{ height: 'auto' }}>
-                    <h1>Escoge el clima</h1>
-                </GridListTile>
                 {this.imgs.map((img, i) => (
                 <GridListTile key={i} >
                     <img src={img.path} style={{width: 800, height: 600}} />
@@ -40,8 +35,9 @@ export class SeleccionarClima extends React.Component {
                     title={img.name}
                     actionIcon={
                         <FormControlLabel
-                            control={<Checkbox  style={{color: "white"}} onChange={() => this.handleCheck(i)} />}
-                            label="Clic aquí"
+                            id="controlLabel"
+                            control={<Checkbox id="checkBoxId" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
+                            label="Clic aqui"
                             style={{color: "white"}}
                         />
                     }
@@ -50,13 +46,14 @@ export class SeleccionarClima extends React.Component {
                 ))}
             </GridList>
             <Button
+                id = "guardar"
                 type="submit"
                 variant="contained"
                 color="primary"
+                onClick={this.handleClave}
             >
                 Guardar
             </Button>
-            </form>
             </div>
         );
     }
