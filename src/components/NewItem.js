@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
+import TabIcon from '@material-ui/icons/Tab';
 
 const styles = (theme) => ({
   root: {
@@ -21,10 +22,12 @@ class NewItem extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        value:''
+        value:'',
+        disableButton:false
       };
       this.handleChange = this.handleChange.bind(this);
       this.onSubForm = this.onSubForm.bind(this);
+      this.onSubTab = this.onSubTab.bind(this);
     }
 
     handleChange(event){
@@ -35,6 +38,11 @@ class NewItem extends React.Component {
       this.props.onSubmitForm(this.state)
     }
 
+    onSubTab(){
+      this.setState({disableButton: true})
+      this.props.onSubmitTab()
+    }
+
     render() {
         const {classes} = this.props;
         return (
@@ -42,8 +50,13 @@ class NewItem extends React.Component {
             <Card>
                 <CardContent>
                     <Grid container justify="flex-start" alignItems="center" spacing={0}>
-                          <IconButton item aria-label="edit item" onClick={this.onSubForm}><AddIcon /></IconButton>
+                          <IconButton item id="icon" aria-label="edit item" onClick={this.onSubForm}><AddIcon /></IconButton>
                           <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    </Grid>
+                    <Grid container justify="flex-end" alignItems="center" spacing={0}>
+                      
+                    <IconButton item id="tabbutton" disabled={this.state.disableButton}
+                      onClick={this.onSubTab} aria-label="edit item"><TabIcon />Agregar Categoria Personal</IconButton>
                     </Grid>
                 </CardContent>
             </Card>
