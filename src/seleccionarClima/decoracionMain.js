@@ -1,8 +1,13 @@
 import React from 'react';
 import {SeleccionarClima} from './SeleccionarClima';
 import {SeleccionarViajero} from './seleccionarViajero';
+import {SeleccionarDestino} from './SeleccionarDestino'
 import { withStyles } from '@material-ui/core/styles';
 
+const styleLink = document.createElement("link");
+styleLink.rel = "stylesheet";
+styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+document.head.appendChild(styleLink);
 
 const styles = (theme) => ({
     root: {
@@ -33,9 +38,22 @@ class Main extends React.Component {
 
     constructor(props){
         super(props)
-        this.state = {viajero: [], clima: []}
+        this.state = {viajero: [], clima: [], pais: ""}
         this.guardarViajero = this.guardarViajero.bind(this)
+        this.guardarDestino = this.guardarDestino.bind(this)
         this.guardarClima = this.guardarClima.bind(this)
+    }
+
+    guardarViajero(data){
+        this.setState({
+            viajero: data
+        })
+    }
+
+    guardarDestino(data){
+        this.setState({
+            pais: data
+        })
     }
 
     guardarClima(data){
@@ -44,11 +62,6 @@ class Main extends React.Component {
         })
     }
 
-    guardarViajero(data){
-        this.setState({
-            viajero: data
-        })
-    }
     render() {
         let imgs = [
             {
@@ -105,13 +118,40 @@ class Main extends React.Component {
             }
         ];
 
+        let data = [
+            { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' },
+            { key: 'ax', value: 'ax', flag: 'ax', text: 'Aland Islands' },
+            { key: 'al', value: 'al', flag: 'al', text: 'Albania' },
+            { key: 'dz', value: 'dz', flag: 'dz', text: 'Algeria' },
+            { key: 'as', value: 'as', flag: 'as', text: 'American Samoa' },
+            { key: 'ad', value: 'ad', flag: 'ad', text: 'Andorra' },
+            { key: 'ao', value: 'ao', flag: 'ao', text: 'Angola' },
+            { key: 'ai', value: 'ai', flag: 'ai', text: 'Anguilla' },
+            { key: 'ag', value: 'ag', flag: 'ag', text: 'Antigua' },
+            { key: 'ar', value: 'ar', flag: 'ar', text: 'Argentina' },
+            { key: 'am', value: 'am', flag: 'am', text: 'Armenia' },
+            { key: 'aw', value: 'aw', flag: 'aw', text: 'Aruba' },
+            { key: 'au', value: 'au', flag: 'au', text: 'Australia' },
+            { key: 'at', value: 'at', flag: 'at', text: 'Austria' },
+            { key: 'az', value: 'az', flag: 'az', text: 'Azerbaijan' },
+            { key: 'bs', value: 'bs', flag: 'bs', text: 'Bahamas' },
+            { key: 'bh', value: 'bh', flag: 'bh', text: 'Bahrain' },
+            { key: 'bd', value: 'bd', flag: 'bd', text: 'Bangladesh' },
+            { key: 'bb', value: 'bb', flag: 'bb', text: 'Barbados' },
+            { key: 'by', value: 'by', flag: 'by', text: 'Belarus' },
+            { key: 'be', value: 'be', flag: 'be', text: 'Belgium' },
+            { key: 'bz', value: 'bz', flag: 'bz', text: 'Belize' },
+            { key: 'bj', value: 'bj', flag: 'bj', text: 'Benin' }
+        ]
+
         const { classes } = this.props;
 
         return (
             <div className={classes.root} >
                 <SeleccionarViajero list={imgs} guardar={this.guardarViajero} id="checkBoxIdViajero"/>
+                <SeleccionarDestino pais={data} guardar={this.guardarDestino} />
                 <h1>Escoge el clima</h1>
-                <SeleccionarClima list={imgs2} guardar={this.guardarClima} id="checkBoxId" />
+                <SeleccionarClima list={imgs2} guardar={this.guardarClima} id="checkBoxId" />                
             </div>
         );
     }

@@ -5,7 +5,6 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
-import { mount } from 'enzyme';
 
 export class SeleccionarClima extends React.Component {
 

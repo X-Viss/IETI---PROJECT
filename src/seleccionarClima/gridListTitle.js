@@ -5,7 +5,6 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
-import { mount } from 'enzyme';
 
 export class GridListTileMio extends React.Component {
     constructor(props){
@@ -21,11 +20,10 @@ export class GridListTileMio extends React.Component {
 
     render(){
         return(
-            <div 
-            style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}
-            >
+            <div>
+            <GridList cols={this.props.cols} style={this.props.style}>
             {this.imgs.map((img, i) => (
-                <GridListTile key={i} cols={2}>
+                <GridListTile key={i} >
                     <img src={img.path} style={{width: this.props.width, height: this.props.height}} />
                     <GridListTileBar
                     title={img.name}
@@ -40,6 +38,7 @@ export class GridListTileMio extends React.Component {
                     />
                 </GridListTile>
             ))}
+            </GridList>
             </div>
         )
     }

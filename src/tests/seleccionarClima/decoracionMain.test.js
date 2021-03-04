@@ -1,17 +1,40 @@
 import {SeleccionarClima} from '../../seleccionarClima/SeleccionarClima';
-import {GridListTileMio} from '../../seleccionarClima/gridListTitle'
+import {GridListTileMio} from '../../seleccionarClima/gridListTitle';
+import {SeleccionarDestino} from '../../seleccionarClima/SeleccionarDestino';
 import {SeleccionarViajero} from '../../seleccionarClima/seleccionarViajero';
 import Main from '../../seleccionarClima/decoracionMain'
-import { render, screen } from '@testing-library/react';
-import { Memory } from '@material-ui/icons';
-import { create } from "react-test-renderer";
 import { mount } from 'enzyme';
 import {it, describe } from '@jest/globals';
 import { cleanup } from '@testing-library/react'
 
-
 describe("Main", () => {
     afterEach(cleanup)
+
+    let data = [
+        { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' },
+        { key: 'ax', value: 'ax', flag: 'ax', text: 'Aland Islands' },
+        { key: 'al', value: 'al', flag: 'al', text: 'Albania' },
+        { key: 'dz', value: 'dz', flag: 'dz', text: 'Algeria' },
+        { key: 'as', value: 'as', flag: 'as', text: 'American Samoa' },
+        { key: 'ad', value: 'ad', flag: 'ad', text: 'Andorra' },
+        { key: 'ao', value: 'ao', flag: 'ao', text: 'Angola' },
+        { key: 'ai', value: 'ai', flag: 'ai', text: 'Anguilla' },
+        { key: 'ag', value: 'ag', flag: 'ag', text: 'Antigua' },
+        { key: 'ar', value: 'ar', flag: 'ar', text: 'Argentina' },
+        { key: 'am', value: 'am', flag: 'am', text: 'Armenia' },
+        { key: 'aw', value: 'aw', flag: 'aw', text: 'Aruba' },
+        { key: 'au', value: 'au', flag: 'au', text: 'Australia' },
+        { key: 'at', value: 'at', flag: 'at', text: 'Austria' },
+        { key: 'az', value: 'az', flag: 'az', text: 'Azerbaijan' },
+        { key: 'bs', value: 'bs', flag: 'bs', text: 'Bahamas' },
+        { key: 'bh', value: 'bh', flag: 'bh', text: 'Bahrain' },
+        { key: 'bd', value: 'bd', flag: 'bd', text: 'Bangladesh' },
+        { key: 'bb', value: 'bb', flag: 'bb', text: 'Barbados' },
+        { key: 'by', value: 'by', flag: 'by', text: 'Belarus' },
+        { key: 'be', value: 'be', flag: 'be', text: 'Belgium' },
+        { key: 'bz', value: 'bz', flag: 'bz', text: 'Belize' },
+        { key: 'bj', value: 'bj', flag: 'bj', text: 'Benin' }
+    ]
 
     let imgs = [
         {
@@ -79,6 +102,16 @@ describe("Main", () => {
 
     it('deberia leer boton abrir en Viajero', () => {
         const component = mount(<Main/>);
+        component.children().find("#pais").at(0).simulate("click");
+    });
+
+    it('deberia leer boton abrir en Viajero', () => {
+        const component = mount(<SeleccionarDestino pais={data}  />);
+        component.children().find("#paisTemporal").at(0).simulate("change");
+    });
+
+    it('deberia leer boton abrir en Viajero', () => {
+        const component = mount(<Main/>);
         component.children().find('#abrir').at(0).simulate("click");
     });
 
@@ -108,18 +141,16 @@ describe("Main", () => {
         checkbox().simulate('click', {target: {check: false}});   
     })
 
-    it('Deberia dar click en checkbox en checkbox en Viajero a false', () => {
+    it('Deberia dar click en checkbox en Viajero a false', () => {
         const component = mount(<SeleccionarViajero list={imgs} />)
         var checkbox = () => component.children().find('#checkBox').at(0)
         checkbox().simulate('click', {target: {check: false}});   
     })
 
-    it('Deberia dar click en checkbox en checkbox en Viajero a false', () => {
+    it('Deberia dar click en checkbox en Viajero a true', () => {
         const component = mount(<SeleccionarViajero list={imgs} />)
         var checkbox = () => component.children().find('#checkBox').at(0)
         checkbox().simulate('click', {target: {check: true}});   
-    })
-
-    
+    }) 
 
 })

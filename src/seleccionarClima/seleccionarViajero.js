@@ -5,10 +5,6 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
 import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 
 export class SeleccionarViajero extends React.Component {
     constructor(props){
@@ -31,6 +27,7 @@ export class SeleccionarViajero extends React.Component {
                         Hola viajero!, qué rol tomaras esta vez?
                     </Button>
                 </div>
+            <form onSubmit={this.handleClave}>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -44,11 +41,10 @@ export class SeleccionarViajero extends React.Component {
             >
                 <Fade in={this.state.open}>
                 <div style={{backgroundColor: 'white', border: '2px solid #000', textAlign: 'center'}}>
-                <GridList cellHeight={250} style={{width: 1000, height: 600}} >
-                <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-                    <h1>Escoge tu rol!</h1>
-                </GridListTile>
-                <GridListTileMio id={this.id} list={this.imgs} enviar={this.handleCheck} width={400} height={300}/>
+                <GridList  style={{width: 1000, height: 500}} >
+                <h1>Escoge tu rol!</h1>
+                    <GridListTileMio id={this.id} list={this.imgs} enviar={this.handleCheck} width={500} height={300}
+                    style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}} cols={2}/>
                 </GridList>
                     <Button
                         id="cerrar"
@@ -62,6 +58,7 @@ export class SeleccionarViajero extends React.Component {
                 </div>
                 </Fade>
             </Modal>
+            </form>
             </div>
         );
     }
