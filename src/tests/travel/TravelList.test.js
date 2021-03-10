@@ -20,7 +20,7 @@ describe("Should render", () => {
     it('should close modal', () => {
         const component = mount(<TravelList />);
         component.find('#deleteButton').at(0).simulate("click");
-        const dialogTitle = screen.getByText(/¿Estás seguro que deseas borrar este viaje?/i);
+        screen.getByText(/¿Estás seguro que deseas borrar este viaje?/i);
         component.find('#dialogDeleteCancel').at(0).simulate("click");
 
         component.unmount();
@@ -29,9 +29,10 @@ describe("Should render", () => {
     it('should delete', () => {
         const component = mount(<TravelList />);
         component.find('#deleteButton').at(0).simulate("click");
-        const dialogTitle = screen.getByText(/¿Estás seguro que deseas borrar este viaje?/i);
+        screen.getByText(/¿Estás seguro que deseas borrar este viaje?/i);
         component.find('#dialogDeleteAccept').at(0).simulate("click");
 
         component.unmount();
     });
 });
+
