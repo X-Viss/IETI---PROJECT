@@ -44,30 +44,31 @@ const datatest1 =[
         featured: 4,
     },
     {
-        img: "https://picsum.photos/1280/720?random=12",
+        img: "https://picsum.photos/1280/720?random=1",
         author: 'author',
         featured: 1,
     },
     {
-        img: "https://picsum.photos/1280/720?random=21",
+        img: "https://picsum.photos/1280/720?random=2",
         title: 'Image',
         featured: 1,
     },
     {
-        img: "https://picsum.photos/1280/720?random=37",
+        img: "https://picsum.photos/1280/720?random=3",
         title: 'Image',
         featured: 1,
     },
     {
-        img: "https://picsum.photos/1280/720?random=44",
+        img: "https://picsum.photos/1280/720?random=4",
         featured: 1,
     },
     {
-        img: "https://picsum.photos/1280/720?random=50",
+        img: "https://picsum.photos/1280/720?random=5",
         title: 'Image',
         featured: 4,
     }
 ]
+
 
 const datatest3=[
     {
@@ -98,6 +99,8 @@ const datatest3=[
         img: "https://picsum.photos/1280/720?random=130",
         title: 'Image',
         author: 'Monet',
+    }
+]
 
 const datatest2 = [
     {
@@ -120,4 +123,6 @@ const datatest2 = [
     }
 ]
 
-export {datatest,datatest1, datatest2,datatest3};
+
+
+export {datatest,datatest1,datatest2,datatest3};
