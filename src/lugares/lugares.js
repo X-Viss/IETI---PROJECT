@@ -12,7 +12,7 @@ class Lugares extends Component {
                 <br/>
                 <br/>
                 <div style={{display: "flex"}} >
-                    <div  style={{flex: "50%"}}>
+                    <div  style={{flex: "50%", backgroundColor:"#F4F4F4"}}>
                         <AdvancedGridList tileData={datatest2} title={"Conoce más sobre..."} numcols={2}/>
                     </div>
                     <div style={{flex: "50%", padding: "80px"}}>

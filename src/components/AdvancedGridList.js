@@ -34,7 +34,7 @@ export default function AdvancedGridList(props) {
 
     return (
         <div className={classes.root}>
-            <Typography variant="h3" gutterBottom style={{color: 'black'}}>
+            <Typography variant="h3" gutterBottom style={{color: '#222A4F'}}>
                 {props.title}
             </Typography>
             <GridList cellHeight={200} spacing={1} cols={props.numcols ? props.numcols : 2} className={classes.gridList}>
