@@ -60,6 +60,7 @@ class TravelList extends React.Component {
                 </TravelCard>
             );
         })
+        
 
         const { classes }=this.props; 
         return (
