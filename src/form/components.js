@@ -92,7 +92,7 @@ export function RegisterForm(props) {
         
     }
 
-
+    /* istanbul ignore next */
     const handleRegisterRequest = (user) => {
         post("/subs", user).then(data => {
             console.log(data)

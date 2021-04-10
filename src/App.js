@@ -18,15 +18,7 @@ function App() {
 
   const [loggedIn, setLoggedIn] = useState(window.sessionStorage.getItem("token")!=null);
   
-  useEffect(() => {
-    const logged = localStorage.getItem("loggedIn");
-    if (logged) {
-      console.log("DONE")
-      setLoggedIn(logged == "true");
-      console.log(loggedIn)
-    }
-  });
-
+/* istanbul ignore next */
   return (
     <div className="App">
 
@@ -38,6 +30,7 @@ function App() {
           <Route exact path="/statisctics"><Statisctics/></Route>
           <Route exact path="/registro" ><RegisterForm /></Route>
           <Route exact path="/login" ><LoginForm /></Route>
+          
           <ProtectedRoute exact isAuthenticated={loggedIn} path="/travelList" component={() => (<Travels/>)} />
           <ProtectedRoute exact isAuthenticated={loggedIn} path="/categorias" component={() => (<Main/>)} />
           <ProtectedRoute exact isAuthenticated={loggedIn} path="/editUser" component={() => (<EditUserForm />)} />
