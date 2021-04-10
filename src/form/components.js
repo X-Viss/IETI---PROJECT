@@ -71,20 +71,25 @@ export function itemsForRegisterForm() {
 }
 
 export function RegisterForm(props) {
+
+    /* istanbul ignore next */
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(event.target.elements)
-        let username = event.target[0].value;
-        let password = event.target[1].value;
-        console.log(username)
-        console.log(password)
-
-        let user = {
-            "userName": username,
-            "password": password
+        if(event.target[0] != undefined && event.target[1] != undefined){
+            let username = event.target[0].value;
+            let password = event.target[1].value;
+            console.log(username)
+            console.log(password)
+    
+            let user = {
+                "userName": username,
+                "password": password
+            }
+            console.log(user)
+            handleRegisterRequest(user);
         }
-        console.log(user)
-        handleRegisterRequest(user);
+        
     }
 
 
@@ -143,16 +148,21 @@ export function itemsForLoginForm() {
 
 
 export function LoginForm(props) {
+
+    /* istanbul ignore next */
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('submit');
-        let username = event.target[0].value;
-        let password = event.target[1].value;
-        let user = {
-            "userName": username,
-            "password": password
+        if(event.target[0] != undefined && event.target[1] != undefined){
+            let username = event.target[0].value;
+            let password = event.target[1].value;
+            let user = {
+                "userName": username,
+                "password": password
+            }
+            jwtRequest(user);
         }
-        jwtRequest(user);
+        
     }
     return <div className="container">
         <div className="sing-in">

@@ -8,7 +8,7 @@ import Main from './seleccionarClima/decoracionMain'
 import { EditUserForm } from './form/edit';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import ProtectedRoute from './tests/common/PrivateRoute';
+import ProtectedRoute from './common/ProtectedRoute';
 import Inicio from "./inicio/Inicio";
 import Lugares from "./lugares/lugares";
 import Tiposviajes from "./tiposviajes/tiposviajes";
@@ -16,7 +16,7 @@ import Statisctics from "./statisctics/statisctics";
 
 function App() {
 
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("loggedIn")=="true");
+  const [loggedIn, setLoggedIn] = useState(window.sessionStorage.getItem("token")!=null);
   
   useEffect(() => {
     const logged = localStorage.getItem("loggedIn");
