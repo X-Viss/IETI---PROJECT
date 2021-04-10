@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { RegisterForm } from './form/components';
 import { Travels } from './travel';
 import { LoginForm } from './form/components';
@@ -29,6 +29,10 @@ function App() {
 
       <Router>
         <Switch>
+          <Route exact path="/inicio"><Inicio/></Route>
+          <Route exact path="/lugares"><Lugares/></Route>
+          <Route exact path="/tiposviajes"><Tiposviajes/></Route>
+          <Route exact path="/statisctics"><Statisctics/></Route>
           <Route exact path="/registro" ><RegisterForm /></Route>
           <Route exact path="/login" ><LoginForm /></Route>
           <ProtectedRoute exact isAuthenticated={loggedIn} path="/travelList" component={() => (<Travels/>)} />

@@ -4,11 +4,11 @@ import TravelCard from '../../travel/TravelCard';
 
 test('renders travel card', () => {
     const travel = {
-        name: "Vacaciones",
-        place: "Colombia",
-        date: new Date()
+        title: "Vacaciones",
+        lugar: "Colombia",
+        dueDate: "Sabado"
     }
-    render(<TravelCard name={travel.name} place={travel.place} date={travel.date} />);
+    render(<TravelCard travel={travel} />);
     const name = screen.getByText(/Vacaciones/i);
     const place = screen.getByText(/Colombia/i);
 
@@ -18,24 +18,24 @@ test('renders travel card', () => {
 
 test('delete function of card', () => {
     const travel = {
-        name: "Vacaciones",
-        place: "Colombia",
-        date: new Date()
+        title: "Vacaciones",
+        lugar: "Colombia",
+        dueDate: "Sabado"
     }
     const deleleAction = jest.fn()
-    const component = mount(<TravelCard name={travel.name} place={travel.place} date={travel.date} onCardDelete={deleleAction} keyName={100}/>)
+    const component = mount(<TravelCard travel={travel}  onCardDelete={deleleAction} keyName={100}/>)
     component.find('#deleteButton').at(0).simulate("click");
     expect(deleleAction).toBeCalledWith(100);
 });
 
 test('travel function of card', () => {
     const travel = {
-        name: "Vacaciones",
-        place: "Colombia",
-        date: new Date()
+        title: "Vacaciones",
+        lugar: "Colombia",
+        dueDate: "Sabado"
     }
     const deleleAction = jest.fn()
-    const component = mount(<TravelCard name={travel.name} place={travel.place} date={travel.date} onCardDelete={deleleAction} keyName={100}/>)
+    const component = mount(<TravelCard travel={travel}  onCardDelete={deleleAction} keyName={100}/>)
     component.find('#travelButton').at(0).simulate("click");
     //expect(deleleAction).toBeCalledTimes(1);
 });

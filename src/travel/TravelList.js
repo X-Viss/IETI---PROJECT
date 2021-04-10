@@ -8,6 +8,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core';
+import { deleteRequest, get } from '../requests/axiosRequests.js';
 
 const styles = (theme) => ({
     root: {
@@ -23,16 +24,33 @@ class TravelList extends React.Component {
         this.state = {
             currentCardDelete: 0,
             deleteConfirmationDialogOpen: false,
-            travels: [{
-                name: "Negocios de cartera",
-                place: "Argentina",
-                date: new Date()
-            }]
+            travels: []
         };
 
         this.handleCardDelete = this.handleCardDelete.bind(this);
         this.handleDeleteCardConfirmation = this.handleDeleteCardConfirmation.bind(this);
         this.handleDialogClose = this.handleDialogClose.bind(this);
+    }
+
+    /* istanbul ignore next */
+    componentDidMount(){
+        get("api/travels?user=luisa").then(
+            data => {
+                console.log(data)
+                this.setState({travels: data})
+            }
+        ).catch((err) => {
+            console.log(err)
+        })
+    }
+
+    addTask(t){
+        this.setState(prevState => {
+            const travels = prevState.travels.concat(t);
+            return {
+                travels
+            }
+        })
     }
 
     handleCardDelete(key) {
@@ -43,20 +61,34 @@ class TravelList extends React.Component {
         this.setState({ deleteConfirmationDialogOpen: false });
     }
 
+      
+    /* istanbul ignore next */
     handleDeleteCardConfirmation() {
-        this.setState(prevState => {
-            const travels = prevState.travels.filter(item => item.key !== this.state.currentCardDelete);
-            return {
-                travels
-            }
-        }, this.handleDialogClose);
+        console.log(this.state.currentCardDelete)
+        if(this.state.currentCardDelete < this.state.travels.length && this.state.currentCardDelete > 0){
+            let currentTravel = this.state.travels[this.state.currentCardDelete];
+            deleteRequest("api/travels?travelId="+2).then(
+                data=> {
+                    console.log(data);
+                    this.setState(prevState => {
+                        const travels = prevState.travels.filter(item => item.travelId !== data.travelId);
+                        return {
+                            travels
+                        }
+                    }, this.handleDialogClose);
+                }
+            ).catch((err)=>{
+                console.log(err);
+            });
+        }
+        
     }
 
     render() {
         const renderTravels = this.state.travels.map((value, index) => {
             value.key = index;
             return (
-                <TravelCard key={index} keyName={index} name={value.name} place={value.place} date={value.date} onDelete={this.onCardDelete} onCardDelete={this.handleCardDelete}>
+                <TravelCard key={index} keyName={index} travel={value} onDelete={this.onCardDelete} onCardDelete={this.handleCardDelete}>
                 </TravelCard>
             );
         })

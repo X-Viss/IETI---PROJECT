@@ -52,7 +52,7 @@ class ButtonsMenu extends React.Component {
                         <Button
                             variant="contained"
                             className={classes.button}
-                            startIcon={<AddToPhotos style={{color: 'white'}}/>}
+                            startIcon={<AddToPhotos />}
                             size="large"
                         >
                             Añadir viaje
