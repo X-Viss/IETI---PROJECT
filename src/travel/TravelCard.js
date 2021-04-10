@@ -7,7 +7,9 @@ import { format } from "date-fns";
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Grid, withStyles } from '@material-ui/core';
 const styles = (theme) => ({
-
+    tipo: {
+        color:"white"
+    }
 });
 class TravelCard extends React.Component {
     constructor(props) {
@@ -26,7 +28,7 @@ class TravelCard extends React.Component {
 
     render() {
         const bull = <span className="bullet">•</span>;
-
+        const { classes } = this.props;
         return (
             <div style={{ display: "flex" }}>
                 <Button id="travelButton" variant="outlined" fullWidth={true} className="cardButton" onClick={this.handleTravelClick}>
@@ -41,18 +43,16 @@ class TravelCard extends React.Component {
                                 </div>
                             </Grid>
 
-                            <Grid ite>
-                                <Typography variant="h5" component="h2">
-                                    {this.props.name}
+                            <Grid ite justify="center" className={classes.tipo}>
+                                <Typography variant="h2">
+                                    {this.props.travel.title}
                                 </Typography>
 
-                                <Typography className="pos">
-
-
-                                    Destino: {this.props.place}
+                                <Typography variant="h5">
+                                    Destino: {this.props.travel.lugar}
                                 </Typography>
-                                <Typography variant="body2" component="p">
-                                    Fecha de viaje: {format(this.props.date, 'yyyy-MM-dd')}
+                                <Typography variant="h5">
+                                    Fecha de viaje: {this.props.travel.dueDate}
                                 </Typography>
                             </Grid>
                         </Grid>
