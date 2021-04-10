@@ -8,7 +8,10 @@ function ImageBanner(props) {
                 <div className="hero-text">
                     <h1 style={{fontSize: "50px"}}>{props.title}</h1>
                     <p>{props.description}</p>
-                    <button>{props.textButton}</button>
+                    <button onClick={event => {
+                        event.preventDefault();
+                        window.location.href = "/login"
+                    }}>{props.textButton}</button>
                 </div>
             </div>
         </div>

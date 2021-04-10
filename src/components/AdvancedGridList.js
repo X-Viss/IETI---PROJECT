@@ -33,14 +33,18 @@ export default function AdvancedGridList(props) {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <Typography variant="h3" gutterBottom style={{color: '#222A4F'}}>
+        <div className={classes.root} style={{backgroundColor: "#F4F4F4"}}>
+            <Typography variant="h3" gutterBottom style={{color: '#222A4F'}} onClick={event => {
+                event.preventDefault();
+                window.location.href = props.href
+            }}>
                 {props.title}
             </Typography>
-            <GridList cellHeight={200} spacing={1} cols={props.numcols ? props.numcols : 2} className={classes.gridList}>
+            <GridList cellHeight={200} spacing={1} cols={props.numcols ? props.numcols : 2}
+                      className={classes.gridList}>
                 {props.tileData.map((tile) => (
-                    <GridListTile key={tile.img} cols={tile.featured} >
-                        <BannerGrid tile={tile} classes = {classes}/>
+                    <GridListTile key={tile.img} cols={tile.featured}>
+                        <BannerGrid tile={tile} classes={classes}/>
                     </GridListTile>
                 ))}
             </GridList>

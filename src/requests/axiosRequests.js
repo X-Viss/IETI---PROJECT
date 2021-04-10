@@ -6,9 +6,9 @@ var instance = axios.create({
 });
 
 
-export const get = (path, data, params) => {
+export const get = (path, params) => {
     return new Promise((resolve, reject) => {
-        instance.get(path, data, params)
+        instance.get(path, params)
             .then(res => {
                 resolve(res.data);
             }).catch(err => {
@@ -21,7 +21,6 @@ export const post = (path, data, params) => {
     return new Promise((resolve, reject) => {
         instance.post(path, data, params)
             .then(res => {
-                console.log(res)
                 resolve(res.data);
             }).catch(err => {
                 reject(err)

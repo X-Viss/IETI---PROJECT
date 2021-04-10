@@ -34,14 +34,17 @@ export default function SingleLineGridList(props) {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <Typography variant="h4" gutterBottom style={{color: 'black'}}>
+        <div className={classes.root} style={{backgroundColor:"#F4F4F4"}}>
+            <Typography variant="h3" gutterBottom style={{color: '#222A4F'}} onClick={event => {
+                event.preventDefault();
+                window.location.href = "/tiposviajes"
+            }}>
                 {props.title}
             </Typography>
             <GridList className={classes.gridList} cols={2.5}>
                 {props.tileData.map((tile) => (
                     <GridListTile key={tile.img}>
-                        <BannerGrid tile={tile} classes = {classes}/>
+                        <BannerGrid tile={tile} classes = {classes} href={props.href}/>
 
                     </GridListTile>
                 ))}
