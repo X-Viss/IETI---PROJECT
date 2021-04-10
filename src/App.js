@@ -9,7 +9,10 @@ import { EditUserForm } from './form/edit';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import ProtectedRoute from './tests/common/PrivateRoute';
-
+import Inicio from "./inicio/Inicio";
+import Lugares from "./lugares/lugares";
+import Tiposviajes from "./tiposviajes/tiposviajes";
+import Statisctics from "./statisctics/statisctics";
 
 function App() {
 
