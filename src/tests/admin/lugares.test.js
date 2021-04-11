@@ -20,6 +20,6 @@ it("Renderiza vista lugares", () => {
         render(<Lugares/>, container);
     });
 
-    const linkElement = screen.getByText(/"Conoce más sobre..."/i);
+    const linkElement = screen.getByText(/Conoce más sobre.../i);
     expect(linkElement).toBeInTheDocument();
 });

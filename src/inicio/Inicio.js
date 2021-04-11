@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import SingleLineGridList from "../components/SingleLineGridList";
 import AdvancedGridList from "../components/AdvancedGridList";
 import ImageBanner from "../components/ImageBanner";
-import {datatest} from "../tmp/datamock";
 import {get} from "../requests/axiosRequests";
+
 
 class Inicio extends Component {
 
@@ -12,6 +12,7 @@ class Inicio extends Component {
         this.state = {tileData: [], tileData2: []};
     }
 
+    /* istanbul ignore next */
     componentDidMount() {
         get("/Locations").then(value => {
             this.setState({

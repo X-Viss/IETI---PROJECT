@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         color: 'rgba(255, 255, 255, 0.54)',
     },
 }));
-
+/* istanbul ignore next */
 export default function SingleLineGridList(props) {
     const classes = useStyles();
 

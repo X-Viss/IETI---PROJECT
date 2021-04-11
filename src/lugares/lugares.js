@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import SingleLineGridList from "../components/SingleLineGridList";
 import AdvancedGridList from "../components/AdvancedGridList";
 import BasicCard from "../components/BasicCard";
-import {datatest2} from "../tmp/datamock";
 import {get} from "../requests/axiosRequests";
 
 class Lugares extends Component {
@@ -10,7 +9,7 @@ class Lugares extends Component {
         super();
         this.state = {tileData: [], namesite: "", location: "", description: "", tileData2: []};
     }
-
+    /* istanbul ignore next */
     componentDidMount() {
         get("/Locations/" + this.props.title).then(value => {
             console.log(value)

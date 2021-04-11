@@ -1,6 +1,6 @@
 import React from 'react';
 import './ImageBanner.css';
-
+/* istanbul ignore next */
 function ImageBanner(props) {
     return (
         <div style={{height: 400}}>

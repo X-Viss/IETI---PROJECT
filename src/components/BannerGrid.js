@@ -2,7 +2,7 @@ import React from 'react';
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
-
+/* istanbul ignore next */
 function BannerGrid(props) {
     return (
         <div>
@@ -15,7 +15,7 @@ function BannerGrid(props) {
                         <IconButton aria-label={`info about ${props.tile.title}`} className={props.classes.icon}
                                     onClick={event => {
                                         event.preventDefault();
-                                        window.location.href = "/lugares/"+props.tile.title
+                                        window.location.href = props.href + "/" + props.tile.title
                                     }}>
                             <InfoIcon/>
                         </IconButton>

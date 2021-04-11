@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
         color: 'rgba(255, 255, 255, 0.54)',
     },
 }));
-
+/* istanbul ignore next */
 export default function AdvancedGridList(props) {
     const classes = useStyles();
 
@@ -44,7 +44,7 @@ export default function AdvancedGridList(props) {
                       className={classes.gridList}>
                 {props.tileData.map((tile) => (
                     <GridListTile key={tile.img} cols={tile.featured}>
-                        <BannerGrid tile={tile} classes={classes}/>
+                        <BannerGrid tile={tile} classes={classes} href={props.href}/>
                     </GridListTile>
                 ))}
             </GridList>

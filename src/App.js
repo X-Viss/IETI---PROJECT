@@ -5,13 +5,16 @@ import Tiposviajes from "./tiposviajes/tiposviajes";
 import Statisctics from "./statisctics/statisctics";
 import {BrowserRouter as Router, Route, Switch, useParams} from "react-router-dom";
 import {LoginForm, RegisterForm} from './form/components';
-import {Travels} from './travel';
 import {NotFoundForm} from './form/404';
 import Main from './seleccionarClima/decoracionMain'
-import {EditUserForm} from './form/edit';
-import TravelCard from "./travel/TravelCard";
+import {Travels} from "./travel";
+import ProtectedRoute from './common/ProtectedRoute';
+import {EditUserForm} from "./form/edit";
+import {useState} from "react";
 
 function App() {
+    const [loggedIn, setLoggedIn] = useState(window.sessionStorage.getItem("token")!=null);
+    /* istanbul ignore next */
     return (
         <div className="App">
             <Router>
@@ -22,11 +25,13 @@ function App() {
                     <Route exact path="/statisctics"><Statisctics/></Route>
                     <Route exact path="/registro"><RegisterForm/></Route>
                     <Route exact path="/login"><LoginForm/></Route>
-                    <Route exact path="/travelList"><Travels/></Route>
-                    <Route exact path="/categorias"><Main/></Route>
-                    <Route exact path="/editUser"><EditUserForm/></Route>
-                    <Route exact path="/editUser"><TravelCard/></Route>
-                    <Route path={"/lugares/:lugar"} children={<Child />}/>
+                    <Route exact path="/create"><Main/></Route>
+                    <Route path={"/lugares/:lugar"} children={<Child/>}/>
+                    <Route path={"/tiposviajes/:viaje"} children={<Child/>}/>
+                    <ProtectedRoute exact isAuthenticated={loggedIn} path="/travelList" component={() => (<Travels/>)} />
+                    <ProtectedRoute exact isAuthenticated={loggedIn} path="/categorias" component={() => (<Main/>)} />
+                    <ProtectedRoute exact isAuthenticated={loggedIn} path="/editUser" component={() => (<EditUserForm />)} />
+
                     <Route><NotFoundForm/></Route>
                 </Switch>
             </Router>
@@ -34,12 +39,18 @@ function App() {
     );
 }
 
+/* istanbul ignore next */
 function Child() {
-    let {lugar} = useParams();
-
-    return (
-        <Lugares title={lugar} />
-    );
+    let {lugar, viaje} = useParams();
+    if (lugar) {
+        return (
+            <Lugares title={lugar}/>
+        );
+    } else if (viaje) {
+        return (
+            <Tiposviajes title={viaje}/>
+        );
+    }
+    return "";
 }
-
 export default App;
