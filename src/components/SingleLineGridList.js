@@ -37,7 +37,7 @@ export default function SingleLineGridList(props) {
         <div className={classes.root} style={{backgroundColor:"#F4F4F4"}}>
             <Typography variant="h3" gutterBottom style={{color: '#222A4F'}} onClick={event => {
                 event.preventDefault();
-                window.location.href = "/tiposviajes"
+                window.location.href = props.href
             }}>
                 {props.title}
             </Typography>

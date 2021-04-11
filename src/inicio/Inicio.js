@@ -14,14 +14,18 @@ class Inicio extends Component {
 
     componentDidMount() {
         get("/Locations").then(value => {
-            console.log(value)
             this.setState({
                 tileData: value.slice(0, 12).map(item => {
                     return item.image
                 })
-            }, () => {
-                console.log(this.state.tileData)
-                console.log(datatest)
+            })
+        })
+
+        get("/Trips").then(value => {
+            this.setState({
+                tileData2: value.slice(0, 8).map(item => {
+                    return item.image
+                })
             })
         })
     }
@@ -35,7 +39,7 @@ class Inicio extends Component {
                     <br/><br/><br/>
                     <AdvancedGridList tileData={this.state.tileData} title={"Inspirate"} numcols={4} href={"/lugares"}/>
                     <br/><br/><br/>
-                    <SingleLineGridList tileData={datatest} title={"Tipo de viaje"} href={"/tiposviajes"}/>
+                    <SingleLineGridList tileData={this.state.tileData2} title={"Tipo de viaje"} href={"/tiposviajes"}/>
                 </div>
             </div>
         );
