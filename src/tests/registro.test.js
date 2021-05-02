@@ -3,10 +3,11 @@ import { createRender } from '@material-ui/core/test-utils';
 import { itemsForRegisterForm, RegisterForm } from '../form/components';
 import { ArticleForForm, MapArticles } from '../form/articles';
 import App from '../App';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 it('The register renders', () => {
-  shallow(<RegisterForm />)
+  shallow(<Router><RegisterForm /></Router>)
 })
 
 it('The register renders items', () => {
@@ -15,7 +16,7 @@ it('The register renders items', () => {
 })
 
 it('calls register click event not do noting', () => {
-  const wrapper = mount(<RegisterForm />);
+  const wrapper = mount(<Router><RegisterForm /></Router> );
   wrapper.find('button').at(0).simulate('click');
   const vari = wrapper.find('button').at(0).simulate('click');
   expect(vari).toEqual({});
@@ -29,12 +30,12 @@ describe('<RegisterForm />', () => {
   });
 
   it('should work', () => {
-    render(<RegisterForm />);
+    render(<Router><RegisterForm /></Router>);
   });
 });
 
 it('calls click register event', () => {
-  const wrapper = mount(<RegisterForm />);
+  const wrapper = mount(<Router><RegisterForm /></Router>);
   wrapper.find('input[name="correo"]').simulate('change',{currentTarget:{value:'algo@algo.com'}})
   wrapper.find('form').simulate('submit')
   expect(wrapper.find('input[name="correo"]').instance().value).toEqual('');

@@ -1,8 +1,10 @@
 import axios from 'axios';
 
-
+const URL = 'http://localhost:8080/';
+var token = window.sessionStorage.getItem("token");
 var instance = axios.create({
-    baseURL: 'http://localhost:8080/',
+    baseURL: URL,
+    headers: { 'Authorization': 'Bearer ' + token}
 });
 
 
@@ -49,4 +51,20 @@ export const deleteRequest = (path, data, params) => {
                 reject(err)
             });
     });
+}
+
+
+
+export const jwtRequest = (user)=>{
+    post("auth", user).then(data=>{
+        console.log(data);
+        window.sessionStorage.setItem("token", data.accessToken);
+        localStorage.setItem("loggedIn", true);
+        instance = axios.create({
+            baseURL: URL,
+            headers: { 'Authorization': 'Bearer ' + data.accessToken }
+        });
+    }).catch((err) =>{
+        console.log(err);        
+    })
 }
