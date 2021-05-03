@@ -13,6 +13,7 @@ import Inicio from "./inicio/Inicio";
 import Lugares from "./lugares/lugares";
 import Tiposviajes from "./tiposviajes/tiposviajes";
 import Statisctics from "./statisctics/statisctics";
+import { Form } from 'semantic-ui-react';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/statisctics"><Statisctics/></Route>
           <Route exact path="/registro" ><RegisterForm /></Route>
           <Route exact path="/login" ><LoginForm /></Route>
+          <Route exact path="/create" ><Main/></Route>
           
           <ProtectedRoute exact isAuthenticated={loggedIn} path="/travelList" component={() => (<Travels/>)} />
           <ProtectedRoute exact isAuthenticated={loggedIn} path="/categorias" component={() => (<Main/>)} />

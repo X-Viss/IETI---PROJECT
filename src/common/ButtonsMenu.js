@@ -1,9 +1,8 @@
-import { Button, CardMedia, Grid } from '@material-ui/core';
+import { Button , Grid} from '@material-ui/core';
 import React from 'react';
-import logo from './logo.jpg';
 import { withStyles } from '@material-ui/core/styles';
 import { AddToPhotos, QuestionAnswer } from '@material-ui/icons';
-import Tooltip from '@material-ui/core/Tooltip';
+import { Link } from 'react-router-dom';
 
 const styles = (theme) => ({
     root: {
@@ -37,32 +36,37 @@ class ButtonsMenu extends React.Component {
                     justify="center"
                 >
                     <Grid item>
-                        <Button
-                            variant="contained"
-                            className={classes.button}
-                            startIcon={<QuestionAnswer />}
-                            size="large"
-                        >
-                            Preguntas Frecuentes
+                        <Link to="/listQuestions">
+                            <Button
+                                variant="contained"
+                                className={classes.button}
+                                startIcon={<QuestionAnswer />}
+                                size="large"
+                            >
+                                Preguntas Frecuentes
                         </Button>
+                        </Link>
                     </Grid>
 
 
                     <Grid item>
-                        <Button
-                            variant="contained"
-                            className={classes.button}
-                            startIcon={<AddToPhotos />}
-                            size="large"
-                        >
-                            Añadir viaje
-                    </Button>
+                        <Link to="/create">
+                            <Button
+                                variant="contained"
+                                className={classes.button}
+                                startIcon={<AddToPhotos />}
+                                size="large"
+                            >
+                                Añadir viaje
+                            </Button>
+                        </Link>
+                        
                     </Grid>
 
 
-                </Grid>
+                </Grid >
 
-            </div>
+            </div >
         )
     }
 }
