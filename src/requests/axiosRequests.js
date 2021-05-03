@@ -64,6 +64,7 @@ export const jwtRequest = (user)=>{
             baseURL: URL,
             headers: { 'Authorization': 'Bearer ' + data.accessToken }
         });
+        sessionStorage.setItem('username', user.userName);
     }).catch((err) =>{
         console.log(err);        
     })
