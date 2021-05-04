@@ -33,6 +33,7 @@ export const post = (path, data, params) => {
 
 export const put = (path, data, params) => {
     return new Promise((resolve, reject) => {
+        console.log(data);
         instance.put(path, data, params)
             .then(res => {
                 resolve(res.data);

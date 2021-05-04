@@ -1,9 +1,16 @@
 import React from 'react';
-import {SeleccionarClima} from './SeleccionarClima';
-import {SeleccionarViajero} from './seleccionarViajero';
-import {SeleccionarDestino} from './SeleccionarDestino'
-import {SeleccionarCategoria} from './SeleccionarPorCategoria'
+import { SeleccionarClima } from './SeleccionarClima';
+import { SeleccionarViajero } from './seleccionarViajero';
+import { SeleccionarDestino } from './SeleccionarDestino'
+import { SeleccionarCategoria } from './SeleccionarPorCategoria'
 import { withStyles } from '@material-ui/core/styles';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { post, put } from '../requests/axiosRequests.js';
+import { countryList, weatherListImages, rolListImages } from './Ui';
 
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
@@ -14,8 +21,9 @@ const styles = (theme) => ({
     root: {
         verticalAlign: "baseline",
         position: "relative",
-        padding: theme.spacing(2),
-        height: "100%"
+        padding: theme.spacing(3),
+        height: "100%",
+        width: '100%',
     },
     down: {
         height: "70%",
@@ -29,18 +37,22 @@ const styles = (theme) => ({
     travelList: {
         width: "inherit",
     },
-
-    upperDiv: {
-
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+        color: 'black'
     }
 });
 
 class Main extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state = {viajero: [], clima: [], pais: "", accesorios: [], ropa: [],
-                      aseo: [], medicina: [], aLaMano: [], compras: [], varios: []}
+        this.state = {
+            id: "", viajero: [], clima: [], pais: "", accesorios: [], ropa: [],
+            aseo: [], medicina: [], aLaMano: [], compras: [], varios: [], accesoriesList: [],
+            cleannessList: [], clothesList: [], healthList: [], onHandList: []
+        }
         this.guardarViajero = this.guardarViajero.bind(this)
         this.guardarClima = this.guardarClima.bind(this)
         this.guardarDestino = this.guardarDestino.bind(this)
@@ -53,169 +65,295 @@ class Main extends React.Component {
         this.guardarVarios = this.guardarVarios.bind(this)
     }
 
-    guardarALaMano(data){
+    guardarALaMano(data) {
         this.setState({
             aLaMano: data
         })
+        put('api/create/category/onhand?id=' + this.state.id, data)
+            .then(res => {
+                alert("Guardado con exito")
+                console.log(res)
+
+            }).catch(res => {
+                console.log("No actualizo")
+                console.log(res)
+            })
     }
 
-    guardarAccesorios(list){
+    guardarAccesorios(data) {
         this.setState({
-            accesorios: list
+            accesorios: data
         })
+        put('api/create/category/accessories?id=' + this.state.id, data)
+            .then(res => {
+                alert("Guardado con exito")
+                console.log(res)
+            }).catch(res => {
+                console.log("No actualizo")
+                console.log(res)
+            })
     }
 
-    guardarAseo(data){
+    guardarAseo(data) {
         this.setState({
             aseo: data
         })
+        put('api/create/category/cleanliness?id=' + this.state.id, data)
+            .then(res => {
+                alert("Guardado con exito")
+                console.log(res)
+            }).catch(res => {
+                console.log("No actualizo")
+                console.log(res)
+            })
     }
-    guardarClima(data){
+
+    guardarClima(data) {
         this.setState({
             clima: data
         })
+        put('api/create/weather?id=' + this.state.id, data)
+            .then(res => {
+                console.log(res);
+                var accesories = []
+                var cleanness = []
+                var clothes = []
+                var health = []
+                var onHand = []
+
+                res.accesoriesList.forEach((element)=> {
+                    accesories.push({
+                        path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
+                        name: element,
+                        check: false,
+                    })
+                    this.setState({accesoriesList: accesories});  
+                })
+                res.cleannessList.forEach((element)=> {
+                    cleanness.push({
+                        path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
+                        name: element,
+                        check: false,
+                    })
+                    this.setState({ cleannessList: cleanness });
+                })
+                res.clothesList.forEach((element)=> {
+                    clothes.push({
+                        path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
+                        name: element,
+                        check: false,
+                    })
+                    this.setState({ clothesList: clothes });
+                })
+                res.healthList.forEach((element)=> {
+                    health.push({
+                        path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
+                        name: element,
+                        check: false,
+                    })
+                    this.setState({ healthList: health });
+                })
+                res.onHandList.forEach((element) => {
+                    onHand.push({
+                        path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
+                        name: element,
+                        check: false,
+                    })
+                    this.setState({ onHandList: onHand });
+                })
+                alert("Guardado con exito")
+            }).catch(res => {
+                console.log("No actualizo")
+                console.log(res)
+            })
     }
 
-    guardarCompras(data){
+    guardarCompras(data) {
         this.setState({
             compras: data
         })
+        put('api/create/category/shopping?id=' + this.state.id, data)
+            .then(res => {
+                alert("Guardado con exito")
+                console.log(res)
+            }).catch(res => {
+                console.log("No actualizo")
+                console.log(res)
+            })
     }
 
-    guardarMedicina(data){
+    guardarMedicina(data) {
         this.setState({
             medicina: data
         })
+        put('api/create/category/medicine?id=' + this.state.id, data)
+            .then(res => {
+                alert("Guardado con exito")
+                console.log(res)
+            }).catch(res => {
+                console.log("No actualizo")
+                console.log(res)
+            })
     }
 
-    guardarDestino(data){
+    guardarDestino(data) {
         this.setState({
             pais: data
         })
+        put('api/create/destiny?id='+this.state.id, { country: data })
+            .then(res => {
+                alert("Guardado con exito")
+                console.log(res)
+            }).catch(res => {
+                console.log("No actualizo")
+                console.log(res)
+            })
     }
 
-    guardarRopa(data){
+    guardarRopa(data) {
         this.setState({
             ropa: data
         })
+        put('api/create/category/clothes?id=' + this.state.id, data)
+            .then(res => {
+                alert("Guardado con exito")
+                console.log(res)
+            }).catch(res => {
+                console.log("No actualizo")
+                console.log(res)
+            })
     }
 
-    guardarVarios(data){
+    guardarVarios(data) {
         this.setState({
             varios: data
         })
+        put('api/create/category/several?id=' + this.state.id, data)
+            .then(res => {
+                alert("Guardado con exito")
+                console.log(res)
+            }).catch(res => {
+                console.log("No actualizo")
+                console.log(res)
+            })
     }
 
-    guardarViajero(data){
+    guardarViajero(data) {
         this.setState({
             viajero: data
         })
+        post('api/create/rol', data)
+            .then(
+                res => {
+                    this.setState({ id: res })
+                    console.log(res)
+                    console.log(this.state.id)
+                }
+            ).catch((err) => {
+                console.log(err)
+            })   
     }
     render() {
-        let imgs = [
-            {
-                path: 'https://i.ibb.co/6JRjSwT/mascotas.jpg',
-                name: "Viaje con mascotas",
-                check: false,
-            },
-            {
-                path: 'https://i.ibb.co/dKFjmSv/mochilero.jpg',
-                name: "Viaje como Mochilero",
-                check: false,
-            },
-            {
-                path: 'https://i.ibb.co/3mJhzz1/parejas.jpg',
-                name: "Viaje en pareja",
-                check: false,
-
-            },
-            {
-                path: 'https://i.ibb.co/vdJ8ZQc/turistas.jpg',
-                name: "Viaje como turista",
-                check: false,
-            },
-            {
-                path: 'https://i.ibb.co/88ckWqL/viaje-De-Negocios.jpg',
-                name: "Viaje de trabajo",
-                check: false,
-            }
-
-        ];
-
-        let imgs2 = [
-            {
-                path : 'https://i.ibb.co/ssC1Wz1/KONICA-MINOLTA-DIGITAL-CAMERA.jpg',
-                name : "Invierno",
-                check: false
-
-            },
-            {
-                path: 'https://i.ibb.co/XsY2PSt/oto-o.jpg',
-                name: "Otoño",
-                check: false
-            },
-            {
-                path: 'https://i.ibb.co/rQ6K4Pp/primavera.jpg',
-                name: "Primavera",
-                check: false
-            
-            },
-            {
-                path: 'https://i.ibb.co/8BHqHSC/verano.jpg',
-                name: "Verano",
-                check: false
-            }
-        ];
-
-        let data = [
-            { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' },
-            { key: 'ax', value: 'ax', flag: 'ax', text: 'Aland Islands' },
-            { key: 'al', value: 'al', flag: 'al', text: 'Albania' },
-            { key: 'dz', value: 'dz', flag: 'dz', text: 'Algeria' },
-            { key: 'as', value: 'as', flag: 'as', text: 'American Samoa' },
-            { key: 'ad', value: 'ad', flag: 'ad', text: 'Andorra' },
-            { key: 'ao', value: 'ao', flag: 'ao', text: 'Angola' },
-            { key: 'ai', value: 'ai', flag: 'ai', text: 'Anguilla' },
-            { key: 'ag', value: 'ag', flag: 'ag', text: 'Antigua' },
-            { key: 'ar', value: 'ar', flag: 'ar', text: 'Argentina' },
-            { key: 'am', value: 'am', flag: 'am', text: 'Armenia' },
-            { key: 'aw', value: 'aw', flag: 'aw', text: 'Aruba' },
-            { key: 'au', value: 'au', flag: 'au', text: 'Australia' },
-            { key: 'at', value: 'at', flag: 'at', text: 'Austria' },
-            { key: 'az', value: 'az', flag: 'az', text: 'Azerbaijan' },
-            { key: 'bs', value: 'bs', flag: 'bs', text: 'Bahamas' },
-            { key: 'bh', value: 'bh', flag: 'bh', text: 'Bahrain' },
-            { key: 'bd', value: 'bd', flag: 'bd', text: 'Bangladesh' },
-            { key: 'bb', value: 'bb', flag: 'bb', text: 'Barbados' },
-            { key: 'by', value: 'by', flag: 'by', text: 'Belarus' },
-            { key: 'be', value: 'be', flag: 'be', text: 'Belgium' },
-            { key: 'bz', value: 'bz', flag: 'bz', text: 'Belize' },
-            { key: 'bj', value: 'bj', flag: 'bj', text: 'Benin' }
-        ]
-
+        let imgs = rolListImages;
+        let imgs2 = weatherListImages;
+        let data = countryList;
         const { classes } = this.props;
-
         return (
             <div className={classes.root} >
-                <SeleccionarViajero list={imgs} guardar={this.guardarViajero} id="checkBoxIdViajero"/>
-                <SeleccionarDestino pais={data} guardar={this.guardarDestino} />
-                <h1>Escoge el Clima</h1>
-                <SeleccionarClima list={imgs2} guardar={this.guardarClima} id="checkBoxId" />     
-                <h1>Accesorios</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarAccesorios}/>
-                <h1>A La Mano</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarALaMano}/>
-                <h1>Aseo</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarAseo}/>
-                <h1>Compras</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarCompras}/>
-                <h1>Medicina</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarMedicina}/>
-                <h1>Ropa</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarRopa}/>
-                <h1>Varios</h1>
-                <SeleccionarCategoria list={imgs} guardar={this.guardarVarios}/>           
-            </div>
+                <Accordion >
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography className={classes.heading} >Tipo de viajero</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails style={{ marginLeft: '35%', width: '100%', left: "50%" }}>
+                        <SeleccionarViajero list={imgs} guardar={this.guardarViajero} id="checkBoxIdViajero" />
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                    >
+                        <Typography className={classes.heading}>Selecciona tu destino</Typography>
+                    </AccordionSummary>
+                    <h1 style={{ marginLeft: '10%'}}>Seleciona tu destino</h1>
+                    <AccordionDetails style={{ marginLeft: '40%', width: '100%', left: "50%" }}>
+                        <SeleccionarDestino pais={data} guardar={this.guardarDestino} />
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel3a-content"
+                        id="panel3a-header"
+                    >
+                        <Typography className={classes.heading}>Selecciona el clima</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <h1>Escoge el Clima</h1><br></br>
+                        <SeleccionarClima list={imgs2} guardar={this.guardarClima} id="checkBoxId" />
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion >
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel4a-content"
+                        id="panel4a-header"
+                    >
+                        <Typography className={classes.heading}>Busca estos accesorios</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <h1>Accesorios</h1><br></br>
+                        <SeleccionarCategoria list={this.state.accesoriesList} guardar={this.guardarAccesorios} />
+                    </AccordionDetails>
+
+                    <AccordionSummary
+                        aria-controls="panel5a-content"
+                        id="panel5a-header"
+                    >
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <h1>A La Mano</h1><br></br>
+                        <SeleccionarCategoria list={this.state.onHandList} guardar={this.guardarALaMano} />
+                    </AccordionDetails>
+
+                    <AccordionSummary
+                        aria-controls="panel6a-content"
+                        id="panel6a-header"
+                    >
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <h1>Aseo</h1><br></br>
+                        <SeleccionarCategoria list={this.state.cleannessList} guardar={this.guardarAseo} />
+                    </AccordionDetails>
+
+                    <AccordionSummary
+                        aria-controls="panel7a-content"
+                        id="panel7a-header"
+                    >
+                    </AccordionSummary>
+
+                    <AccordionDetails>
+                        <h1>Medicina</h1><br></br>
+                        <SeleccionarCategoria list={this.state.healthList} guardar={this.guardarMedicina} />
+                    </AccordionDetails>
+
+                    <AccordionSummary
+                        aria-controls="panel8a-content"
+                        id="panel8a-header"
+                    >
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <h1>Ropa</h1><br></br>
+                        <SeleccionarCategoria list={this.state.clothesList} guardar={this.guardarRopa} />
+                    </AccordionDetails>
+
+                </Accordion>
+            </div >
         );
     }
 }

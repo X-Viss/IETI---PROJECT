@@ -25,7 +25,7 @@ export class SeleccionarDestino extends React.Component{
     render(){
         return(
             <div>
-                <h1>Seleciona tu destino</h1>
+                
                     <Dropdown
                         id="paisTemporal"
                         fluid
