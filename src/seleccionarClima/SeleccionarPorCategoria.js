@@ -13,7 +13,7 @@ export class SeleccionarCategoria extends React.Component {
 
   handleClave(e){
         e.preventDefault();
-        this.props.guardar(this.list)
+        this.props.guardar(this.props.list)
   }
 
   handleCheck(position){

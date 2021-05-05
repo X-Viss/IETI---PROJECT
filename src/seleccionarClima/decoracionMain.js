@@ -70,28 +70,15 @@ class Main extends React.Component {
             aLaMano: data
         })
         put('api/create/category/onhand?id=' + this.state.id, data)
-            .then(res => {
-                alert("Guardado con exito")
-                console.log(res)
-
-            }).catch(res => {
-                console.log("No actualizo")
-                console.log(res)
-            })
     }
 
     guardarAccesorios(data) {
         this.setState({
             accesorios: data
         })
+        console.log("ome llegue aca ome ave maria ome")
+        console.log(data)
         put('api/create/category/accessories?id=' + this.state.id, data)
-            .then(res => {
-                alert("Guardado con exito")
-                console.log(res)
-            }).catch(res => {
-                console.log("No actualizo")
-                console.log(res)
-            })
     }
 
     guardarAseo(data) {
@@ -99,13 +86,6 @@ class Main extends React.Component {
             aseo: data
         })
         put('api/create/category/cleanliness?id=' + this.state.id, data)
-            .then(res => {
-                alert("Guardado con exito")
-                console.log(res)
-            }).catch(res => {
-                console.log("No actualizo")
-                console.log(res)
-            })
     }
 
     guardarClima(data) {
@@ -162,9 +142,6 @@ class Main extends React.Component {
                     this.setState({ onHandList: onHand });
                 })
                 alert("Guardado con exito")
-            }).catch(res => {
-                console.log("No actualizo")
-                console.log(res)
             })
     }
 
@@ -173,13 +150,6 @@ class Main extends React.Component {
             compras: data
         })
         put('api/create/category/shopping?id=' + this.state.id, data)
-            .then(res => {
-                alert("Guardado con exito")
-                console.log(res)
-            }).catch(res => {
-                console.log("No actualizo")
-                console.log(res)
-            })
     }
 
     guardarMedicina(data) {
@@ -187,13 +157,6 @@ class Main extends React.Component {
             medicina: data
         })
         put('api/create/category/medicine?id=' + this.state.id, data)
-            .then(res => {
-                alert("Guardado con exito")
-                console.log(res)
-            }).catch(res => {
-                console.log("No actualizo")
-                console.log(res)
-            })
     }
 
     guardarDestino(data) {
@@ -201,13 +164,6 @@ class Main extends React.Component {
             pais: data
         })
         put('api/create/destiny?id='+this.state.id, { country: data })
-            .then(res => {
-                alert("Guardado con exito")
-                console.log(res)
-            }).catch(res => {
-                console.log("No actualizo")
-                console.log(res)
-            })
     }
 
     guardarRopa(data) {
@@ -215,13 +171,6 @@ class Main extends React.Component {
             ropa: data
         })
         put('api/create/category/clothes?id=' + this.state.id, data)
-            .then(res => {
-                alert("Guardado con exito")
-                console.log(res)
-            }).catch(res => {
-                console.log("No actualizo")
-                console.log(res)
-            })
     }
 
     guardarVarios(data) {
@@ -229,13 +178,6 @@ class Main extends React.Component {
             varios: data
         })
         put('api/create/category/several?id=' + this.state.id, data)
-            .then(res => {
-                alert("Guardado con exito")
-                console.log(res)
-            }).catch(res => {
-                console.log("No actualizo")
-                console.log(res)
-            })
     }
 
     guardarViajero(data) {
@@ -243,15 +185,7 @@ class Main extends React.Component {
             viajero: data
         })
         post('api/create/rol', data)
-            .then(
-                res => {
-                    this.setState({ id: res })
-                    console.log(res)
-                    console.log(this.state.id)
-                }
-            ).catch((err) => {
-                console.log(err)
-            })   
+            .then(res => {this.setState({ id: res }) }) 
     }
     render() {
         let imgs = rolListImages;
