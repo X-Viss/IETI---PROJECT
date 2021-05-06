@@ -7,6 +7,7 @@ import { mount } from 'enzyme';
 import {it, describe } from '@jest/globals';
 import { cleanup } from '@testing-library/react'
 import { SeleccionarCategoria } from '../../seleccionarClima/SeleccionarPorCategoria';
+import {TituloHora} from '../../seleccionarClima/TituloHora'
 
 describe("Main", () => {
     afterEach(cleanup)
@@ -96,6 +97,11 @@ describe("Main", () => {
         component.children().find('#guardar').at(0).simulate("click");
     });
 
+    it('deberia leer boton guardar en hora y titulo', () => {
+        const component = mount(<Main/>);
+        component.children().find('#tituloHora').at(0).simulate("click");
+    });
+
     it('deberia leer boton guardar cerrar en Viajero', () => {
         const component = mount(<Main/>);
         component.children().find('#cerrar').at(0).simulate("click");
@@ -104,6 +110,12 @@ describe("Main", () => {
     it('deberia leer boton abrir en Viajero', () => {
         const component = mount(<Main/>);
         component.children().find("#pais").at(0).simulate("click");
+    });
+
+    it('deberia leer boton abrir en TimpoHora', () => {
+        const component = mount(<TituloHora />);
+        component.find("#textoTitulo").at(0).simulate("change");
+        component.find("#fechaViaje").at(0).simulate("change");
     });
 
     it('deberia leer boton abrir en Viajero', () => {

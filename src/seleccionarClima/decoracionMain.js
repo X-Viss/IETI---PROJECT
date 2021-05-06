@@ -71,7 +71,7 @@ class Main extends React.Component {
         this.setState({
             aLaMano: data
         })
-        put('api/create/category/onhand?id=' + this.state.id, data)
+        put('api/create/category/onhand?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
     }
 
     guardarAccesorios(data) {
@@ -80,14 +80,14 @@ class Main extends React.Component {
         })
         console.log("ome llegue aca ome ave maria ome")
         console.log(data)
-        put('api/create/category/accessories?id=' + this.state.id, data)
+        put('api/create/category/accessories?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
     }
 
     guardarAseo(data) {
         this.setState({
             aseo: data
         })
-        put('api/create/category/cleanliness?id=' + this.state.id, data)
+        put('api/create/category/cleanliness?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
     }
 
     guardarClima(data) {
@@ -151,35 +151,35 @@ class Main extends React.Component {
         this.setState({
             compras: data
         })
-        put('api/create/category/shopping?id=' + this.state.id, data)
+        put('api/create/category/shopping?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
     }
 
     guardarMedicina(data) {
         this.setState({
             medicina: data
         })
-        put('api/create/category/medicine?id=' + this.state.id, data)
+        put('api/create/category/medicine?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
     }
 
     guardarDestino(data) {
         this.setState({
             pais: data
         })
-        put('api/create/destiny?id='+this.state.id, { country: data })
+        put('api/create/destiny?id='+this.state.id, { country: data }).then(() =>{alert("Guardado con exito")})
     }
 
     guardarRopa(data) {
         this.setState({
             ropa: data
         })
-        put('api/create/category/clothes?id=' + this.state.id, data)
+        put('api/create/category/clothes?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
     }
 
     guardarVarios(data) {
         this.setState({
             varios: data
         })
-        put('api/create/category/several?id=' + this.state.id, data)
+        put('api/create/category/several?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
     }
 
     guardarViajero(data) {
@@ -187,7 +187,7 @@ class Main extends React.Component {
             viajero: data
         })
         post('api/create/rol?id='+this.state.id, data)
-            .then(res => {this.setState({ id: res }) }) 
+            .then(res => {this.setState({ id: res })} ) 
     }
 
     guardarTituloHora(tit, hor){
@@ -197,7 +197,7 @@ class Main extends React.Component {
         this.setState({
             hora: hor
         })
-        put('api/create/titlehour?id='+this.state.id, { title: tit, dueDate: hor})
+        put('api/create/titlehour?id='+this.state.id+'&title='+tit+'&date='+hor).then(() =>{alert("Guardado con exito")})
     }
     render() {
         let imgs = rolListImages;

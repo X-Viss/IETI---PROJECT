@@ -32,25 +32,22 @@ export class TituloHora extends React.Component{
     render(){
         return(
             <div>
-                <form>
-                    <h1 style={{ marginLeft: '10%'}}>Coloca un titulo a tu viaje!</h1>
-                    <TextField 
-                        id="outlined-basic"
-                        label="Outlined" variant="outlined"
-                        defaultValue="Jamaica bajo cero"
-                        onChange={this.handleTituloTemporal}
-                    />
-                    <h1 style={{ marginLeft: '10%'}}>Programalo ya!</h1>
-                    <TextField
-                        id="datetime-local"
-                        label="Next appointment"
-                        type="datetime-local"
-                        InputLabelProps={{
-                        shrink: true,
-                        }}
-                        onChange={this.handleHoraTemporal}
-                    />
-                </form>
+                <h1 style={{ marginLeft: '10%'}}>Coloca un titulo a tu viaje!</h1>
+                <TextField 
+                    id="textoTitulo"
+                    label="Titulo" variant="outlined"
+                    onChange={this.handleTituloTemporal}
+                />
+                <h1 style={{ marginLeft: '10%'}}>Programalo ya!</h1>
+                <TextField
+                    id="fechaViaje"
+                    label="Es hoy!!"
+                    type="datetime-local"
+                    InputLabelProps={{
+                    shrink: true,
+                    }}
+                    onChange={this.handleHoraTemporal}
+                /><br></br>
                 <Button
                     id="tituloHora"
                     type="submit"
