@@ -94,6 +94,7 @@ class Main extends React.Component {
         this.setState({
             clima: data
         })
+        /* istanbul ignore next */
         put('api/create/weather?id=' + this.state.id, data)
             .then(res => {
                 console.log(res);
@@ -186,8 +187,7 @@ class Main extends React.Component {
         this.setState({
             viajero: data
         })
-        post('api/create/rol?id='+this.state.id, data)
-            .then(res => {this.setState({ id: res })} ) 
+        post('api/create/rol?id='+this.state.id, data).then(res => {this.setState({ id: res })} ) 
     }
 
     guardarTituloHora(tit, hor){

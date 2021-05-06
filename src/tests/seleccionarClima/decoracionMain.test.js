@@ -112,17 +112,6 @@ describe("Main", () => {
         component.children().find("#pais").at(0).simulate("click");
     });
 
-    it('deberia leer boton abrir en TimpoHora', () => {
-        const component = mount(<TituloHora />);
-        component.find("#textoTitulo").at(0).simulate("change");
-        component.find("#fechaViaje").at(0).simulate("change");
-    });
-
-    it('deberia leer boton abrir en Viajero', () => {
-        const component = mount(<SeleccionarDestino pais={data}  />);
-        component.children().find("#paisTemporal").at(0).simulate("change");
-    });
-
     it('deberia leer boton abrir en Viajero', () => {
         const component = mount(<Main/>);
         component.children().find('#abrir').at(0).simulate("click");
@@ -132,6 +121,16 @@ describe("Main", () => {
         const component = mount(<Main />)
         component.children().find('#guardarCategoria').at(0).simulate("click");
     }) 
+
+    it('deberia leer boton abrir en TimpoHora', () => {
+        const component = mount(<TituloHora />);
+        const findTitle = component.find("#textoTitulo").at(0).simulate("change")
+    });
+
+    it('deberia leer boton abrir en Viajero', () => {
+        const component = mount(<SeleccionarDestino pais={data}  />);
+        component.children().find("#paisTemporal").at(0).simulate("change");
+    });
 
     it('Deberia dar click en checkbox en clima a true', () => {
         const component = mount(<SeleccionarClima list={imgs2} />)

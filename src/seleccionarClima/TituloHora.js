@@ -31,7 +31,7 @@ export class TituloHora extends React.Component{
 
     render(){
         return(
-            <div>
+            <div id="divTituloHora">
                 <h1 style={{ marginLeft: '10%'}}>Coloca un titulo a tu viaje!</h1>
                 <TextField 
                     id="textoTitulo"
