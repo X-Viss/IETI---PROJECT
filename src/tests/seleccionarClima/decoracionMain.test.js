@@ -100,6 +100,8 @@ describe("Main", () => {
     it('deberia leer boton guardar en hora y titulo', () => {
         const component = mount(<Main/>);
         component.children().find('#tituloHora').at(0).simulate("click");
+        component.children().find("#textoTitulo").at(0).simulate("change");
+        component.children().find("#fechaViaje").at(0).simulate("change");
     });
 
     it('deberia leer boton guardar cerrar en Viajero', () => {
@@ -121,11 +123,6 @@ describe("Main", () => {
         const component = mount(<Main />)
         component.children().find('#guardarCategoria').at(0).simulate("click");
     }) 
-
-    it('deberia leer boton abrir en TimpoHora', () => {
-        const component = mount(<TituloHora />);
-        const findTitle = component.find("#textoTitulo").at(0).simulate("change")
-    });
 
     it('deberia leer boton abrir en Viajero', () => {
         const component = mount(<SeleccionarDestino pais={data}  />);

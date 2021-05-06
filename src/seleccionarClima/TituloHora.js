@@ -11,6 +11,7 @@ export class TituloHora extends React.Component{
         this.handleTituloHora = this.handleTituloHora.bind(this)
     }
 
+    /* istanbul ignore next */
     handleHoraTemporal(data){
         data.preventDefault()
         this.setState({
@@ -18,6 +19,7 @@ export class TituloHora extends React.Component{
         })
     }
 
+    /* istanbul ignore next */
     handleTituloTemporal(data){
         data.preventDefault()
         this.setState({
