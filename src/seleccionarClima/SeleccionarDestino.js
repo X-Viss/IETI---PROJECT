@@ -25,25 +25,24 @@ export class SeleccionarDestino extends React.Component{
     render(){
         return(
             <div>
-                
-                    <Dropdown
-                        id="paisTemporal"
-                        fluid
-                        placeholder='¿A qué país te dirijes viajero?'
-                        search
-                        selection
-                        options={this.paises}
-                        onChange={this.handlePaisTemporal}
-                    />
-                    <Button
-                        id="pais"
-                        type="submit"
-                        variant="contained"
-                        color="primary"
-                        onClick={this.handlePais}
-                    >
-                        Guardar
-                    </Button><br/><br/>
+                <Dropdown
+                    id="paisTemporal"
+                    fluid
+                    placeholder='¿A qué país te dirijes viajero?'
+                    search
+                    selection
+                    options={this.paises}
+                    onChange={this.handlePaisTemporal}
+                />
+                <Button
+                    id="pais"
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    onClick={this.handlePais}
+                >
+                    Guardar
+                </Button><br/><br/>
             </div>
         )
     }

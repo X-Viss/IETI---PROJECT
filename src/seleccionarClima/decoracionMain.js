@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { post, put } from '../requests/axiosRequests.js';
 import { countryList, weatherListImages, rolListImages } from './Ui';
+import {TituloHora} from './TituloHora';
 
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
@@ -49,7 +50,7 @@ class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: "", viajero: [], clima: [], pais: "", accesorios: [], ropa: [],
+            id: "", viajero: [], clima: [], pais: "", accesorios: [], ropa: [], titulo: "", hora: "",
             aseo: [], medicina: [], aLaMano: [], compras: [], varios: [], accesoriesList: [],
             cleannessList: [], clothesList: [], healthList: [], onHandList: []
         }
@@ -63,6 +64,7 @@ class Main extends React.Component {
         this.guardarALaMano = this.guardarALaMano.bind(this)
         this.guardarCompras = this.guardarCompras.bind(this)
         this.guardarVarios = this.guardarVarios.bind(this)
+        this.guardarTituloHora = this.guardarTituloHora.bind(this)
     }
 
     guardarALaMano(data) {
@@ -184,8 +186,18 @@ class Main extends React.Component {
         this.setState({
             viajero: data
         })
-        post('api/create/rol', data)
+        post('api/create/rol?id='+this.state.id, data)
             .then(res => {this.setState({ id: res }) }) 
+    }
+
+    guardarTituloHora(tit, hor){
+        this.setState({
+            titulo: tit
+        })
+        this.setState({
+            hora: hor
+        })
+        put('api/create/titlehour?id='+this.state.id, { title: tit, dueDate: hor})
     }
     render() {
         let imgs = rolListImages;
@@ -204,6 +216,18 @@ class Main extends React.Component {
                     </AccordionSummary>
                     <AccordionDetails style={{ marginLeft: '35%', width: '100%', left: "50%" }}>
                         <SeleccionarViajero list={imgs} guardar={this.guardarViajero} id="checkBoxIdViajero" />
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion >
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel9a-header"
+                    >
+                        <Typography className={classes.heading} >Coloca un titulo y fecha a tu viaje</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails style={{ marginLeft: '35%', width: '100%', left: "50%" }}>
+                        <TituloHora guardar={this.guardarTituloHora} />
                     </AccordionDetails>
                 </Accordion>
                 <Accordion>
