@@ -9,8 +9,10 @@ test('renders buttons with text', () => {
         </Router>
     );
     const preguntas = screen.getByText(/Preguntas Frecuentes/i);
-    const anadir = screen.getByText(/Preguntas Frecuentes/i);
+    const anadir = screen.getByText(/Añadir Viaje/i);
+    const crear = screen.getByText(/Ver Mis Viajes/i);
 
     expect(preguntas).toBeInTheDocument();
     expect(anadir).toBeInTheDocument();
+    expect(crear).toBeInTheDocument();
 });

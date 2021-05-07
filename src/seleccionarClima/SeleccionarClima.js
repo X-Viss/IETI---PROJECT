@@ -37,7 +37,7 @@ export class SeleccionarClima extends React.Component {
                         <FormControlLabel
                             id="controlLabel"
                             control={<Checkbox id="checkBoxId" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
-                            label="Clic aqui"
+                            label="Clic aquí"
                             style={{color: "white"}}
                         />
                     }

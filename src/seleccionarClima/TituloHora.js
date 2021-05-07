@@ -34,13 +34,13 @@ export class TituloHora extends React.Component{
     render(){
         return(
             <div id="divTituloHora">
-                <h1 style={{ marginLeft: '10%'}}>Coloca un titulo a tu viaje!</h1>
+                <h1 style={{ marginLeft: '10%'}}>Coloca un título a tu viaje!</h1>
                 <TextField 
                     id="textoTitulo"
                     label="Titulo" variant="outlined"
                     onChange={this.handleTituloTemporal}
                 />
-                <h1 style={{ marginLeft: '10%'}}>Programalo ya!</h1>
+                <h1 style={{ marginLeft: '10%'}}>Prográmalo ya!</h1>
                 <TextField
                     id="fechaViaje"
                     label="Es hoy!!"

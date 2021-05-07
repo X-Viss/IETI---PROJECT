@@ -12,6 +12,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { post, put } from '../requests/axiosRequests.js';
 import { countryList, weatherListImages, rolListImages } from './Ui';
 import {TituloHora} from './TituloHora';
+import OptionsBoard from '../common/OptionsBoard';
+import { Grid } from '@material-ui/core';
 
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
@@ -42,6 +44,10 @@ const styles = (theme) => ({
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,
         color: 'black'
+    },
+    upperGrid:{
+        height: "15vh",
+        backgroundColor: "#222A4F",
     }
 });
 
@@ -206,6 +212,9 @@ class Main extends React.Component {
         const { classes } = this.props;
         return (
             <div className={classes.root} >
+                <Grid item xs alignItems="center" className={classes.upperGrid}>
+                    <OptionsBoard></OptionsBoard>
+                </Grid>
                 <Accordion >
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}

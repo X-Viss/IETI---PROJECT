@@ -30,7 +30,7 @@ export class GridListTileMio extends React.Component {
                         <FormControlLabel
                             id="control"
                             control={<Checkbox id="checkBox" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
-                            label="Clic aqui"
+                            label="Clic aquí"
                             style={{color: "white"}}
                         />
                     }
