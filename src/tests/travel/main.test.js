@@ -1,6 +1,7 @@
 import { createRender } from '@material-ui/core/test-utils';
 import { it, describe, beforeAll } from '@jest/globals';
-import Travels from '../../travel'
+import Travels from '../../travel';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 describe('<Travels />', () => {
     let render;
@@ -10,6 +11,10 @@ describe('<Travels />', () => {
     });
 
     it('should work', () => {
-        render(<Travels />);
+        render(
+            <Router>
+                <Travels/>
+            </Router>
+        );
     });
 });

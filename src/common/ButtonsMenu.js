@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { AddToPhotos, QuestionAnswer } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
+
 const styles = (theme) => ({
     root: {
 
@@ -50,19 +51,31 @@ class ButtonsMenu extends React.Component {
 
 
                     <Grid item>
-                        <Link to="/create">
+                        <Link to="/categorias">
                             <Button
                                 variant="contained"
                                 className={classes.button}
                                 startIcon={<AddToPhotos />}
                                 size="large"
                             >
-                                Añadir viaje
+                                Añadir Viaje
                             </Button>
                         </Link>
                         
                     </Grid>
 
+                    <Grid item>
+                        <Link to="/travelList">
+                            <Button
+                                variant="contained"
+                                className={classes.button}
+                                startIcon={<AddToPhotos />}
+                                size="large"
+                            >
+                                Ver Mis Viajes
+                        </Button>
+                        </Link>
+                    </Grid>
 
                 </Grid >
 
