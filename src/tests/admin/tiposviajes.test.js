@@ -20,6 +20,6 @@ it("Renderiza Vista Tipo de viajes", () => {
         render(<Tiposviajes/>, container);
     });
 
-    const linkElement = screen.getByText(/Glamping/i);
+    const linkElement = screen.getByText(/Conoce más/i);
     expect(linkElement).toBeInTheDocument();
 });
