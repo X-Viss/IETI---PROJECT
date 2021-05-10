@@ -3,6 +3,7 @@ import { createRender } from '@material-ui/core/test-utils';
 import { itemsForLoginForm, LoginForm } from '../form/components';
 import { ArticleForForm, MapArticles } from '../form/articles';
 import App from '../App';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 it('The app renders', () => {
@@ -10,7 +11,7 @@ it('The app renders', () => {
 })
 
 it('The login renders', () => {
-  shallow(<LoginForm />)
+  shallow(<Router><LoginForm /></Router> )
 })
 
 it('The login renders map', () => {
@@ -54,7 +55,7 @@ it('The login renders article not class', () => {
 })
 
 it('calls click event not do noting', () => {
-  const wrapper = mount(<LoginForm />);
+  const wrapper = mount(<Router><LoginForm /></Router>);
   wrapper.find('button').at(0).simulate('click');
   const vari = wrapper.find('button').at(0).simulate('click');
   expect(vari).toEqual({});
@@ -68,12 +69,12 @@ describe('<LoginForm />', () => {
   });
 
   it('should work', () => {
-    render(<LoginForm />);
+    render(<Router><LoginForm /></Router>);
   });
 });
 
 it('calls click event', () => {
-  const wrapper = mount(<LoginForm />);
+  const wrapper = mount(<Router><LoginForm /></Router>);
   wrapper.children().find('input[type="password"]').simulate('change', {target: {name: 'password', value: '123'}});
   wrapper.find('input[name="usuario"]').simulate('change',{currentTarget:{value:'algo@algo.com'}})
   wrapper.find('form').simulate('submit')

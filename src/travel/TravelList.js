@@ -34,7 +34,8 @@ class TravelList extends React.Component {
 
     /* istanbul ignore next */
     componentDidMount(){
-        get("api/travels?user=luisa").then(
+        let user = sessionStorage.getItem('username');
+        get("api/travels?user="+user).then(
             data => {
                 console.log(data)
                 this.setState({travels: data})
@@ -92,6 +93,7 @@ class TravelList extends React.Component {
                 </TravelCard>
             );
         })
+        
 
         const { classes }=this.props; 
         return (

@@ -3,6 +3,11 @@ import { MapArticles } from './articles'
 import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import './login.css';
+import { Link } from 'react-router-dom';
+import { jwtRequest, post } from '../requests/axiosRequests';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import CustomToast from '../common/CustomToast';
 
 export function itemsForRegisterForm() {
     const confirmPasswords = (event) => {
@@ -66,10 +71,43 @@ export function itemsForRegisterForm() {
 }
 
 export function RegisterForm(props) {
+
+    /* istanbul ignore next */
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(event.target.elements)
+        if(event.target[0] != undefined && event.target[1] != undefined){
+            let username = event.target[0].value;
+            let password = event.target[1].value;
+            console.log(username)
+            console.log(password)
+    
+            let user = {
+                "userName": username,
+                "password": password
+            }
+            console.log(user)
+            handleRegisterRequest(user);
+        }
+        
     }
+
+    /* istanbul ignore next */
+    const handleRegisterRequest = (user) => {
+        post("/subs", user).then(data => {
+            console.log(data)
+            toast.success("Usuario creado", {
+                toastId: "registerSuccess"
+            });
+        }).catch((err) => {
+            console.log(err);
+            toast.error("Error en la creación", {
+                toastId: "registerFailure"
+            });
+        });
+    }
+
+
     const items = itemsForRegisterForm()
     return <div className="container">
         <div className="sing-in">
@@ -77,61 +115,75 @@ export function RegisterForm(props) {
                 <form onSubmit={handleSubmit}>
                     <center>
                         <h1>Registro</h1>
-                        <p/>
+                        <p />
                         <MapArticles items={items} />
-                        <p/>
+                        <p />
                         <button type="submit" variant="contained">Submit</button>
-                        <p/><p/>
+                        <p /><p />
                     </center>
-                    <button type="submit" className="ghost">Ya tienes cuenta? Ingresa</button>
-                    </form>
-            </div>
-        </div>
-        <div className="overlay-container">
-            <div className="overlay overlay-right">
-            </div>
-	    </div>
-    </div>
-}
-
-export function itemsForLoginForm(){
-    return[
-        {
-            className:"",
-            item:<TextField label="Usuario" type="email" name="usuario" required={true}/>
-        },
-        {
-            className:"",
-            item:<TextField label="Contraseña" type="password" name="password" required={true}/>
-        }
-    ]
-}
-
-
-export function LoginForm(props){
-    const handleSubmit= (event)=>{
-        event.preventDefault()
-        console.log('submit')
-    }
-    return <div className="container">
-        <div className= "sing-in">
-            <div className="sign-in-container">
-                <form onSubmit={handleSubmit}>
-                    <center>
-                    <h1>Sign in</h1>
-                    <p/>
-                    <MapArticles items={itemsForLoginForm()}/>
-                    <p/>
-                    <button type="submit">Login</button>
-                    <p/><p/>
-                    </center>
-                    <button type="submit" className="ghost">No tienes cuenta? Registrate</button>
+                    <Link to="/login"><button type="button" className="ghost">Ya tienes cuenta? Ingresa</button></Link>
                 </form>
             </div>
         </div>
         <div className="overlay-container">
             <div className="overlay overlay-right">
             </div>
-	    </div>
+        </div>
+        <CustomToast/>
+    </div>
+}
+
+export function itemsForLoginForm() {
+    return [
+        {
+            className: "",
+            item: <TextField label="Usuario" type="email" name="usuario" required={true} />
+        },
+        {
+            className: "",
+            item: <TextField label="Contraseña" type="password" name="password" required={true} />
+        }
+    ]
+}
+
+
+export function LoginForm(props) {
+
+    /* istanbul ignore next */
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('submit');
+        if(event.target[0] != undefined && event.target[1] != undefined){
+            let username = event.target[0].value;
+            let password = event.target[1].value;
+            let user = {
+                "userName": username,
+                "password": password
+            }
+            jwtRequest(user);
+        }
+        
+    }
+    return <div className="container">
+        <div className="sing-in">
+            <div className="sign-in-container">
+                <form onSubmit={handleSubmit}>
+                    <center>
+                        <h1>Sign in</h1>
+                        <p />
+                        <MapArticles items={itemsForLoginForm()} />
+                        <p />
+                        <button type="submit">Login</button>
+                        <p /><p />
+                    </center>
+                    <Link to="/registro"><button type="button" className="ghost">No tienes cuenta? Registrate</button></Link>
+                </form>
+
+            </div>
+        </div>
+        <div className="overlay-container">
+            <div className="overlay overlay-right">
+            </div>
+        </div>
     </div>
 }

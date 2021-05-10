@@ -9,7 +9,7 @@ import GridList from '@material-ui/core/GridList';
 export class SeleccionarViajero extends React.Component {
     constructor(props){
         super(props)
-        this.state = { open: true, name: '', status: '', date: ''}
+        this.state = { open: false, name: '', status: '', date: ''}
         this.imgs = this.props.list
         this.id = this.props.id
         this.handleClave = this.handleClave.bind(this)
@@ -22,43 +22,42 @@ export class SeleccionarViajero extends React.Component {
     render(){
         return (
             <div>
-                <div style={{textAlign: 'center'}}>
-                    <Button id="abrir" type="button" onClick={this.handleOpen} variant="contained" color="primary">
-                        Hola viajero!, qué rol tomaras esta vez?
-                    </Button>
-                </div>
-            <form onSubmit={this.handleClave}>
-            <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                open={this.state.open}
-                style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                timeout: 500,
-                }}
-            >
-                <Fade in={this.state.open}>
-                <div style={{backgroundColor: 'white', border: '2px solid #000', textAlign: 'center'}}>
-                <GridList  style={{width: 1000, height: 500}} >
-                <h1>Escoge tu rol!</h1>
-                    <GridListTileMio id={this.id} list={this.imgs} enviar={this.handleCheck} width={500} height={300}
-                    style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}} cols={2}/>
-                </GridList>
-                    <Button
-                        id="cerrar"
-                        type="submit"
-                        variant="contained"
-                        color="primary"
-                        onClick={this.handleClose}
-                    >
-                        Apply
-                    </Button><br/><br/>
-                </div>
-                </Fade>
-            </Modal>
-            </form>
+                <h1 style={{width: '100%', height: '100px'}}>¿Cuál será tu nuevo rol?</h1>
+                <Button id="abrir" type="button" onClick={this.handleOpen} variant="contained" color="primary">
+                    Hola viajero!, qué rol tomaras esta vez?
+                </Button>
+                <form onSubmit={this.handleClave}>
+                <Modal
+                    aria-labelledby="transition-modal-title"
+                    aria-describedby="transition-modal-description"
+                    open={this.state.open}
+                    style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                    timeout: 500,
+                    }}
+                >
+                    <Fade in={this.state.open}>
+                    <div style={{backgroundColor: 'white', border: '2px solid #000', textAlign: 'center'}}>
+                    <GridList  style={{width: 900, height: 600}} >
+                    <h1 style={{width: '100%', height: '100px'}}>Escoge tu rol!</h1>
+                        <GridListTileMio id={this.id} list={this.imgs} enviar={this.handleCheck} width={500} height={300}
+                        style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', height: '300px', width: '900px'}} cols={2}/>
+                    </GridList>
+                        <Button
+                            id="cerrar"
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            onClick={this.handleClose}
+                        >
+                            Guardar
+                        </Button><br/><br/>
+                    </div>
+                    </Fade>
+                </Modal>
+                </form>
             </div>
         );
     }

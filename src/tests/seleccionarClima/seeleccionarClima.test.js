@@ -2,7 +2,6 @@ import {SeleccionarClima} from '../../seleccionarClima/SeleccionarClima';
 import Main from '../../seleccionarClima/decoracionMain'
 import { render, screen } from '@testing-library/react';
 import { Memory } from '@material-ui/icons';
-import { create } from "react-test-renderer";
 
 test('renders buttons with text', () => {
     let imgs2 = [

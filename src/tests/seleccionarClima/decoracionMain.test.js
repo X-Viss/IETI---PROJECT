@@ -7,6 +7,7 @@ import { mount } from 'enzyme';
 import {it, describe } from '@jest/globals';
 import { cleanup } from '@testing-library/react'
 import { SeleccionarCategoria } from '../../seleccionarClima/SeleccionarPorCategoria';
+import { BrowserRouter as Router } from "react-router-dom";
 
 describe("Main", () => {
     afterEach(cleanup)
@@ -92,34 +93,50 @@ describe("Main", () => {
     ];
 
     it('deberia leer boton guardar en Clima', () => {
-        const component = mount(<Main/>);
+        const component = mount(<Router><Main/></Router>);
         component.children().find('#guardar').at(0).simulate("click");
     });
 
+    it('deberia leer boton guardar en hora y titulo', () => {
+        const component = mount(<Router><Main/></Router>);
+        component.children().find('#tituloHora').at(0).simulate("click");
+        component.children().find("#textoTitulo").at(0).simulate("change");
+        component.children().find("#fechaViaje").at(0).simulate("change");
+    });
+
     it('deberia leer boton guardar cerrar en Viajero', () => {
-        const component = mount(<Main/>);
+        const component = mount(<Router><Main/></Router>);
+        component.children().find('#abrir').at(0).simulate("click");
         component.children().find('#cerrar').at(0).simulate("click");
     });
 
+    it('Deberia dar click en checkbox en Viajero a false', () => {
+        const component = mount(<Router><Main/></Router>);
+        component.children().find('#abrir').at(0).simulate("click");
+        var checkbox = () => component.children().find('#checkBox').at(0)
+        checkbox().simulate('click', {target: {check: false}})
+        checkbox().simulate('click', {target: {check: true}})
+    })
+
     it('deberia leer boton abrir en Viajero', () => {
-        const component = mount(<Main/>);
+        const component = mount(<Router><Main/></Router>);
         component.children().find("#pais").at(0).simulate("click");
     });
+
+    it('deberia leer boton abrir en Viajero', () => {
+        const component = mount(<Router><Main/></Router>);
+        component.children().find('#abrir').at(0).simulate("click");
+    });
+
+    it('Deberia ir al boton guardar categoria', () => {
+        const component = mount(<Router><Main/></Router>)
+        component.children().find('#guardarCategoria').at(0).simulate("click");
+    }) 
 
     it('deberia leer boton abrir en Viajero', () => {
         const component = mount(<SeleccionarDestino pais={data}  />);
         component.children().find("#paisTemporal").at(0).simulate("change");
     });
-
-    it('deberia leer boton abrir en Viajero', () => {
-        const component = mount(<Main/>);
-        component.children().find('#abrir').at(0).simulate("click");
-    });
-
-    it('Deberia ir al boton guardar categoria', () => {
-        const component = mount(<Main />)
-        component.children().find('#guardarCategoria').at(0).simulate("click");
-    }) 
 
     it('Deberia dar click en checkbox en clima a true', () => {
         const component = mount(<SeleccionarClima list={imgs2} />)
@@ -146,18 +163,6 @@ describe("Main", () => {
         var checkbox = () => component.find('#checkBox').at(0)
         checkbox().simulate('click', {target: {check: false}});   
     })
-
-    it('Deberia dar click en checkbox en Viajero a false', () => {
-        const component = mount(<SeleccionarViajero list={imgs} />)
-        var checkbox = () => component.children().find('#checkBox').at(0)
-        checkbox().simulate('click', {target: {check: false}});   
-    })
-
-    it('Deberia dar click en checkbox en Viajero a true', () => {
-        const component = mount(<SeleccionarViajero list={imgs} />)
-        var checkbox = () => component.children().find('#checkBox').at(0)
-        checkbox().simulate('click', {target: {check: true}});   
-    }) 
 
     it('Deberia cambiar el estado de una categoria a true', () => {
         const component = mount(<SeleccionarCategoria list={imgs} />)

@@ -1,6 +1,7 @@
 import OptionsBoard from '../../common/OptionsBoard';
 import { createRender } from '@material-ui/core/test-utils';
 import {it, describe } from '@jest/globals';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 describe('<OptionsBoard />', () => {
   let render;
@@ -10,6 +11,10 @@ describe('<OptionsBoard />', () => {
   });
 
   it('should work', () => {
-    const wrapper = render(<OptionsBoard />);
+    const wrapper = render(
+                      <Router>
+                        <OptionsBoard />
+                      </Router>
+                    );
   });
 });

@@ -4,7 +4,6 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Button from '@material-ui/core/Button';
 
 export class GridListTileMio extends React.Component {
     constructor(props){
@@ -21,9 +20,9 @@ export class GridListTileMio extends React.Component {
     render(){
         return(
             <div>
-            <GridList cols={this.props.cols} style={this.props.style}>
-            {this.imgs.map((img, i) => (
-                <GridListTile key={i} >
+            <GridList cols={this.props.cols} style={this.props.style} style={{width: '1000px'}}>
+            {this.props.list.map((img, i) => (
+                <GridListTile key={i} style={{width: '300px'}} >
                     <img src={img.path} style={{width: this.props.width, height: this.props.height}} />
                     <GridListTileBar
                     title={img.name}
@@ -31,7 +30,7 @@ export class GridListTileMio extends React.Component {
                         <FormControlLabel
                             id="control"
                             control={<Checkbox id="checkBox" style={{color: "white"}} onClick={() => this.handleCheck(i)} />}
-                            label="Clic aqui"
+                            label="Clic aquí"
                             style={{color: "white"}}
                         />
                     }
