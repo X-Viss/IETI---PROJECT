@@ -3,6 +3,8 @@ import AdvancedGridList from "../components/AdvancedGridList";
 import BasicCard from "../components/BasicCard";
 import {Typography} from "@material-ui/core";
 import {get} from "../requests/axiosRequests";
+import OptionsBoard from "../common/OptionsBoard";
+import Grid from "@material-ui/core/Grid";
 
 class Tiposviajes extends Component {
     /* istanbul ignore next */
@@ -33,7 +35,9 @@ class Tiposviajes extends Component {
             <div>
                 <br/>
                 <br/>
-
+                <Grid item xs alignItems="center" style={{height:"15vh",backgroundColor: "#222A4F"}} >
+                    <OptionsBoard></OptionsBoard>
+                </Grid>
                 <div style={{display: "flex"}} >
                     <div  style={{flex: "50%", padding:"5px"}}>
                         <Typography variant="h3" gutterBottom style={{color: 'black'}}>

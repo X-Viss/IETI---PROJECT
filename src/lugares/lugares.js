@@ -3,6 +3,8 @@ import SingleLineGridList from "../components/SingleLineGridList";
 import AdvancedGridList from "../components/AdvancedGridList";
 import BasicCard from "../components/BasicCard";
 import {get} from "../requests/axiosRequests";
+import OptionsBoard from "../common/OptionsBoard";
+import Grid from "@material-ui/core/Grid";
 
 class Lugares extends Component {
     constructor() {
@@ -43,6 +45,9 @@ class Lugares extends Component {
             <div>
                 <br/>
                 <br/>
+                <Grid item xs alignItems="center" style={{height:"15vh",backgroundColor: "#222A4F"}} >
+                    <OptionsBoard></OptionsBoard>
+                </Grid>
                 <div style={{display: "flex"}}>
                     <div style={{flex: "50%", backgroundColor: "#F4F4F4"}}>
                         <AdvancedGridList tileData={this.state.tileData} title={"Conoce más sobre..."} numcols={2}/>
