@@ -9,6 +9,9 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core';
 import { deleteRequest, get } from '../requests/axiosRequests.js';
+import { toast } from 'react-toastify';
+import CustomToast from '../common/CustomToast.js';
+
 
 const styles = (theme) => ({
     root: {
@@ -33,19 +36,19 @@ class TravelList extends React.Component {
     }
 
     /* istanbul ignore next */
-    componentDidMount(){
+    componentDidMount() {
         let user = sessionStorage.getItem('username');
-        get("api/travels?user="+user).then(
+        get("api/travels?user=" + user).then(
             data => {
                 console.log(data)
-                this.setState({travels: data})
+                this.setState({ travels: data })
             }
         ).catch((err) => {
             console.log(err)
         })
     }
 
-    addTask(t){
+    addTask(t) {
         this.setState(prevState => {
             const travels = prevState.travels.concat(t);
             return {
@@ -56,33 +59,42 @@ class TravelList extends React.Component {
 
     handleCardDelete(key) {
         this.setState({ currentCardDelete: key, deleteConfirmationDialogOpen: true });
+        console.log(this.state.currentCardDelete);
+
     }
 
     handleDialogClose() {
         this.setState({ deleteConfirmationDialogOpen: false });
     }
 
-      
+
     /* istanbul ignore next */
     handleDeleteCardConfirmation() {
-        console.log(this.state.currentCardDelete)
-        if(this.state.currentCardDelete < this.state.travels.length && this.state.currentCardDelete > 0){
-            let currentTravel = this.state.travels[this.state.currentCardDelete];
-            deleteRequest("api/travels?travelId="+2).then(
-                data=> {
-                    console.log(data);
-                    this.setState(prevState => {
-                        const travels = prevState.travels.filter(item => item.travelId !== data.travelId);
-                        return {
-                            travels
-                        }
-                    }, this.handleDialogClose);
-                }
-            ).catch((err)=>{
-                console.log(err);
+
+        if (this.state.currentCardDelete < this.state.travels.length && this.state.currentCardDelete >= 0) {
+            console.log("deleting")
+            let travel = this.state.travels[this.state.currentCardDelete];
+            console.log(travel);
+            deleteRequest("api/travels?id=" +travel.id).then(data => {
+                console.log(data);
+                toast.success("Borrado exitoso", {
+                    toastId: "deleteTravelSuccess"
+                });
+                this.setState(prevState =>{
+                    let travels = prevState.travels.splice(this.state.currentCardDelete, 1);
+                    return (
+                        travels
+                    )
+                })
+            }).catch((err) => {
+                console.log("err");
+                toast.error("Error en el borrado", {
+                    toastId: "deleteTravelFailure"
+                });
             });
+            this.handleDialogClose();
         }
-        
+
     }
 
     render() {
@@ -93,9 +105,9 @@ class TravelList extends React.Component {
                 </TravelCard>
             );
         })
-        
 
-        const { classes }=this.props; 
+
+        const { classes } = this.props;
         return (
             <div className={classes.root}>
                 {renderTravels}
@@ -121,6 +133,7 @@ class TravelList extends React.Component {
                         </Button>
                     </DialogActions>
                 </Dialog>
+                <CustomToast></CustomToast>
             </div>
         )
     }

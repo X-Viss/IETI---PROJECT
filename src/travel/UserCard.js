@@ -29,12 +29,7 @@ class UserCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {
-                firstName: "David",
-                lastName: "Vasquez",
-                mail: "example@mail.com",
-                description: "Ready to Travel :)"
-            }
+            email: sessionStorage.getItem("username") == null ? "": sessionStorage.getItem("username")
         };
     }
 
@@ -47,14 +42,8 @@ class UserCard extends React.Component {
 
                     <Avatar alt="David Vasquez" className={classes.large} src={user}></Avatar>
                     <CardContent>
-                        <Typography variant="h5" component="h2" classes={{root: classes.root}}>
-                            {this.state.user.firstName + " " + this.state.user.lastName}
-                        </Typography>
                         <Typography variant="h5" component="h2"> 
-                            {this.state.user.mail}
-                        </Typography>
-                        <Typography variant="h5" component="h2" >
-                            {this.state.user.description}
+                            {this.state.email}
                         </Typography>
                     </CardContent>
                     <Tooltip title="Editar perfíl" arrow>
