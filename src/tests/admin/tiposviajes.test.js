@@ -2,6 +2,7 @@ import {act, render, screen} from '@testing-library/react';
 import {unmountComponentAtNode} from "react-dom";
 import React from "react";
 import Tiposviajes from "../../tiposviajes/tiposviajes";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 let container = null;
 beforeEach(() => {
@@ -17,7 +18,7 @@ afterEach(() => {
 
 it("Renderiza Vista Tipo de viajes", () => {
     act(() => {
-        render(<Tiposviajes/>, container);
+        render(<Router><Tiposviajes/></Router>, container);
     });
 
     const linkElement = screen.getByText(/Conoce más/i);

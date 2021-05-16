@@ -1,6 +1,8 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react'
 import Button from '@material-ui/core/Button';
+import CustomToast from '../common/CustomToast.js';
+import { toast } from 'react-toastify';
 
 export class SeleccionarDestino extends React.Component{
     constructor(props){
@@ -18,13 +20,19 @@ export class SeleccionarDestino extends React.Component{
         })
     }
 
+    /* istanbul ignore next */
     handlePais(){
-        this.props.guardar(this.state.pais)
+        if(this.state.pais==""){
+            toast.warn("Debes escoger un país!", {toastId: "warn país"}) 
+        }else{
+            this.props.guardar(this.state.pais)
+        }
     }
 
     render(){
         return(
             <div>
+                <CustomToast></CustomToast>
                 <Dropdown
                     id="paisTemporal"
                     fluid

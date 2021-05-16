@@ -14,6 +14,8 @@ import { countryList, weatherListImages, rolListImages } from './Ui';
 import {TituloHora} from './TituloHora';
 import OptionsBoard from '../common/OptionsBoard';
 import { Grid } from '@material-ui/core';
+import CustomToast from '../common/CustomToast.js';
+import { toast } from 'react-toastify';
 
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
@@ -73,137 +75,162 @@ class Main extends React.Component {
         this.guardarTituloHora = this.guardarTituloHora.bind(this)
     }
 
+    /* istanbul ignore next */
     guardarALaMano(data) {
         this.setState({
             aLaMano: data
         })
-        put('api/create/category/onhand?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
+        put('api/create/category/onhand?id=' + this.state.id, data).then(() =>{ toast.success("Guardado con éxito!", {toastId: "succes a la mano"}) })
     }
 
     guardarAccesorios(data) {
         this.setState({
             accesorios: data
         })
-        console.log("ome llegue aca ome ave maria ome")
-        console.log(data)
-        put('api/create/category/accessories?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
+        put('api/create/category/accessories?id=' + this.state.id, data).then(() =>{ toast.success("Guardado con éxito!", {toastId: "succes accesorios"}) })
     }
 
+    /* istanbul ignore next */
     guardarAseo(data) {
         this.setState({
             aseo: data
         })
-        put('api/create/category/cleanliness?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
+        put('api/create/category/cleanliness?id=' + this.state.id, data).then(() =>{toast.success("Guardado con éxito!", {toastId: "succes aseo"})})
     }
 
     guardarClima(data) {
-        this.setState({
-            clima: data
-        })
         /* istanbul ignore next */
-        put('api/create/weather?id=' + this.state.id, data)
-            .then(res => {
-                console.log(res);
-                var accesories = []
-                var cleanness = []
-                var clothes = []
-                var health = []
-                var onHand = []
-
-                res.accesoriesList.forEach((element)=> {
-                    accesories.push({
-                        path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
-                        name: element,
-                        check: false,
-                    })
-                    this.setState({accesoriesList: accesories});  
-                })
-                res.cleannessList.forEach((element)=> {
-                    cleanness.push({
-                        path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
-                        name: element,
-                        check: false,
-                    })
-                    this.setState({ cleannessList: cleanness });
-                })
-                res.clothesList.forEach((element)=> {
-                    clothes.push({
-                        path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
-                        name: element,
-                        check: false,
-                    })
-                    this.setState({ clothesList: clothes });
-                })
-                res.healthList.forEach((element)=> {
-                    health.push({
-                        path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
-                        name: element,
-                        check: false,
-                    })
-                    this.setState({ healthList: health });
-                })
-                res.onHandList.forEach((element) => {
-                    onHand.push({
-                        path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
-                        name: element,
-                        check: false,
-                    })
-                    this.setState({ onHandList: onHand });
-                })
-                alert("Guardado con exito")
+        if(this.state.id==""){
+            toast.warn("Debes seleccionar primero tu rol!", {
+                toastId: "warn clima"
+            });
+        }else{
+            this.setState({
+                clima: data
             })
+            /* istanbul ignore next */
+            put('api/create/weather?id=' + this.state.id, data)
+                .then(res => {
+                    console.log(res);
+                    var accesories = []
+                    var cleanness = []
+                    var clothes = []
+                    var health = []
+                    var onHand = []
+
+                    res.accesoriesList.forEach((element)=> {
+                        accesories.push({
+                            path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
+                            name: element,
+                            check: false,
+                        })
+                        this.setState({accesoriesList: accesories});  
+                    })
+                    res.cleannessList.forEach((element)=> {
+                        cleanness.push({
+                            path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
+                            name: element,
+                            check: false,
+                        })
+                        this.setState({ cleannessList: cleanness });
+                    })
+                    res.clothesList.forEach((element)=> {
+                        clothes.push({
+                            path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
+                            name: element,
+                            check: false,
+                        })
+                        this.setState({ clothesList: clothes });
+                    })
+                    res.healthList.forEach((element)=> {
+                        health.push({
+                            path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
+                            name: element,
+                            check: false,
+                        })
+                        this.setState({ healthList: health });
+                    })
+                    res.onHandList.forEach((element) => {
+                        onHand.push({
+                            path: 'https://i.ibb.co/XLqTpvs/fondo.jpg',
+                            name: element,
+                            check: false,
+                        })
+                        this.setState({ onHandList: onHand });
+                    })
+                    toast.success("Guardado con éxito!", {toastId: "succes clima"})
+                })
+        }
     }
 
+    /* istanbul ignore next */
     guardarCompras(data) {
         this.setState({
             compras: data
         })
-        put('api/create/category/shopping?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
+        put('api/create/category/shopping?id=' + this.state.id, data).then(() =>{ toast.success("Guardado con éxito!", {toastId: "succes compras"}) })
     }
 
     guardarMedicina(data) {
         this.setState({
             medicina: data
         })
-        put('api/create/category/medicine?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
+        put('api/create/category/medicine?id=' + this.state.id, data).then(() =>{ toast.success("Guardado con éxito!", {toastId: "succes medicina"}) })
     }
 
     guardarDestino(data) {
-        this.setState({
-            pais: data
-        })
-        put('api/create/destiny?id='+this.state.id, { country: data }).then(() =>{alert("Guardado con exito")})
+        if(this.state.id==""){
+            toast.warn("Debes seleccionar primero tu rol!", {
+                toastId: "warn destino"
+            });
+        }else{
+            this.setState({
+                pais: data
+            })
+            put('api/create/destiny?id='+this.state.id, { country: data }).then(() =>{ toast.success("Guardado con éxito!", {toastId: "succes destino"}) })
+        }
     }
 
     guardarRopa(data) {
         this.setState({
             ropa: data
         })
-        put('api/create/category/clothes?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
+        put('api/create/category/clothes?id=' + this.state.id, data).then(() =>{ toast.success("Guardado con éxito!", {toastId: "succes ropa"}) })
     }
 
     guardarVarios(data) {
         this.setState({
             varios: data
         })
-        put('api/create/category/several?id=' + this.state.id, data).then(() =>{alert("Guardado con exito")})
+        put('api/create/category/several?id=' + this.state.id, data).then(() =>{ toast.success("Guardado con éxito!", {toastId: "succes varios"}) })
     }
 
     guardarViajero(data) {
+        /* istanbul ignore next */
         this.setState({
             viajero: data
         })
-        post('api/create/rol?id='+this.state.id, data).then(res => {this.setState({ id: res })} ) 
+        post('api/create/rol?id='+this.state.id, data).then(res => {
+            this.setState({ id: res })
+            toast.success("Guardado con éxito!", {toastId: "succes viajero"}) 
+         })
     }
 
     guardarTituloHora(tit, hor){
-        this.setState({
-            titulo: tit
-        })
-        this.setState({
-            hora: hor
-        })
-        put('api/create/titlehour?id='+this.state.id+'&title='+tit+'&date='+hor).then(() =>{alert("Guardado con exito")})
+        /* istanbul ignore next */
+        if(this.state.id==""){
+            toast.warn("Debes seleccionar primero tu rol!", {
+                toastId: "warn titulo y hora"
+            });
+        }else{
+            this.setState({
+                titulo: tit
+            })
+            this.setState({
+                hora: hor
+            })
+            put('api/create/titlehour?id='+this.state.id+'&title='+tit+'&date='+hor).then(() =>{ toast.success("Guardado con éxito!", {toastId: "succes titulo y hora"}) })
+        }
     }
     render() {
         let imgs = rolListImages;
@@ -212,6 +239,7 @@ class Main extends React.Component {
         const { classes } = this.props;
         return (
             <div className={classes.root} >
+                <CustomToast></CustomToast>
                 <Grid item xs alignItems="center" className={classes.upperGrid}>
                     <OptionsBoard></OptionsBoard>
                 </Grid>
@@ -233,7 +261,7 @@ class Main extends React.Component {
                         aria-controls="panel1a-content"
                         id="panel9a-header"
                     >
-                        <Typography className={classes.heading} >Coloca un titulo y fecha a tu viaje</Typography>
+                        <Typography className={classes.heading} >Coloca un título y fecha a tu viaje</Typography>
                     </AccordionSummary>
                     <AccordionDetails style={{ marginLeft: '35%', width: '100%', left: "50%" }}>
                         <TituloHora guardar={this.guardarTituloHora} />
