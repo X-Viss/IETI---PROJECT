@@ -2,7 +2,7 @@ import { CardMedia } from '@material-ui/core';
 import React from 'react';
 import logo from './logo.jpg';
 import { withStyles } from '@material-ui/core/styles';
-
+import { Link } from 'react-router-dom';
 const styles = (theme) => ({
 
     root: {
@@ -30,13 +30,14 @@ class AppLogo extends React.Component {
         return (
 
             <div className={classes.root}>
-
+                <Link to="/">
                     <CardMedia
                         image={logo}
                         className={classes.logo}
                         component="img"
                         title="Inicio"
                     />
+                </Link>
 
             </div>
         )

@@ -19,7 +19,8 @@ class TravelCard extends React.Component {
     }
 
     handleTravelClick() {
-        console.log(1)
+        console.log(this.props.keyName)
+        this.props.onCardSelection(this.props.keyName);
     }
 
     handleTravelDelete() {

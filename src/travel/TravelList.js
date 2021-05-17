@@ -11,6 +11,7 @@ import { withStyles } from '@material-ui/core';
 import { deleteRequest, get } from '../requests/axiosRequests.js';
 import { toast } from 'react-toastify';
 import CustomToast from '../common/CustomToast.js';
+import { Redirect } from 'react-router';
 
 
 const styles = (theme) => ({
@@ -27,12 +28,14 @@ class TravelList extends React.Component {
         this.state = {
             currentCardDelete: 0,
             deleteConfirmationDialogOpen: false,
-            travels: []
+            travels: [],
+            travelRedirection: false,
+            editTravelId: ""
         };
-
         this.handleCardDelete = this.handleCardDelete.bind(this);
         this.handleDeleteCardConfirmation = this.handleDeleteCardConfirmation.bind(this);
         this.handleDialogClose = this.handleDialogClose.bind(this);
+        this.handleCardSelection = this.handleCardSelection.bind(this);
     }
 
     /* istanbul ignore next */
@@ -65,6 +68,15 @@ class TravelList extends React.Component {
 
     handleDialogClose() {
         this.setState({ deleteConfirmationDialogOpen: false });
+    }
+
+    handleCardSelection(key){
+        console.log(key)
+        console.log(this.state.travels[key])
+        let travel = this.state.travels[key];
+        this.setState({travelRedirection: true,
+            editTravelId: travel.id})
+        console.log(this.state.travelRedirection)
     }
 
 
@@ -101,7 +113,7 @@ class TravelList extends React.Component {
         const renderTravels = this.state.travels.map((value, index) => {
             value.key = index;
             return (
-                <TravelCard key={index} keyName={index} travel={value} onDelete={this.onCardDelete} onCardDelete={this.handleCardDelete}>
+                <TravelCard key={index} keyName={index} travel={value} onDelete={this.onCardDelete} onCardDelete={this.handleCardDelete} onCardSelection={this.handleCardSelection}>
                 </TravelCard>
             );
         })
@@ -134,6 +146,7 @@ class TravelList extends React.Component {
                     </DialogActions>
                 </Dialog>
                 <CustomToast></CustomToast>
+                {this.state.travelRedirection ? <Redirect to={ "/editar?travelId=" + this.state.editTravelId }></Redirect> : <div></div>}
             </div>
         )
     }

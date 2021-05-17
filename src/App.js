@@ -19,7 +19,7 @@ function App() {
         <div className="App">
             <Router>
                 <Switch>
-                    <Route exact path="/inicio"><Inicio/></Route>
+                    <Route exact path="/"><Inicio/></Route>
                     <Route exact path="/lugares"><Lugares/></Route>
                     <Route exact path="/tiposviajes"><Tiposviajes/></Route>
                     <Route exact path="/statisctics"><Statisctics/></Route>
@@ -38,6 +38,7 @@ function App() {
         </div>
     );
 }
+
 
 /* istanbul ignore next */
 function Child() {
