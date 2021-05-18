@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Switch, useParams} from "react-router-do
 import {LoginForm, RegisterForm} from './form/components';
 import {NotFoundForm} from './form/404';
 import Main from './seleccionarClima/decoracionMain'
+import QuestList from './components/QuestList'
 import {Travels} from "./travel";
 import ProtectedRoute from './common/ProtectedRoute';
 import {EditUserForm} from "./form/edit";
@@ -26,6 +27,7 @@ function App() {
                     <Route exact path="/registro"><RegisterForm/></Route>
                     <Route exact path="/login"><LoginForm/></Route>
                     <Route exact path="/create"><Main/></Route>
+                    <Route exact path="/listQuestions"><QuestList/></Route>
                     <Route path={"/lugares/:lugar"} children={<Child/>}/>
                     <Route path={"/tiposviajes/:viaje"} children={<Child/>}/>
                     <ProtectedRoute exact isAuthenticated={loggedIn} path="/travelList" component={() => (<Travels/>)} />
