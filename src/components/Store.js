@@ -24,8 +24,7 @@ class Quest extends React.Component {
             <div className={classes.root}>
                 <Card>
                     <CardContent>
-                    <Checkbox inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} />
-                    <img src={this.props.src} alt={this.props.name} style={{width: 100, height: 100}}/>
+                    <a href={this.props.url} ><img src={this.props.src} alt={this.props.name} style={{width: 100, height: 100}}/></a>
                     </CardContent>
                 </Card>
             </div>
