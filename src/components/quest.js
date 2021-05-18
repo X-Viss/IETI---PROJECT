@@ -31,10 +31,10 @@ class Quest extends React.Component {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     >
-                    <Typography className={classes.heading}>{this.props.qry}</Typography>
+                    <Typography color='primary' className={classes.heading}>{this.props.qry}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                    <Typography>
+                    <Typography color='primary'>
                         {this.props.ans}
                     </Typography>
                     </AccordionDetails>
