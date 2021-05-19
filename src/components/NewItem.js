@@ -55,7 +55,7 @@ class NewItem extends React.Component {
                     </Grid>
                     <Grid container justify="flex-end" alignItems="center" spacing={0}>
                       
-                    <IconButton item id="tabbutton" disabled={this.state.disableButton}
+                    <IconButton item id="tabbutton" disabled={true}
                       onClick={this.onSubTab} aria-label="edit item"><TabIcon />Agregar Categoria Personal</IconButton>
                     </Grid>
                 </CardContent>

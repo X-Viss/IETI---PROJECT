@@ -18,7 +18,7 @@ class ItemList extends React.Component {
     render() {
         const {classes} = this.props;
         const itemsli = this.props.items.map((item, index) => 
-          <Item text={item}></Item>
+          <Item key={index} onCheckBox={this.props.onCheckBox} travel={this.props.travel} tab={this.props.currentTab} check={item.check} name={item.name}></Item>
         )
         return (
         <div className={classes.root}>
