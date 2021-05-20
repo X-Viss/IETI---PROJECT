@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect } from 'react-router';
 import { MapArticles } from './articles'
 import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
@@ -148,7 +149,7 @@ export function itemsForLoginForm() {
 
 
 export function LoginForm(props) {
-
+    const [value, setValue] = React.useState(false);
     /* istanbul ignore next */
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -161,6 +162,9 @@ export function LoginForm(props) {
                 "password": password
             }
             jwtRequest(user);
+            console.log(value);
+            setValue(true);
+            
         }
         
     }
@@ -176,6 +180,7 @@ export function LoginForm(props) {
                         <button type="submit">Login</button>
                         <p /><p />
                     </center>
+                    {value ? <Redirect to="/travelList"></Redirect> : <div></div>}
                     <Link to="/registro"><button type="button" className="ghost">No tienes cuenta? Registrate</button></Link>
                 </form>
 

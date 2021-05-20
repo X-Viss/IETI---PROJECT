@@ -1,5 +1,6 @@
 import React from 'react';
-import { Avatar, Card, CardContent, Link, Typography, withStyles } from '@material-ui/core';
+import { Avatar, Card, CardContent, Typography, withStyles } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import user from './user.png';
 import EditIcon from '@material-ui/icons/Edit';
 import IconButton from '@material-ui/core/IconButton';
@@ -48,9 +49,7 @@ class UserCard extends React.Component {
                     </CardContent>
                     <Tooltip title="Editar perfíl" arrow>
                         <Link
-                            component="button"
-                            variant="body2"
-                            to="/editar"
+                            to="/editUser"
                         >
                             <IconButton size="large">
                                 <EditIcon fontSize="large" style={{color: "white"}}/>
