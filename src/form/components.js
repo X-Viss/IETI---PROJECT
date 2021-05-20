@@ -396,7 +396,7 @@ export function itemsForLoginForm() {
 
 
 export function LoginForm(props) {
-    const [value, setValue] = React.useState(false);
+    const [value, setValue]= React.useState(false);
     /* istanbul ignore next */
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -410,7 +410,7 @@ export function LoginForm(props) {
             }
             jwtRequest(user);
             console.log(value);
-            setValue(true);
+            setValue(true );
             
         }
         
@@ -427,7 +427,7 @@ export function LoginForm(props) {
                         <button type="submit">Login</button>
                         <p /><p />
                     </center>
-                    {value ? <Redirect to="/travelList"></Redirect> : <div></div>}
+                    {value ? <Redirect to="/travelList"></Redirect>:<div></div>}
                     <Link to="/registro"><button type="button" className="ghost">No tienes cuenta? Registrate</button></Link>
                 </form>
 

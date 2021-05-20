@@ -48,9 +48,7 @@ class UserCard extends React.Component {
                         </Typography>
                     </CardContent>
                     <Tooltip title="Editar perfíl" arrow>
-                        <Link
-                            to="/editUser"
-                        >
+                        <Link to="/editUser" >
                             <IconButton size="large">
                                 <EditIcon fontSize="large" style={{color: "white"}}/>
                             </IconButton>
