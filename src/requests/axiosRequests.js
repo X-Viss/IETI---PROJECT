@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:8080/';
+const URL = 'https://xviss.herokuapp.com/';
 var token = window.sessionStorage.getItem("token");
 var instance = axios.create({
     baseURL: URL,
